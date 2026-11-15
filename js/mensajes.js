@@ -46,6 +46,19 @@ const MENSAJES = {
     ];
   },
 
+  // Al cambiar el estado a "Devuelta al taller"
+  devuelta(o) {
+    return [
+      `¡Hola${saludo(o)}! 👋`,
+      "",
+      "Como equipo siempre nos vamos a preocupar de que tu cuadro llegue a tu casa exactamente como lo pediste 🖼️✨, por eso lo hemos ingresado a taller para corregir lo necesario 🛠️",
+      "",
+      "Tu orden es una de nuestras prioridades 💛 Te avisaremos por acá cuando esté listo.",
+      "",
+      "¡Muchas gracias por la paciencia! 🙏",
+    ];
+  },
+
   // Al cambiar el estado a "Lista para retirar"
   listo(o) {
     return [
