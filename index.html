@@ -134,7 +134,7 @@
   <input type="search" id="oQ" placeholder="Buscar por cliente, teléfono, moldura, estado…" aria-label="Buscar órdenes" style="width:100%;margin:8px 0">
   <div id="oList"></div>
 </aside>
-<div class="opane"><div id="oEst" class="est"></div><div id="oCliBox" style="margin:8px 0;display:none"><button class="btn s" id="oCli" type="button">Descargar PDF para el cliente</button></div><p class="ophint">Selecciona una orden de la lista para verla o editarla.</p>
+<div class="opane"><div id="oEst" class="est"></div><div id="oCliBox" style="margin:8px 0;display:none"><button class="btn s" id="oCli" type="button">Descargar PDF para el cliente</button> <button class="btn s" id="oWa" type="button">Enviar por WhatsApp</button></div><p class="ophint">Selecciona una orden de la lista para verla o editarla.</p>
 <section class="v-rest">
   <h1>Restauración <span id="rN"></span></h1>
   <p class="sub">El cliente deja la obra y el restaurador la evalúa en la tienda. El precio se agrega después, editando la orden.</p>
@@ -185,7 +185,11 @@
 </div></section>
 
 <dialog id="dlg"><form method="dialog"><h2>Confirmar orden de trabajo</h2><p id="dlgTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" value="no">Volver</button><button class="btn p" value="si">Confirmar orden</button></div></form></dialog>
-<dialog id="waDlg"><form method="dialog"><h2>Avisar al cliente</h2><p id="waTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" value="cancel">Cancelar</button><button class="btn" value="solo">Cambiar sin avisar</button><button class="btn p" value="avisar">Cambiar y avisar</button></div></form></dialog>
+<dialog id="waDlg"><form method="dialog"><h2>Avisar al cliente</h2><p id="waTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" value="cancel">Cancelar</button><button class="btn" value="solo">Cambiar sin avisar</button><button class="btn p" value="avisar">Cambiar y abrir WhatsApp</button></div></form></dialog>
+<dialog id="envDlg"><h2 id="envT"></h2><p>Para enviarle la orden al cliente por WhatsApp:</p>
+  <div class="paso"><button class="btn" id="envPdf" type="button">1 · Descargar PDF</button></div>
+  <div class="paso"><button class="btn p" id="envWa" type="button">2 · Abrir WhatsApp</button><small>Se abre el chat con el mensaje ya escrito. Adjunta el PDF con el clip 📎 (o arrástralo al chat) y aprieta Enviar.</small></div>
+  <div style="text-align:right;margin-top:14px"><button class="btn" id="envX" type="button">Listo</button></div></dialog>
 <dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
 <div id="toast"></div>
 
@@ -193,6 +197,7 @@
 <script src="js/config.js"></script>
 <script src="js/catalogo.js"></script>
 <script src="js/datos.js"></script>
+<script src="js/mensajes.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

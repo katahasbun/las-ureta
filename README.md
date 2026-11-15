@@ -13,6 +13,7 @@ ingresando con un usuario creado en Supabase → Authentication → Users.
 - `js/app.js`: cálculos, carrito, órdenes, estados, proveedores y PDF
 - `js/config.js`: dirección y clave pública de Supabase (nunca la secret key)
 - `js/datos.js`: inicio de sesión, guardar y cargar órdenes, subir fotos
+- `js/mensajes.js`: textos de WhatsApp para los clientes (fáciles de editar)
 - `js/vendor/`: librería de Supabase (supabase-js 2.45.4)
 - `supabase/esquema.sql`: tablas, numeración de OT, seguridad y fotos
 
