@@ -25,7 +25,7 @@
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 
 /* Encabezado */
-header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:36px;padding:14px 32px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:36px;padding:14px 180px 14px 32px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
 .hlogo{display:block;line-height:0}.hlogo img{height:40px;width:auto}
 nav{display:flex;gap:28px;overflow-x:auto;scrollbar-width:none}
 nav a{color:var(--ink);text-decoration:none;padding:6px 0;white-space:nowrap;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid transparent}
@@ -62,7 +62,7 @@ textarea{min-height:96px;resize:vertical}
 .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:11px 20px;border-radius:var(--r);font:500 14px/1.2 var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
 .btn:hover{border-color:var(--ink)}
 .btn.p{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
-.btn.p:hover{background:var(--brown);border-color:var(--brown);color:#fff}
+.btn.p:hover{background:var(--brown);border-color:var(--brown);color:var(--acc-ink)}
 .btn.s{padding:7px 12px;font-size:12.5px}
 .btn:disabled{opacity:.55;cursor:default}
 a.btn{display:inline-block;text-align:center;text-decoration:none}
@@ -173,3 +173,13 @@ body[data-v="ordenes"] .rl,body[data-v="ordenes"] #rNew{display:none!important}
 .v-prov{max-width:780px;margin:0 auto;padding:28px 20px 64px}
 .v-prov .chk input:checked+span{text-decoration:line-through;color:var(--mute)}
 .v-prov .chk{align-items:flex-start}
+
+/* Botón modo día / noche */
+.tema{position:fixed;z-index:10;top:calc(17px + env(safe-area-inset-top,0px));right:24px;display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:var(--panel);color:var(--ink);font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:var(--sombra);transition:border-color .15s}
+.tema:hover{border-color:var(--ink)}
+.tema svg{color:var(--gold)}
+@media(max-width:860px){.tema{top:calc(13px + env(safe-area-inset-top,0px));right:14px}}
+@media(max-width:560px){.tema .tt{display:none}.tema{padding:8px}}
+/* En modo noche las etiquetas de estado llevan texto oscuro para leerse bien */
+:root[data-theme="dark"] .est{color:#141312}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .est{color:#141312}}
