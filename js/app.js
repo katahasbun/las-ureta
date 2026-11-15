@@ -159,49 +159,7 @@ $("oWa").onclick=()=>{const o=allOT().find(x=>x.n===ordSel);if(o)ofrecerEnvio(o,
 async function cliPdf(x){const o=x&&x.n?x:allOT().find(y=>y.n===ordSel);if(!o)return toast("Selecciona una orden");
 const J=window.jspdf&&window.jspdf.jsPDF,dl=window.claude&&claude.use?await claude.use("downloads"):{save:async({filename,data})=>{const a=document.createElement("a");a.href=URL.createObjectURL(data);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}};
 if(!J)return toast("No se pudo cargar el generador de PDF. Revisa la conexión y recarga la página");if(!dl)return toast("La descarga no está disponible en esta vista");
-const $$=n=>"$"+Math.round(n).toLocaleString("es-CL").replace(/ /g," ");
-try{const d=new J({unit:"mm",format:"a4"}),W=210,M=18,CW=W-2*M,PH=297,AC=[28,28,28],MU=[110,110,116];let y=0;
-const need=h=>{if(y+h>PH-24){d.addPage();y=M}};
-const col=c=>d.setTextColor(c[0],c[1],c[2]);
-const txt=(x,size,bold,c,gap,w)=>{d.setFont("helvetica",bold?"bold":"normal");d.setFontSize(size);col(c||[29,29,32]);const lh=size*0.3528*1.35;d.splitTextToSize(String(x),w||CW).forEach(l=>{need(lh);d.text(l,M,y+size*0.3528);y+=lh});y+=gap||0};
-const row=(a,b,size,bold,c)=>{d.setFont("helvetica",bold?"bold":"normal");d.setFontSize(size);col(c||[29,29,32]);const lh=size*0.3528*1.5;need(lh);d.text(a,M,y+size*0.3528);d.text(b,W-M,y+size*0.3528,{align:"right"});y+=lh};
-const line=()=>{d.setDrawColor(227,227,223);d.setLineWidth(.3);d.line(M,y,W-M,y);y+=3};
-// Encabezado
-const logo=await new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src="img/logo.png"});
-if(logo){const lh=15;d.addImage(logo,"PNG",M,11,lh*logo.naturalWidth/logo.naturalHeight,lh)}else{col(AC);d.setFont("times","normal");d.setFontSize(24);d.text("LAS URETA",M,22)}
-d.setFont("helvetica","normal");d.setFontSize(8);col(MU);d.text("A R T E   Y   E N M A R C A C I O N E S",W-M,17,{align:"right"});d.text("Las Condes, Santiago · lasureta.cl",W-M,22,{align:"right"});
-d.setDrawColor(168,131,79);d.setLineWidth(.4);d.line(M,32,W-M,32);
-y=42;
-const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
-d.setFont("times","normal");d.setFontSize(22);col(AC);d.text(`Orden de trabajo N° ${o.n}`,M,y+7);y+=12;
-txt(`${o.tipo==="rest"?"Restauración":"Enmarcación"} · Fecha: ${fd(new Date(o.creado))} · Entrega: ${ent}`,10,false,MU,1);
-txt(`Cliente: ${o.nom||"-"}${o.tel?" · "+o.tel:""}`,10,false,null,o.vendedora?1:5);if(o.vendedora)txt(`Te atendió: ${o.vendedora}`,10,false,null,5);
-let total,desc=0,conv="",ab,saldo;
-if(o.tipo==="rest"){
- txt("Detalle del trabajo",12,true,AC,1.5);line();
- txt(`Objeto: ${o.obj||"-"}`,11,true,null,1);txt(`Unidades: ${o.uni||1}`,10,false,null,1);if(o.obs)txt(`Observaciones: ${o.obs}`,10,false,MU,2);
- const ph=(o.ph||[]).find(Boolean);
- total=parseFloat(o.precio)||0;ab=parseFloat(o.abono)||0;saldo=Math.max(0,total-ab);
-}else{
- txt("Detalle del trabajo",12,true,AC,1.5);line();
- const keys=["vidrio","paspa","fondo","montaje","java"];
- let t=0;
- for(const it of o.items){t+=it.c.tot;const g=k=>(OPT[k][it.sel[keys.indexOf(k)]]||["Sin"])[0];
-  need(36);row(it.nombre||"Trabajo",$$(it.c.tot),12,true);
-  txt(`Obra: ${it.alto} × ${it.ancho} cm · Cantidad: ${it.c.u}`,9.5,false,MU,0);
-  txt(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" ("+MOLD[s][1]+")"+colorM(it,k)).join(" + ")}`,9.5,false,MU,0);
-  const mats=[["Vidrio",g("vidrio")],["Paspartú",g("paspa")],["Fondo",g("fondo")],["Montaje",g("montaje")],["Java",g("java")]].filter(x=>!/^Sin/.test(x[1]));
-  if(mats.length)txt(mats.map(x=>x[0]+": "+x[1]).join(" · "),9.5,false,MU,0);
-  const ex=[it.chk[0]&&"Desmontaje",it.chk[1]&&"Urgencia",it.chk[2]&&"Conservación museo",it.chk[3]&&"Despacho a domicilio"].filter(Boolean);if(ex.length)txt("Extras: "+ex.join(", "),9.5,false,MU,0);
-  y+=3;line()}
- total=t;const cv=o.conv&&o.conv!=="No",pct=cv?+o.dcto||0:0;if(pct){desc=t*pct/100;conv=`Descuento convenio ${pct} %`}
- ab=parseFloat(o.abono)||0;saldo=Math.max(0,total-desc-ab)}
-y+=2;need(40);
-if(o.tipo==="rest"&&!total){txt("Precio: por definir al evaluar la restauración.",10.5,false,MU,2)}
-else{row("Total",$$(total),11,false);if(desc){row(conv,"-"+$$(desc),11,false);row("Total con descuento",$$(total-desc),11,true)}
- if(ab>0)row("Abono"+(o.pago?" ("+o.pago+")":""),"-"+$$(ab),11,false);else if(o.pago)txt("Forma de pago: "+o.pago,10,false,MU,1);y+=1;line();row("Saldo a pagar",$$(saldo),13,true,AC)}
-y+=8;txt("Precios con IVA incluido. Este documento es un resumen de tu orden de trabajo. Si tienes dudas, escríbenos y con gusto te ayudamos.",9,false,MU,0);
-txt("¡Gracias por confiar en Las Ureta!",10,true,AC,0);
+try{const d=await armarPdfCliente(J,o);  // formato en js/pdf-cliente.js
 await dl.save({filename:`Orden de trabajo ${o.n} Las Ureta.pdf`,data:d.output("blob")});toast("PDF del cliente generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 
 async function genPdf(){const tl=$("oTaller").value;if(!tl)return toast("Elige el taller");const sel=allOT().filter(o=>chosen.has(o.n));if(!sel.length)return toast("Selecciona al menos una orden");
