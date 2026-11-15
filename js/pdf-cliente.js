@@ -114,10 +114,9 @@ async function armarPdfCliente(J, o) {
 
   // ---- Atendido por · Total · Abono · Saldo
   const r = resumenOT(o), sinPrecio = o.tipo === "rest" && !r.total;
-  const pct = o.tipo === "enm" && o.conv && o.conv !== "No" ? +o.dcto || 0 : 0;
   const by = PH - 24, cols = [
     [M, 68, "ATENDIDO POR", o.vendedora || ""],
-    [M + 71, 36, pct ? `TOTAL (CON ${pct} % DCTO.)` : "TOTAL", sinPrecio ? "Por evaluar" : $$(r.total)],
+    [M + 71, 36, "TOTAL", sinPrecio ? "Por evaluar" : $$(r.total)],
     [M + 110, 34, "ABONO" + (o.pago && r.ab ? ` (${o.pago.toUpperCase()})` : ""), $$(r.ab)],
     [M + 147, CW - 147, "SALDO", sinPrecio ? "—" : $$(r.saldo)],
   ];
