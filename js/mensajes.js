@@ -22,11 +22,8 @@ const MENSAJES = {
       `¡Hola${hola}! 👋✨`,
       "",
       "Muchas gracias por confiar en Las Ureta 🖼️💛",
-      `Tu orden de trabajo N.º ${o.n} ya quedó registrada:`,
+      `Tu orden de trabajo N.º ${o.n} ya quedó registrada.`,
       "",
-      `💰 Total: ${clp(r.total)}`,
-      r.ab ? `✅ Abono: ${clp(r.ab)}` : null,
-      `🧾 Saldo: ${clp(r.saldo)}`,
       `📅 Entrega estimada: ${entregaTxt(o)}`,
       "",
       "Te adjuntamos el detalle de tu orden 📎",
@@ -36,14 +33,16 @@ const MENSAJES = {
 
   // Al cambiar el estado a "Lista para retirar"
   listo(o) {
-    const r = resumenOT(o);
     return [
       `¡Hola${saludo(o)}! 🎉`,
       "",
       `Te contamos que tu orden N.º ${o.n} ya está lista para retirar 🖼️✨`,
-      r.saldo ? `🧾 Saldo pendiente: ${clp(r.saldo)}` : null,
       "",
       "Te esperamos en nuestra tienda 🏠",
+      "Lunes a viernes de 10:00 a 18:30 hrs",
+      "Sábados y domingos de 10:00 a 18:00 hrs",
+      "Almuerzo de 14:00 a 14:45 hrs",
+      "",
       "¡Muchas gracias por confiar en Las Ureta! 💛",
     ];
   },
@@ -68,7 +67,7 @@ function resumenOT(o) {
 function entregaTxt(o) {
   const f = o.tipo === "rest" ? o.fecha : (o.entTipo === "f" ? o.entFecha : "");
   if (f) return "el " + fd(new Date(f + "T12:00:00"));
-  return o.tipo === "rest" ? "por definir" : "en 2 a 3 semanas";
+  return o.tipo === "rest" ? "por definir" : "2 a 3 semanas";
 }
 
 const textoWA = (tipo, o) => MENSAJES[tipo](o).filter(x => x !== null).join("\n");
