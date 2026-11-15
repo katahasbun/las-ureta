@@ -1,16 +1,18 @@
 // Utilidades
 const $=id=>document.getElementById(id);
 const clp=n=>"$"+Math.round(n).toLocaleString("es-CL");
+const colorM=(it,k)=>it.mc&&it.mc[k]?", color "+it.mc[k]:"";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 // Cotizador, órdenes, restauraciones y proveedores
 for(const k in OPT){$(k).innerHTML='<option value="">Seleccionar…</option>'+OPT[k].map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("")}
 $("region").innerHTML='<option value="">Seleccionar zona…</option>'+REG.map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("");
-let molds=[-1],mw=[""],mq=[""],cart=[],editing=null,photos={1:null,2:null};
+let molds=[-1],mw=[""],mc=[""],mq=[""],cart=[],editing=null,photos={1:null,2:null};
 const mlabel=m=>`${m[0]} · ${m[1]}${m[2]?" · "+m[2]:""} · ${clp(m[3])}/ML`;
 function fillRes(i){const q=(mq[i]||"").toLowerCase().trim(),all=MOLD.map((m,j)=>({m,j})).filter(x=>!q||x.m.join(" ").toLowerCase().includes(q)),shown=all.slice(0,60);
   $("mr"+i).innerHTML=shown.map(x=>`<button type="button" class="mres" data-pick="${i}|${x.j}">${mlabel(x.m)}</button>`).join("")+(all.length?"":'<p class="empty" style="padding:10px">Sin resultados</p>')+(all.length>60?`<p class="empty" style="padding:8px 10px;font-size:12px">Mostrando 60 de ${all.length}. Escribe más para afinar.</p>`:"")}
 function renderMolds(){
-  $("molduras").innerHTML=molds.map((sel,i)=>`<div style="margin-bottom:14px"><label${sel<0?` for="mq${i}"`:""}>Moldura ${i+1}</label>`+(sel>=0?`<div class="mpick"><span>${mlabel(MOLD[sel])}</span><button class="btn s" type="button" data-chg="${i}">Cambiar</button>${i?`<button class="btn s" type="button" data-rm="${i}">Quitar</button>`:""}</div><label for="mw${i}" style="margin-top:8px">Ancho de la moldura ${i+1} (cm)</label><input type="number" id="mw${i}" data-mw="${i}" inputmode="decimal" min="0" step="0.1" placeholder="Ej: 2" value="${mw[i]||""}" style="max-width:140px">`:`<input type="text" id="mq${i}" data-mq="${i}" autocomplete="off" placeholder="Buscar por código, nombre o proveedor" value="${(mq[i]||"").replace(/"/g,"&quot;")}"><div class="mres-box" id="mr${i}"></div>${i?`<button class="btn s" type="button" data-rm="${i}" style="margin-top:6px">Quitar</button>`:""}`)+`</div>`).join("");
+  $("molduras").innerHTML=molds.map((sel,i)=>`<div style="margin-bottom:14px"><label${sel<0?` for="mq${i}"`:""}>Moldura ${i+1}</label>`+(sel>=0?`<div class="mpick"><span>${mlabel(MOLD[sel])}</span><button class="btn s" type="button" data-chg="${i}">Cambiar</button>${i?`<button class="btn s" type="button" data-rm="${i}">Quitar</button>`:""}</div><div class="mdet"><div><label for="mw${i}">Ancho de la moldura ${i+1} (cm)</label><input type="number" id="mw${i}" data-mw="${i}" inputmode="decimal" min="0" step="0.1" placeholder="Ej: 2" value="${mw[i]||""}"></div><div><label for="mc${i}">Color de la moldura ${i+1}</label><input type="text" id="mc${i}" data-mc="${i}" placeholder="Ej.: dorado, negro mate" value="${esc(mc[i]||"")}"></div></div>`:`<input type="text" id="mq${i}" data-mq="${i}" autocomplete="off" placeholder="Buscar por código, nombre o proveedor" value="${(mq[i]||"").replace(/"/g,"&quot;")}"><div class="mres-box" id="mr${i}"></div>${i?`<button class="btn s" type="button" data-rm="${i}" style="margin-top:6px">Quitar</button>`:""}`)+`</div>`).join("");
   molds.forEach((sel,i)=>{if(sel<0)fillRes(i)});
 }
 function calc(){
@@ -45,14 +47,14 @@ function renderCart(){
 }
 function snap(){
   const c=calc(),t=k=>(OPT[k][$(k).value]||["Sin"])[0];
-  return{nombre:$("nombre").value,alto:$("alto").value,ancho:$("ancho").value,cant:$("cant").value,m:["mSup","mInf","mIzq","mDer"].map(i=>$(i).value),molds:molds.filter(s=>s>=0),mw:molds.map((s,i)=>s>=0?mw[i]:null).filter(x=>x!==null),sel:["vidrio","paspa","fondo","montaje","java"].map(k=>$(k).value),chk:["desm","urg","museo","desp"].map(i=>$(i).checked),region:$("region").value,obs:$("obs").value,mn:molds.filter(s=>s>=0).map(s=>MOLD[s][0]),mats:[t("vidrio"),t("paspa"),t("fondo")].filter(x=>!x.startsWith("Sin")),ph1:photos[1],ph2:photos[2],mm:$("montajeManual").value,c};
+  return{nombre:$("nombre").value,alto:$("alto").value,ancho:$("ancho").value,cant:$("cant").value,m:["mSup","mInf","mIzq","mDer"].map(i=>$(i).value),molds:molds.filter(s=>s>=0),mw:molds.map((s,i)=>s>=0?mw[i]:null).filter(x=>x!==null),mc:molds.map((s,i)=>s>=0?(mc[i]||""):null).filter(x=>x!==null),sel:["vidrio","paspa","fondo","montaje","java"].map(k=>$(k).value),chk:["desm","urg","museo","desp"].map(i=>$(i).checked),region:$("region").value,obs:$("obs").value,mn:molds.map((s,i)=>s>=0?MOLD[s][0]+(mc[i]?` (${mc[i]})`:""):null).filter(x=>x!==null),mats:[t("vidrio"),t("paspa"),t("fondo")].filter(x=>!x.startsWith("Sin")),ph1:photos[1],ph2:photos[2],mm:$("montajeManual").value,c};
 }
 function load(s){
   $("nombre").value=s.nombre;$("alto").value=s.alto;$("ancho").value=s.ancho;$("cant").value=s.cant;
   ["mSup","mInf","mIzq","mDer"].forEach((i,n)=>$(i).value=s.m[n]);$("mUni").value=s.m[0];$("mPers").checked=!s.m.every(x=>x==s.m[0]);syncM();
   ["vidrio","paspa","fondo","montaje","java"].forEach((k,n)=>$(k).value=s.sel[n]);
   ["desm","urg","museo","desp"].forEach((k,n)=>$(k).checked=s.chk[n]);
-  $("region").value=s.region;$("obs").value=s.obs;$("montajeManual").value=s.mm||"";molds=s.molds.length?[...s.molds]:[-1];mw=molds.map((_,i)=>s.mw&&s.mw[i]!=null?String(s.mw[i]):"");mq=molds.map(()=>"");photos={1:s.ph1,2:s.ph2};
+  $("region").value=s.region;$("obs").value=s.obs;$("montajeManual").value=s.mm||"";molds=s.molds.length?[...s.molds]:[-1];mw=molds.map((_,i)=>s.mw&&s.mw[i]!=null?String(s.mw[i]):"");mc=molds.map((_,i)=>s.mc&&s.mc[i]!=null?String(s.mc[i]):"");mq=molds.map(()=>"");photos={1:s.ph1,2:s.ph2};
   [1,2].forEach(p=>setPh(p,photos[p]));syncDesp();syncMM();renderMolds();refresh();
 }
 function setPh(p,url){const el=$("ph"+p);const old=el.querySelector("img");if(old)old.remove();if(url){const im=document.createElement("img");im.src=fotoSrc(url);im.alt="";el.appendChild(im)}}
@@ -63,15 +65,15 @@ function toast(t){const e=$("toast");e.textContent=t;e.style.display="block";cle
 function reset(){load({nombre:"",alto:"",ancho:"",cant:1,m:["","","",""],molds:[-1],sel:["","","","",""],chk:[false,false,false,false],region:"",obs:"",ph1:null,ph2:null});editing=null;$("add").textContent="Agregar al carrito";$("cancel").style.display="none"}
 document.addEventListener("change",e=>{if(e.target.classList)e.target.classList.remove("req")});
 document.addEventListener("input",e=>{if(e.target.classList)e.target.classList.remove("req");const q=e.target.dataset.mq;if(q!==undefined){mq[+q]=e.target.value;fillRes(+q)}refresh()});
-document.addEventListener("input",e=>{if(e.target.dataset.mw!==undefined){mw[+e.target.dataset.mw]=e.target.value;refresh()}});
+document.addEventListener("input",e=>{if(e.target.dataset.mw!==undefined){mw[+e.target.dataset.mw]=e.target.value;refresh()}if(e.target.dataset.mc!==undefined)mc[+e.target.dataset.mc]=e.target.value;});
 document.addEventListener("change",e=>{if(e.target.dataset.m!==undefined){molds[+e.target.dataset.m]=+e.target.value}if(e.target.id==="desp")syncDesp();if(e.target.type==="file"&&e.target.dataset.p){const f=e.target.files[0],p=e.target.dataset.p;if(f)shrink(f,u=>{photos[p]=u;setPh(p,u)})}refresh()});
 document.addEventListener("click",e=>{const d=e.target.dataset;
   if(d.pick!==undefined){const[a,b]=d.pick.split("|").map(Number);molds[a]=b;renderMolds();refresh()}
-  if(d.chg!==undefined){molds[+d.chg]=-1;mw[+d.chg]="";mq[+d.chg]="";renderMolds();refresh()}
-  if(d.rm!==undefined){molds.splice(+d.rm,1);mw.splice(+d.rm,1);mq.splice(+d.rm,1);renderMolds();refresh()}
+  if(d.chg!==undefined){molds[+d.chg]=-1;mw[+d.chg]="";mc[+d.chg]="";mq[+d.chg]="";renderMolds();refresh()}
+  if(d.rm!==undefined){molds.splice(+d.rm,1);mw.splice(+d.rm,1);mc.splice(+d.rm,1);mq.splice(+d.rm,1);renderMolds();refresh()}
   if(d.e!==undefined){editing=+d.e;load(cart[editing]);$("add").textContent="Guardar cambios";$("cancel").style.display="inline-block";scrollTo({top:0,behavior:"smooth"})}
   if(d.d!==undefined){cart.splice(+d.d,1);renderCart();toast("Trabajo eliminado")}});
-$("addMold").onclick=()=>{if(molds.length<3){molds.push(-1);mw.push("");mq.push("");renderMolds();refresh()}else toast("Máximo tres molduras por trabajo")};
+$("addMold").onclick=()=>{if(molds.length<3){molds.push(-1);mw.push("");mc.push("");mq.push("");renderMolds();refresh()}else toast("Máximo tres molduras por trabajo")};
 $("add").onclick=()=>{if(!(parseFloat($("alto").value)>0&&parseFloat($("ancho").value)>0))return toast("Completa las medidas de la obra");if(!$("mPers").checked&&$("mUni").value==="")return toast("Indica el margen (puede ser 0)");if(!molds.some(s=>s>=0))return toast("Elige al menos una moldura");if(molds.some((s,i)=>s>=0&&!(parseFloat(mw[i])>0)))return toast("Indica el ancho de cada moldura");
 const falta=[["vidrio","Vidrio"],["paspa","Paspartú"],["fondo","Fondo"],["montaje","Montaje"],["java","Java o embalaje"]].filter(([k])=>$(k).value==="");if($("desp").checked&&$("region").value==="")falta.push(["region","Zona de despacho"]);
 if($("montaje").value!==""&&(OPT.montaje[$("montaje").value]||[])[2]==="manual"&&!(parseFloat($("montajeManual").value)>0))falta.push(["montajeManual","Precio del montaje de objetos"]);
@@ -85,7 +87,6 @@ function syncM(){const p=$("mPers").checked;$("mGrid").style.display=p?"grid":"n
 document.addEventListener("input",e=>{if(e.target.id==="mUni"){syncM();refresh()}});
 document.addEventListener("change",e=>{if(e.target.id==="mPers"){syncM();refresh()}});
 const TIT={restauraciones:"Restauraciones",ordenes:"Órdenes de trabajo",proveedores:"Proveedores"};
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let guardando=false;
 const fill=(id,a,ph)=>{$(id).innerHTML=(ph?`<option value="">${ph}</option>`:"")+a.map(x=>`<option>${x}</option>`).join("")};
 fill("como",["Boca a boca","Cliente","Google","ChatGPT","Instagram","TikTok","Pasando por el local"],"Seleccionar");
@@ -187,7 +188,7 @@ if(o.tipo==="rest"){
  for(const it of o.items){t+=it.c.tot;const g=k=>(OPT[k][it.sel[keys.indexOf(k)]]||["Sin"])[0];
   need(36);row(it.nombre||"Trabajo",$$(it.c.tot),12,true);
   txt(`Obra: ${it.alto} × ${it.ancho} cm · Cantidad: ${it.c.u}`,9.5,false,MU,0);
-  txt(`Moldura: ${it.molds.map(s=>MOLD[s][0]+" ("+MOLD[s][1]+")").join(" + ")}`,9.5,false,MU,0);
+  txt(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" ("+MOLD[s][1]+")"+colorM(it,k)).join(" + ")}`,9.5,false,MU,0);
   const mats=[["Vidrio",g("vidrio")],["Paspartú",g("paspa")],["Fondo",g("fondo")],["Montaje",g("montaje")],["Java",g("java")]].filter(x=>!/^Sin/.test(x[1]));
   if(mats.length)txt(mats.map(x=>x[0]+": "+x[1]).join(" · "),9.5,false,MU,0);
   const ex=[it.chk[0]&&"Desmontaje",it.chk[1]&&"Urgencia",it.chk[2]&&"Conservación museo",it.chk[3]&&"Despacho a domicilio"].filter(Boolean);if(ex.length)txt("Extras: "+ex.join(", "),9.5,false,MU,0);
@@ -217,13 +218,13 @@ if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones
 else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
 if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
 T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);
-T(`Moldura: ${it.molds.map(s=>MOLD[s][0]+" "+MOLD[s][1]).join(" + ")}`);T(`Vidrio: ${g("vidrio")} · Paspartú: ${g("paspa")} · Fondo: ${g("fondo")}`);T(`Montaje: ${g("montaje")} · Java: ${g("java")}`);
+T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join(" + ")}`);T(`Vidrio: ${g("vidrio")} · Paspartú: ${g("paspa")} · Fondo: ${g("fondo")}`);T(`Montaje: ${g("montaje")} · Java: ${g("java")}`);
 const ex=[it.chk[0]&&"Desmontaje",it.chk[1]&&"Urgencia",it.chk[2]&&"Conservación museo"].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
 T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 const PV={vidrio:Array(8).fill(""),paspa:Array(4).fill(""),fondo:Array(4).fill("")};
 const fq=n=>n.toFixed(2).replace(".",",");
-function provLines(){const L=[];ots.forEach(o=>o.items.forEach((it,i)=>{const u=it.c.u,add=(k,prov,d,q,unit)=>{const opts=String(prov).split(" / ").map(x=>x.trim()).filter(Boolean);if(opts.length)L.push({o,key:i+"-"+k,opts,prov:null,d,q,unit,it})};it.molds.forEach((s,j)=>add("m"+j,MOLD[s][2],MOLD[s][0]+" · "+MOLD[s][1],it.c.ml*u,"ML"));[["vidrio",0],["paspa",1],["fondo",2]].forEach(([k,n])=>add(k,PV[k][it.sel[n]],OPT[k][it.sel[n]][0],it.c.area*u,"m²"))}));
+function provLines(){const L=[];ots.forEach(o=>o.items.forEach((it,i)=>{const u=it.c.u,add=(k,prov,d,q,unit)=>{const opts=String(prov).split(" / ").map(x=>x.trim()).filter(Boolean);if(opts.length)L.push({o,key:i+"-"+k,opts,prov:null,d,q,unit,it})};it.molds.forEach((s,j)=>add("m"+j,MOLD[s][2],MOLD[s][0]+" · "+MOLD[s][1]+colorM(it,j),it.c.ml*u,"ML"));[["vidrio",0],["paspa",1],["fondo",2]].forEach(([k,n])=>add(k,PV[k][it.sel[n]],OPT[k][it.sel[n]][0],it.c.area*u,"m²"))}));
 const pend=l=>!(l.o.ped||{})[l.key],cnt={};
 L.forEach(l=>{const lk=(l.o.sup||{})[l.key];if(lk&&l.opts.includes(lk))l.prov=lk;else if(l.opts.length===1)l.prov=l.opts[0]});
 L.filter(l=>l.prov&&pend(l)).forEach(l=>cnt[l.prov]=(cnt[l.prov]||0)+1);
