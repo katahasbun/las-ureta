@@ -185,10 +185,10 @@
 </div></section>
 
 <dialog id="dlg"><form method="dialog"><h2>Confirmar orden de trabajo</h2><p id="dlgTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" value="no">Volver</button><button class="btn p" value="si">Confirmar orden</button></div></form></dialog>
-<dialog id="waDlg"><form method="dialog"><h2>Avisar al cliente</h2><p id="waTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" value="cancel">Cancelar</button><button class="btn" value="solo">Cambiar sin avisar</button><button class="btn p" value="avisar">Cambiar y abrir WhatsApp</button></div></form></dialog>
+<dialog id="waDlg"><form method="dialog"><h2>Avisar al cliente</h2><p id="waTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" value="cancel">Cancelar</button><button class="btn" value="solo">Cambiar sin avisar</button><a class="btn p" id="waGo" target="_blank" rel="noopener">Cambiar y abrir WhatsApp</a></div></form></dialog>
 <dialog id="envDlg"><h2 id="envT"></h2><p>Para enviarle la orden al cliente por WhatsApp:</p>
   <div class="paso"><button class="btn" id="envPdf" type="button">1 · Descargar PDF</button></div>
-  <div class="paso"><button class="btn p" id="envWa" type="button">2 · Abrir WhatsApp</button><small>Se abre el chat con el mensaje ya escrito. Adjunta el PDF con el clip 📎 (o arrástralo al chat) y aprieta Enviar.</small></div>
+  <div class="paso"><a class="btn p" id="envWa" target="_blank" rel="noopener">2 · Abrir WhatsApp</a><small>Se abre el chat con el mensaje ya escrito. Adjunta el PDF con el clip 📎 (o arrástralo al chat) y aprieta Enviar.</small></div>
   <div style="text-align:right;margin-top:14px"><button class="btn" id="envX" type="button">Listo</button></div></dialog>
 <dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
 <div id="toast"></div>

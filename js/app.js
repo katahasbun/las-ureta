@@ -136,9 +136,9 @@ function ordHist(){const o=allOT().find(x=>x.n===ordSel);if(!o){$("oHist").inner
 $("oHist").innerHTML="<h2>Historial de estados</h2>"+[...(o.hist||[])].reverse().map(h=>`<div class="tr"><span>${esc(h.de)} → <b>${esc(h.a)}</b>${h.por?` <small style="color:var(--mute)">(${esc(h.por)})</small>`:""}</span><span style="color:var(--mute)">${fh(h.t)}</span></div>`).join("")+`<div class="tr"><span>Recibida (orden creada)</span><span style="color:var(--mute)">${fh(o.creado)}</span></div>`+(o.avisado?`<div class="tr"><span>Aviso «lista para retirar» abierto en WhatsApp</span><span style="color:var(--mute)">${fh(o.avisado)}</span></div>`:"")}
 function setEstado(n,nuevo){const o=allOT().find(x=>x.n===n),ant=estOf(o);if(!o||nuevo===ant){ordList();return}
 const apply=()=>{o.hist=o.hist||[];o.hist.push({de:ant,a:nuevo,t:Date.now(),por:usuaria});o.estado=nuevo;ordList();ordEst();ordHist();guardarOrden(o);toast(`OT ${n}: ${nuevo}`)};
-if(nuevo==="Lista para retirar"&&!o.avisado&&o.tel){pendEst={o,apply};$("waTxt").innerHTML=`Se abrirá WhatsApp para enviar este mensaje al <b>${esc(o.tel)}</b>:<br><br><i>${esc(textoWA("listo",o)).replace(/\n/g,"<br>")}</i>`;$("waDlg").showModal();return}
+if(nuevo==="Lista para retirar"&&!o.avisado&&o.tel){pendEst={o,apply};$("waTxt").innerHTML=`Se abrirá WhatsApp para enviar este mensaje al <b>${esc(o.tel)}</b>:<br><br><i>${esc(textoWA("listo",o)).replace(/\n/g,"<br>")}</i>`;linkWA($("waGo"),o,"listo");$("waDlg").showModal();return}
 apply();if(nuevo==="Lista para retirar"&&o.avisado)toast(`OT ${n}: ${nuevo}. Ya se había avisado al cliente`)}
-$("waDlg").addEventListener("close",()=>{const v=$("waDlg").returnValue,p=pendEst;$("waDlg").returnValue="";pendEst=null;if(!p)return;if(v==="avisar"){p.o.avisado=Date.now();p.apply();if(abrirWA(p.o,"listo"))toast("Revisa WhatsApp y aprieta Enviar")}else if(v==="solo")p.apply();else ordList()});
+$("waDlg").addEventListener("close",()=>{const v=$("waDlg").returnValue,p=pendEst;$("waDlg").returnValue="";pendEst=null;if(!p)return;if(v==="avisar"){p.o.avisado=Date.now();p.apply();toast("Revisa WhatsApp y aprieta Enviar")}else if(v==="solo")p.apply();else ordList()});
 document.addEventListener("input",e=>{if(e.target.id==="oQ")ordList()});
 function ordEst(){const o=allOT().find(x=>x.n===ordSel),e=o?est(o):null,d=o?due(o):null;$("oEst").className="est "+(e?e[0]:"");$("oEst").textContent=e?(o.estado==="Entregada"?"Entregada":estOf(o)+" · "+e[1]+(d?" · entrega "+(o.tipo==="enm"&&o.entTipo!=="f"?"hasta el ":"el ")+fd(d):"")):""}
 function ordOpen(n){ordSel=n;$("oCliBox").style.display="block";const o=allOT().find(x=>x.n===n);document.body.dataset.sel=o.tipo;if(o.tipo==="rest")rLoad(o);else otLoad(o);ordList();ordEst();ordHist();scrollTo({top:0,behavior:"smooth"})}
@@ -149,9 +149,10 @@ $("oGen").onclick=genPdf;
 $("oCli").onclick=cliPdf;
 // Enviar la orden por WhatsApp: 1) descargar el PDF, 2) abrir el chat con el mensaje
 let envO=null;
-function ofrecerEnvio(o,titulo){envO=o;$("envT").textContent=titulo||`Orden N° ${o.n} guardada`;$("envDlg").showModal()}
+function ofrecerEnvio(o,titulo){envO=o;linkWA($("envWa"),o,"confirmacion");$("envT").textContent=titulo||`Orden N° ${o.n} guardada`;$("envDlg").showModal()}
 $("envPdf").onclick=()=>cliPdf(envO);
-$("envWa").onclick=()=>{if(abrirWA(envO,"confirmacion"))toast("Adjunta el PDF en el chat y aprieta Enviar")};
+$("envWa").onclick=e=>{if(e.currentTarget.dataset.sinTel){e.preventDefault();return avisoTelInvalido()}toast("Adjunta el PDF en el chat y aprieta Enviar")};
+$("waGo").onclick=e=>{if(e.currentTarget.dataset.sinTel){e.preventDefault();avisoTelInvalido();$("waDlg").close("solo");return}$("waDlg").close("avisar")};
 $("envX").onclick=()=>$("envDlg").close();
 $("oWa").onclick=()=>{const o=allOT().find(x=>x.n===ordSel);if(o)ofrecerEnvio(o,`Enviar orden N° ${o.n}`)};
 async function cliPdf(x){const o=x&&x.n?x:allOT().find(y=>y.n===ordSel);if(!o)return toast("Selecciona una orden");

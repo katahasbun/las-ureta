@@ -81,10 +81,21 @@ function telWA(t) {
   return d.length >= 11 ? d : null;
 }
 
-// Abre WhatsApp (app o WhatsApp Web) con el chat del cliente y el mensaje ya escrito
-function abrirWA(o, tipo) {
+// Dirección que abre el chat del cliente con el mensaje ya escrito:
+// en el computador, WhatsApp Web; en el celular, la app de WhatsApp.
+const esCelular = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+function urlWA(o, tipo) {
   const n = telWA(o.tel);
-  if (!n) { toast("El teléfono del cliente no parece válido. Revísalo en la orden"); return false; }
-  window.open("https://wa.me/" + n + "?text=" + encodeURIComponent(textoWA(tipo, o)), "_blank", "noopener");
-  return true;
+  if (!n) return null;
+  const t = encodeURIComponent(textoWA(tipo, o));
+  return esCelular ? `https://wa.me/${n}?text=${t}` : `https://web.whatsapp.com/send?phone=${n}&text=${t}`;
 }
+
+// Prepara un link <a> para abrir WhatsApp. Un link no lo bloquea el navegador
+// (una ventana abierta por código sí puede quedar bloqueada sin aviso).
+function linkWA(a, o, tipo) {
+  const url = urlWA(o, tipo);
+  a.href = url || "#";
+  a.dataset.sinTel = url ? "" : "1";
+}
+function avisoTelInvalido() { toast("El teléfono del cliente no parece válido. Revísalo en la orden"); }
