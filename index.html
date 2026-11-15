@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Las Ureta · Cotizador (prototipo)</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif&display=swap">
+<title>Las Ureta · Portal</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/estilos.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 <header>
-  <div class="logo">Las Ureta</div>
-  <nav><a href="#menu">← Menú</a></nav>
+  <a class="hlogo" href="#menu" aria-label="Volver al menú"><img class="logo-img" src="img/logo.png" alt="Las Ureta"></a>
+  <nav aria-label="Secciones"><a href="#enmarcaciones">Enmarcaciones</a><a href="#restauraciones">Restauraciones</a><a href="#ordenes">Órdenes de trabajo</a><a href="#proveedores">Proveedores</a></nav>
 </header>
 <section class="v-login">
-  <div class="logo">Las Ureta</div>
+  <img class="logo-img portada-logo" src="img/logo.png" alt="Las Ureta">
+  <span class="eyebrow">Portal interno</span>
   <p class="sub">Ingresa con tu correo y contraseña</p>
   <form id="loginForm" class="card">
     <label for="lMail">Correo</label><input type="email" id="lMail" autocomplete="username" required>
@@ -24,12 +26,15 @@
   </form>
 </section>
 <section class="v-menu">
-  <div class="logo">Las Ureta</div>
-  <p class="sub">¿Qué quieres hacer?</p>
-  <a class="mbtn" href="#enmarcaciones">Enmarcaciones</a>
-  <a class="mbtn" href="#restauraciones">Restauraciones</a>
-  <a class="mbtn" href="#ordenes">Órdenes de trabajo</a>
-  <a class="mbtn" href="#proveedores">Proveedores</a>
+  <img class="logo-img portada-logo" src="img/logo.png" alt="Las Ureta">
+  <span class="eyebrow">Arte y enmarcaciones · Portal interno</span>
+  <h1>¿Qué quieres hacer hoy?</h1>
+  <div class="mgrid">
+    <a class="mbtn" href="#enmarcaciones"><span class="mt">Enmarcaciones</span><span class="md">Cotizar trabajos y crear órdenes</span></a>
+    <a class="mbtn" href="#restauraciones"><span class="mt">Restauraciones</span><span class="md">Recibir obras para evaluar</span></a>
+    <a class="mbtn" href="#ordenes"><span class="mt">Órdenes de trabajo</span><span class="md">Estados, taller, PDF y WhatsApp</span></a>
+    <a class="mbtn" href="#proveedores"><span class="mt">Proveedores</span><span class="md">Qué pedir y a quién</span></a>
+  </div>
   <p class="sub quien">Sesión: <span id="quien"></span> · <button class="lnk" id="cambiarNom" type="button">Cambiar nombre</button> · <button class="lnk" id="salir" type="button">Cerrar sesión</button></p>
 </section>
 <section class="v-ph">
@@ -41,6 +46,7 @@
 
 <main>
 <section>
+  <span class="eyebrow">Enmarcaciones</span>
   <h1>Nueva cotización</h1>
   <p class="sub">Cada trabajo se suma al carrito. Cuando esté listo, se crea la orden de trabajo.</p>
 
@@ -123,6 +129,7 @@
 </main>
 
 <section class="v-prov">
+  <span class="eyebrow">Pedidos</span>
   <h1>Proveedores</h1>
   <p class="sub">Pedidos pendientes según las órdenes de enmarcación confirmadas, agrupados por proveedor. Marca cada línea cuando ya esté pedida.</p>
   <div id="provList"></div>
@@ -136,6 +143,7 @@
 </aside>
 <div class="opane"><div id="oEst" class="est"></div><div id="oCliBox" style="margin:8px 0;display:none"><button class="btn s" id="oCli" type="button">Descargar PDF para el cliente</button> <button class="btn s" id="oWa" type="button">Enviar por WhatsApp</button></div><p class="ophint">Selecciona una orden de la lista para verla o editarla.</p>
 <section class="v-rest">
+  <span class="eyebrow">Restauraciones</span>
   <h1>Restauración <span id="rN"></span></h1>
   <p class="sub">El cliente deja la obra y el restaurador la evalúa en la tienda. El precio se agrega después, editando la orden.</p>
   <div class="card"><h2>Orden</h2>
@@ -160,6 +168,7 @@
 </section>
 
 <section class="v-ot">
+  <span class="eyebrow">Enmarcaciones</span>
   <h1>Orden de trabajo <span id="otN"></span></h1>
   <p class="sub">El número se asigna solo. Completa los datos del cliente y revisa cada trabajo.</p>
   <div class="card"><h2>Cliente</h2>

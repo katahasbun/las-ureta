@@ -12,7 +12,7 @@ const mlabel=m=>`${m[0]} · ${m[1]}${m[2]?" · "+m[2]:""} · ${clp(m[3])}/ML`;
 function fillRes(i){const q=(mq[i]||"").toLowerCase().trim(),all=MOLD.map((m,j)=>({m,j})).filter(x=>!q||x.m.join(" ").toLowerCase().includes(q)),shown=all.slice(0,60);
   $("mr"+i).innerHTML=shown.map(x=>`<button type="button" class="mres" data-pick="${i}|${x.j}">${mlabel(x.m)}</button>`).join("")+(all.length?"":'<p class="empty" style="padding:10px">Sin resultados</p>')+(all.length>60?`<p class="empty" style="padding:8px 10px;font-size:12px">Mostrando 60 de ${all.length}. Escribe más para afinar.</p>`:"")}
 function renderMolds(){
-  $("molduras").innerHTML=molds.map((sel,i)=>`<div style="margin-bottom:14px"><label${sel<0?` for="mq${i}"`:""}>Moldura ${i+1}</label>`+(sel>=0?`<div class="mpick"><span>${mlabel(MOLD[sel])}</span><button class="btn s" type="button" data-chg="${i}">Cambiar</button>${i?`<button class="btn s" type="button" data-rm="${i}">Quitar</button>`:""}</div><div class="mdet"><div><label for="mw${i}">Ancho de la moldura ${i+1} (cm)</label><input type="number" id="mw${i}" data-mw="${i}" inputmode="decimal" min="0" step="0.1" placeholder="Ej: 2" value="${mw[i]||""}"></div><div><label for="mc${i}">Color de la moldura ${i+1}</label><input type="text" id="mc${i}" data-mc="${i}" placeholder="Ej.: dorado, negro mate" value="${esc(mc[i]||"")}"></div></div>`:`<input type="text" id="mq${i}" data-mq="${i}" autocomplete="off" placeholder="Buscar por código, nombre o proveedor" value="${(mq[i]||"").replace(/"/g,"&quot;")}"><div class="mres-box" id="mr${i}"></div>${i?`<button class="btn s" type="button" data-rm="${i}" style="margin-top:6px">Quitar</button>`:""}`)+`</div>`).join("");
+  $("molduras").innerHTML=molds.map((sel,i)=>`<div style="margin-bottom:14px"><label${sel<0?` for="mq${i}"`:""}>Moldura ${i+1}</label>`+(sel>=0?`<div class="mpick"><span>${mlabel(MOLD[sel])}</span><button class="btn s" type="button" data-chg="${i}">Cambiar</button>${i?`<button class="btn s" type="button" data-rm="${i}">Quitar</button>`:""}</div><div class="mdet"><div><label for="mw${i}">Ancho (cm)</label><input type="number" id="mw${i}" data-mw="${i}" inputmode="decimal" min="0" step="0.1" placeholder="Ej: 2" value="${mw[i]||""}"></div><div><label for="mc${i}">Color</label><input type="text" id="mc${i}" data-mc="${i}" placeholder="Ej.: dorado, negro mate" value="${esc(mc[i]||"")}"></div></div>`:`<input type="text" id="mq${i}" data-mq="${i}" autocomplete="off" placeholder="Buscar por código, nombre o proveedor" value="${(mq[i]||"").replace(/"/g,"&quot;")}"><div class="mres-box" id="mr${i}"></div>${i?`<button class="btn s" type="button" data-rm="${i}" style="margin-top:6px">Quitar</button>`:""}`)+`</div>`).join("");
   molds.forEach((sel,i)=>{if(sel<0)fillRes(i)});
 }
 function calc(){
@@ -160,19 +160,20 @@ async function cliPdf(x){const o=x&&x.n?x:allOT().find(y=>y.n===ordSel);if(!o)re
 const J=window.jspdf&&window.jspdf.jsPDF,dl=window.claude&&claude.use?await claude.use("downloads"):{save:async({filename,data})=>{const a=document.createElement("a");a.href=URL.createObjectURL(data);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}};
 if(!J)return toast("No se pudo cargar el generador de PDF. Revisa la conexión y recarga la página");if(!dl)return toast("La descarga no está disponible en esta vista");
 const $$=n=>"$"+Math.round(n).toLocaleString("es-CL").replace(/ /g," ");
-try{const d=new J({unit:"mm",format:"a4"}),W=210,M=18,CW=W-2*M,PH=297,AC=[31,75,74],MU=[110,110,116];let y=0;
+try{const d=new J({unit:"mm",format:"a4"}),W=210,M=18,CW=W-2*M,PH=297,AC=[28,28,28],MU=[110,110,116];let y=0;
 const need=h=>{if(y+h>PH-24){d.addPage();y=M}};
 const col=c=>d.setTextColor(c[0],c[1],c[2]);
 const txt=(x,size,bold,c,gap,w)=>{d.setFont("helvetica",bold?"bold":"normal");d.setFontSize(size);col(c||[29,29,32]);const lh=size*0.3528*1.35;d.splitTextToSize(String(x),w||CW).forEach(l=>{need(lh);d.text(l,M,y+size*0.3528);y+=lh});y+=gap||0};
 const row=(a,b,size,bold,c)=>{d.setFont("helvetica",bold?"bold":"normal");d.setFontSize(size);col(c||[29,29,32]);const lh=size*0.3528*1.5;need(lh);d.text(a,M,y+size*0.3528);d.text(b,W-M,y+size*0.3528,{align:"right"});y+=lh};
 const line=()=>{d.setDrawColor(227,227,223);d.setLineWidth(.3);d.line(M,y,W-M,y);y+=3};
 // Encabezado
-d.setFillColor(AC[0],AC[1],AC[2]);d.rect(0,0,W,30,"F");
-d.setTextColor(255,255,255);d.setFont("helvetica","bold");d.setFontSize(22);d.text("Las Ureta",M,15);
-d.setFont("helvetica","normal");d.setFontSize(9);d.text("Galería de arte y taller de enmarcación · Las Condes, Santiago · lasureta.cl",M,22);
-y=40;
+const logo=await new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src="img/logo.png"});
+if(logo){const lh=15;d.addImage(logo,"PNG",M,11,lh*logo.naturalWidth/logo.naturalHeight,lh)}else{col(AC);d.setFont("times","normal");d.setFontSize(24);d.text("LAS URETA",M,22)}
+d.setFont("helvetica","normal");d.setFontSize(8);col(MU);d.text("A R T E   Y   E N M A R C A C I O N E S",W-M,17,{align:"right"});d.text("Las Condes, Santiago · lasureta.cl",W-M,22,{align:"right"});
+d.setDrawColor(168,131,79);d.setLineWidth(.4);d.line(M,32,W-M,32);
+y=42;
 const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
-txt(`Orden de trabajo N° ${o.n}`,17,true,AC,2);
+d.setFont("times","normal");d.setFontSize(22);col(AC);d.text(`Orden de trabajo N° ${o.n}`,M,y+7);y+=12;
 txt(`${o.tipo==="rest"?"Restauración":"Enmarcación"} · Fecha: ${fd(new Date(o.creado))} · Entrega: ${ent}`,10,false,MU,1);
 txt(`Cliente: ${o.nom||"-"}${o.tel?" · "+o.tel:""}`,10,false,null,o.vendedora?1:5);if(o.vendedora)txt(`Te atendió: ${o.vendedora}`,10,false,null,5);
 let total,desc=0,conv="",ab,saldo;
