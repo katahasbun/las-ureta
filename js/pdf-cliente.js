@@ -66,11 +66,7 @@ async function armarPdfCliente(J, o) {
   campo(M + mitad + 3, y0 + 9, mitad, "Entrega", ent ? ent.charAt(0).toUpperCase() + ent.slice(1) : "");
   campo(M, y0 + 18, CW, "Correo", o.mail);
   if (o.tipo === "rest") campo(M, y0 + 27, CW, "Forma de pago", o.pago);
-  else {
-    const conv = o.conv && o.conv !== "No" ? o.conv + (+o.dcto ? ` (${o.dcto} % dcto.)` : "") : "No";
-    campo(M, y0 + 27, mitad, "Convenio", conv);
-    campo(M + mitad + 3, y0 + 27, mitad, "¿Dónde nos conociste?", o.como);
-  }
+  else campo(M, y0 + 27, CW, "¿Dónde nos conociste?", o.como);
 
   // ---- Detalle en líneas (como el cuaderno de la orden de papel)
   font(8.5, "normal", LBL); d.text("Detalle", M + 4, y0 + 41);
