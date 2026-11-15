@@ -9,8 +9,9 @@ const SUPABASE_KEY = "sb_publishable_sXFjL6nUBGXxiF5M8aq9lQ_3SK0JWiB";
 const CONTACTO = {
   web: "www.lasureta.cl",
   telefonos: ["264659979"],
-  correo: "info@lasureta.cl",
+  whatsapp: "+56 9 8414 7314",
+  correo: "contacto@lasureta.cl",
   instagram: "@lasureta",
-  tiktok: "",
+  tiktok: "@lasureta",
   direccion: "Manquehue Norte 402, Las Condes",
 };

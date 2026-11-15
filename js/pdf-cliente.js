@@ -6,6 +6,7 @@
 const ICONOS_PDF = {
   web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   fono: '<path d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 7.1 7.1l1.3-2 4 1.6v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+  wa: '<path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 19z"/><path d="M9.2 8.6c.2 3 3.2 6 6.2 6.2l1-1.5-2-1-.9.8a4.6 4.6 0 0 1-2.6-2.6l.8-.9-1-2z"/>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
   ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
   tt: '<path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.6 2.2 4.3 5 4.6"/>',
@@ -41,13 +42,13 @@ async function armarPdfCliente(J, o) {
 
   // ---- Encabezado: contacto (izquierda), logo (centro), número de orden (derecha)
   const C = typeof CONTACTO !== "undefined" ? CONTACTO : {};
-  const contacto = [["web", C.web], ...(C.telefonos || []).map(t => ["fono", t]), ["mail", C.correo], ["ig", C.instagram], ["tt", C.tiktok], ["pin", C.direccion]].filter(x => x[1]);
+  const contacto = [["web", C.web], ...(C.telefonos || []).map(t => ["fono", t]), ["wa", C.whatsapp], ["mail", C.correo], ["ig", C.instagram], ["tt", C.tiktok], ["pin", C.direccion]].filter(x => x[1]);
   let cy = 13;
   font(7.5, "normal", SUAVE);
   for (const [k, v] of contacto) {
     d.text(String(v), 66, cy, { align: "right" });
     if (ic[k]) d.addImage(ic[k], "PNG", 68.5, cy - 2.9, 3.6, 3.6);
-    cy += 4.7;
+    cy += 4.4;
   }
   const logo = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = "img/logo.png"; });
   if (logo) { const h = 23; d.addImage(logo, "PNG", 84, 12, h * logo.naturalWidth / logo.naturalHeight, h); }
