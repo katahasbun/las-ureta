@@ -70,6 +70,20 @@
       <div><label for="mDer">Derecho</label><input type="number" id="mDer" value="" min="0"></div>
       <div><label for="mInf">Inferior</label><input type="number" id="mInf" value="" min="0"></div>
     </div>
+    <div class="chk" style="margin-top:14px"><input type="checkbox" id="bOn"><label for="bOn" style="margin:0;color:var(--ink);font-size:15px">Blanco original</label></div>
+    <div id="bBox" class="subopc" style="display:none">
+      <p class="calc" style="border:0;margin:0 0 10px;padding:0">Cuántos cm del blanco original de la obra dejar antes del paspartú. No cambia el precio.</p>
+      <div class="grid" style="align-items:end">
+        <div><label for="bUni">Blanco original (cm)</label><input type="number" id="bUni" value="" placeholder="Ej.: 1" min="0" step="0.1"></div>
+        <div class="chk"><input type="checkbox" id="bPers"><label for="bPers" style="margin:0;color:var(--ink);font-size:15px">Personalizado</label></div>
+      </div>
+      <div class="grid" id="bGrid" style="display:none;margin-top:12px">
+        <div><label for="bSup">Superior</label><input type="number" id="bSup" value="" min="0" step="0.1"></div>
+        <div><label for="bIzq">Izquierdo</label><input type="number" id="bIzq" value="" min="0" step="0.1"></div>
+        <div><label for="bDer">Derecho</label><input type="number" id="bDer" value="" min="0" step="0.1"></div>
+        <div><label for="bInf">Inferior</label><input type="number" id="bInf" value="" min="0" step="0.1"></div>
+      </div>
+    </div>
     <div class="calc" id="mv"></div>
   </div>
 
@@ -90,6 +104,7 @@
       <div><label for="java">Java o embalaje</label><select id="java"></select></div>
     </div>
     <div class="chk" style="margin-top:12px"><input type="checkbox" id="desm"><label for="desm" style="margin:0;color:var(--ink);font-size:15px">Desmontaje</label></div>
+    <div id="desmBox" class="subopc" style="display:none"></div>
   </div>
 
   <div class="card">

@@ -28,7 +28,7 @@ function calc(){
   for(const [k,n] of [["vidrio","Vidrio"],["paspa","Paspartú"],["fondo","Fondo"]]){const p=(OPT[k][$(k).value]||[0,0])[1];if(p){const v=area*p;sub+=v;L.push([`${n} (${area.toFixed(3).replace(".",",")} m²)`,v])}}
   const mt=OPT.montaje[$("montaje").value]||["",0,"fijo"],mp=mt[2]==="manual"?g("montajeManual"):mt[1];if(mp){const v=mt[2]==="ml"?ml*mp:mt[2]==="area"?area*mp:mp;sub+=v;L.push(["Montaje: "+mt[0].replace(/ \(.*\)/,"")+(mt[2]==="ml"?` (${ml.toFixed(2).replace(".",",")} ML)`:mt[2]==="area"?` (${area.toFixed(3).replace(".",",")} m²)`:""),v])}
   const ja=(OPT.java[$("java").value]||[0,0])[1];if(ja){sub+=ja;L.push(["Java",ja])}
-  if($("desm").checked){sub+=DESM;L.push(["Desmontaje",DESM])}
+  if($("desm").checked)desmSel().forEach(i=>{const[n,v]=DESMONTAJE[i];sub+=v;L.push(["Desmontaje ("+n.toLowerCase()+")",v])});
   if($("museo").checked){const v=sub*MUSEO;sub+=v;L.push(["Conservación museo 20 %",v])}
   if($("urg").checked){const v=sub*URG;sub+=v;L.push(["Urgencia 30 %",v])}
   let unit=sub,tot=unit*u;
@@ -47,22 +47,22 @@ function renderCart(){
 }
 function snap(){
   const c=calc(),t=k=>(OPT[k][$(k).value]||["Sin"])[0];
-  return{nombre:$("nombre").value,alto:$("alto").value,ancho:$("ancho").value,cant:$("cant").value,m:["mSup","mInf","mIzq","mDer"].map(i=>$(i).value),molds:molds.filter(s=>s>=0),mw:molds.map((s,i)=>s>=0?mw[i]:null).filter(x=>x!==null),mc:molds.map((s,i)=>s>=0?(mc[i]||""):null).filter(x=>x!==null),sel:["vidrio","paspa","fondo","montaje","java"].map(k=>$(k).value),chk:["desm","urg","museo","desp"].map(i=>$(i).checked),region:$("region").value,urgF:$("urgFecha").value,dir:$("dir").value.trim(),obs:$("obs").value,mn:molds.map((s,i)=>s>=0?MOLD[s][0]+(mc[i]?` (${mc[i]})`:""):null).filter(x=>x!==null),mats:[t("vidrio"),t("paspa"),t("fondo")].filter(x=>!x.startsWith("Sin")),ph1:photos[1],ph2:photos[2],mm:$("montajeManual").value,c};
+  return{nombre:$("nombre").value,alto:$("alto").value,ancho:$("ancho").value,cant:$("cant").value,m:["mSup","mInf","mIzq","mDer"].map(i=>$(i).value),blanco:$("bOn").checked?["bSup","bInf","bIzq","bDer"].map(i=>$(i).value):null,desmOp:$("desm").checked?desmSel():[],molds:molds.filter(s=>s>=0),mw:molds.map((s,i)=>s>=0?mw[i]:null).filter(x=>x!==null),mc:molds.map((s,i)=>s>=0?(mc[i]||""):null).filter(x=>x!==null),sel:["vidrio","paspa","fondo","montaje","java"].map(k=>$(k).value),chk:["desm","urg","museo","desp"].map(i=>$(i).checked),region:$("region").value,urgF:$("urgFecha").value,dir:$("dir").value.trim(),obs:$("obs").value,mn:molds.map((s,i)=>s>=0?MOLD[s][0]+(mc[i]?` (${mc[i]})`:""):null).filter(x=>x!==null),mats:[t("vidrio"),t("paspa"),t("fondo")].filter(x=>!x.startsWith("Sin")),ph1:photos[1],ph2:photos[2],mm:$("montajeManual").value,c};
 }
 function load(s){
   $("nombre").value=s.nombre;$("alto").value=s.alto;$("ancho").value=s.ancho;$("cant").value=s.cant;
-  ["mSup","mInf","mIzq","mDer"].forEach((i,n)=>$(i).value=s.m[n]);$("mUni").value=s.m[0];$("mPers").checked=!s.m.every(x=>x==s.m[0]);syncM();
+  ["mSup","mInf","mIzq","mDer"].forEach((i,n)=>$(i).value=s.m[n]);$("mUni").value=s.m[0];$("mPers").checked=!s.m.every(x=>x==s.m[0]);syncM();$("bOn").checked=!!s.blanco;["bSup","bInf","bIzq","bDer"].forEach((i,n)=>$(i).value=s.blanco?s.blanco[n]:"");$("bUni").value=s.blanco?s.blanco[0]:"";$("bPers").checked=!!s.blanco&&!s.blanco.every(x=>x==s.blanco[0]);syncB();document.querySelectorAll("[data-dop]").forEach(c=>c.checked=(s.desmOp||[]).includes(+c.dataset.dop));
   ["vidrio","paspa","fondo","montaje","java"].forEach((k,n)=>$(k).value=s.sel[n]);
   ["desm","urg","museo","desp"].forEach((k,n)=>$(k).checked=s.chk[n]);
   $("region").value=s.region;$("urgFecha").value=s.urgF||"";$("dir").value=s.dir||"";$("obs").value=s.obs;$("montajeManual").value=s.mm||"";molds=s.molds.length?[...s.molds]:[-1];mw=molds.map((_,i)=>s.mw&&s.mw[i]!=null?String(s.mw[i]):"");mc=molds.map((_,i)=>s.mc&&s.mc[i]!=null?String(s.mc[i]):"");mq=molds.map(()=>"");photos={1:s.ph1,2:s.ph2};
-  [1,2].forEach(p=>setPh(p,photos[p]));syncDesp();syncMM();renderMolds();refresh();
+  [1,2].forEach(p=>setPh(p,photos[p]));syncDesp();syncDesm();syncMM();renderMolds();refresh();
 }
 function setPh(p,url){const el=$("ph"+p);const old=el.querySelector("img");if(old)old.remove();if(url){const im=document.createElement("img");im.src=fotoSrc(url);im.alt="";el.appendChild(im)}}
 function syncMM(){$("mmBox").style.display=(OPT.montaje[$("montaje").value]||[])[2]==="manual"?"block":"none"}
 document.addEventListener("change",e=>{if(e.target.id==="montaje"){syncMM();refresh()}});
 function syncDesp(){$("regionBox").style.display=$("desp").checked?"block":"none";$("urgBox").style.display=$("urg").checked?"block":"none";$("urgFecha").min=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10)}
 // Urgencia y despacho de un trabajo, en texto (para carrito, orden y PDF)
-const extrasTxt=it=>[it.chk&&it.chk[1]&&it.urgF?"Urgente para el "+fd(new Date(it.urgF+"T12:00:00")):"",it.chk&&it.chk[3]?"Despacho"+(it.dir?": "+it.dir:"")+((REG[it.region]||[""])[0]?" ("+REG[it.region][0]+")":""):""].filter(Boolean).join(" · ");
+const extrasTxt=it=>[blancoTxt(it),it.chk&&it.chk[0]&&(it.desmOp||[]).length?desmTxt(it):"",it.chk&&it.chk[1]&&it.urgF?"Urgente para el "+fd(new Date(it.urgF+"T12:00:00")):"",it.chk&&it.chk[3]?"Despacho"+(it.dir?": "+it.dir:"")+((REG[it.region]||[""])[0]?" ("+REG[it.region][0]+")":""):""].filter(Boolean).join(" · ");
 function toast(t){const e=$("toast");e.textContent=t;e.style.display="block";clearTimeout(e._t);e._t=setTimeout(()=>e.style.display="none",2600)}
 function reset(){load({nombre:"",alto:"",ancho:"",cant:1,m:["","","",""],molds:[-1],sel:["","","","",""],chk:[false,false,false,false],region:"",obs:"",ph1:null,ph2:null});editing=null;$("add").textContent="Agregar al carrito";$("cancel").style.display="none"}
 document.addEventListener("change",e=>{if(e.target.classList)e.target.classList.remove("req")});
@@ -76,7 +76,7 @@ document.addEventListener("click",e=>{const d=e.target.dataset;
   if(d.e!==undefined){editing=+d.e;load(cart[editing]);$("add").textContent="Guardar cambios";$("cancel").style.display="inline-block";scrollTo({top:0,behavior:"smooth"})}
   if(d.d!==undefined){cart.splice(+d.d,1);renderCart();toast("Trabajo eliminado")}});
 $("addMold").onclick=()=>{if(molds.length<3){molds.push(-1);mw.push("");mc.push("");mq.push("");renderMolds();refresh()}else toast("Máximo tres molduras por trabajo")};
-$("add").onclick=()=>{if(!(parseFloat($("alto").value)>0&&parseFloat($("ancho").value)>0))return toast("Completa las medidas de la obra");if(!$("mPers").checked&&$("mUni").value==="")return toast("Indica el margen (puede ser 0)");if(!molds.some(s=>s>=0))return toast("Elige al menos una moldura");if(molds.some((s,i)=>s>=0&&!(parseFloat(mw[i])>0)))return toast("Indica el ancho de cada moldura");
+$("add").onclick=()=>{if(!(parseFloat($("alto").value)>0&&parseFloat($("ancho").value)>0))return toast("Completa las medidas de la obra");if(!$("mPers").checked&&$("mUni").value==="")return toast("Indica el margen (puede ser 0)");if($("bOn").checked&&!$("bPers").checked&&$("bUni").value==="")return toast("Indica los cm de blanco original");if($("desm").checked&&!desmSel().length)return toast("Elige el tipo de desmontaje");if(!molds.some(s=>s>=0))return toast("Elige al menos una moldura");if(molds.some((s,i)=>s>=0&&!(parseFloat(mw[i])>0)))return toast("Indica el ancho de cada moldura");
 const falta=[["vidrio","Vidrio"],["paspa","Paspartú"],["fondo","Fondo"],["montaje","Montaje"],["java","Java o embalaje"]].filter(([k])=>$(k).value==="");if($("desp").checked&&$("region").value==="")falta.push(["region","Zona de despacho"]);if($("desp").checked&&!$("dir").value.trim())falta.push(["dir","Dirección de despacho"]);if($("urg").checked&&!$("urgFecha").value)falta.push(["urgFecha","Fecha de la urgencia"]);
 if($("montaje").value!==""&&(OPT.montaje[$("montaje").value]||[])[2]==="manual"&&!(parseFloat($("montajeManual").value)>0))falta.push(["montajeManual","Precio del montaje de objetos"]);
 if(falta.length){["vidrio","paspa","fondo","montaje","java","region","montajeManual","dir","urgFecha"].forEach(k=>$(k).classList.remove("req"));falta.forEach(([k])=>$(k).classList.add("req"));$(falta[0][0]).focus();return toast("Falta elegir: "+falta.map(x=>x[1]).join(", "))}const s=snap();if(editing!==null){cart[editing]=s;toast("Trabajo actualizado")}else{cart.push(s);toast("Trabajo agregado")}renderCart();reset()};
@@ -85,6 +85,17 @@ $("draft").onclick=()=>toast(cart.length?"Borrador guardado":"Agrega al menos un
 $("ot").onclick=()=>{if(!cart.length)return toast("Agrega al menos un trabajo");$("dlgTxt").textContent=`Se creará una orden con ${cart.length} trabajo(s) por ${$("total").textContent}. En la versión final se genera el PDF del cliente y se pregunta si enviarlo por WhatsApp.`;$("dlg").showModal()};
 $("dlg").addEventListener("close",async()=>{const ok=$("dlg").returnValue==="si";$("dlg").returnValue="";if(ok){if(guardando)return;guardando=true;const rec=otRec();toast("Guardando la orden…");try{await crearOrden(rec)}catch(e){console.error(e);return toast("No se pudo guardar la orden. Revisa la conexión y vuelve a intentarlo")}finally{guardando=false}ots.push(rec);toast(`Orden N° ${rec.n} confirmada`);cart=[];renderCart();reset();["cNom","cTel","cMail","entFecha","abono"].forEach(i=>$(i).value="");$("entTipo").value="s";$("como").value="";$("conv").value="No";$("dcto").value="";$("pago").value="";$("abonoTipo").value="";location.hash="menu";ofrecerEnvio(rec)}});
 renderMolds();refresh();renderCart();
+// Blanco original: igual que el margen (parejo o personalizado). Solo instrucción para el taller.
+function syncB(){const on=$("bOn").checked,p=$("bPers").checked;$("bBox").style.display=on?"block":"none";$("bGrid").style.display=p?"grid":"none";$("bUni").disabled=p;if(!p)["bSup","bInf","bIzq","bDer"].forEach(i=>$(i).value=$("bUni").value)}
+document.addEventListener("input",e=>{if(e.target.id==="bUni")syncB()});
+document.addEventListener("change",e=>{if(e.target.id==="bOn"||e.target.id==="bPers")syncB()});
+const blancoTxt=it=>{const b=(it.blanco||[]).map(x=>String(x).replace(".",","));if(!it.blanco)return"";return b.every(x=>x==b[0])?`Blanco original: ${b[0]} cm`:`Blanco original (cm): superior ${b[0]}, inferior ${b[1]}, izquierdo ${b[2]}, derecho ${b[3]}`};
+// Desmontaje: opciones marcadas
+$("desmBox").innerHTML=DESMONTAJE.map(([n,v],i)=>`<label class="chk" style="margin:4px 0"><input type="checkbox" data-dop="${i}"><span>${n} <small style="color:var(--mute)">${clp(v)}</small></span></label>`).join("");
+const desmSel=()=>[...document.querySelectorAll("[data-dop]:checked")].map(c=>+c.dataset.dop);
+const desmTxt=it=>{const o=(it.desmOp||[]).map(i=>DESMONTAJE[i][0].toLowerCase());return "Desmontaje"+(o.length?": "+o.join(", "):"")};
+function syncDesm(){$("desmBox").style.display=$("desm").checked?"block":"none"}
+document.addEventListener("change",e=>{if(e.target.id==="desm")syncDesm()});
 function syncM(){const p=$("mPers").checked;$("mGrid").style.display=p?"grid":"none";$("mUni").disabled=p;if(!p)["mSup","mInf","mIzq","mDer"].forEach(i=>$(i).value=$("mUni").value)}
 document.addEventListener("input",e=>{if(e.target.id==="mUni"){syncM();refresh()}});
 document.addEventListener("change",e=>{if(e.target.id==="mPers"){syncM();refresh()}});
@@ -180,9 +191,9 @@ T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);if(o.vendedora)T(`
 if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
 else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
 if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
-T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);
+T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);if(it.blanco)T(blancoTxt(it));
 T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join(" + ")}`);T(`Vidrio: ${g("vidrio")} · Paspartú: ${g("paspa")} · Fondo: ${g("fondo")}`);T(`Montaje: ${g("montaje")} · Java: ${g("java")}`);
-const ex=[it.chk[0]&&"Desmontaje",it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
+const ex=[it.chk[0]&&desmTxt(it),it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
 T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 const PV={vidrio:Array(8).fill(""),paspa:Array(4).fill(""),fondo:Array(4).fill("")};

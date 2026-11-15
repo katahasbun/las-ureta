@@ -83,7 +83,8 @@ async function armarPdfCliente(J, o) {
       fila("Moldura: " + it.molds.map((s, k) => MOLD[s][0] + colorM(it, k)).join(" + "));
       const mats = [["Vidrio", g("vidrio")], ["Paspartú", g("paspa")], ["Fondo", g("fondo")], ["Montaje", g("montaje")], ["Java", g("java")]].filter(x => !/^Sin/.test(x[1]));
       if (mats.length) fila(mats.map(x => x[0] + ": " + x[1]).join(" · "));
-      const ex = [it.chk[0] && "Desmontaje", it.chk[1] && ("Urgencia" + (it.urgF ? " (para el " + fd(new Date(it.urgF + "T12:00:00")) + ")" : "")), it.chk[2] && "Conservación museo", it.chk[3] && ("Despacho a domicilio" + (it.dir ? ": " + it.dir : ""))].filter(Boolean);
+      if (it.blanco) fila(blancoTxt(it));
+      const ex = [it.chk[0] && desmTxt(it), it.chk[1] && ("Urgencia" + (it.urgF ? " (para el " + fd(new Date(it.urgF + "T12:00:00")) + ")" : "")), it.chk[2] && "Conservación museo", it.chk[3] && ("Despacho a domicilio" + (it.dir ? ": " + it.dir : ""))].filter(Boolean);
       if (ex.length) fila("Extras: " + ex.join(", "));
       if (it.obs) fila("Observaciones: " + it.obs);
     }
