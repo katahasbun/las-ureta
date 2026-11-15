@@ -103,3 +103,13 @@ body[data-v="ordenes"] .rl,body[data-v="ordenes"] #rNew{display:none!important}
 .v-rest .grid{margin-bottom:10px}
 textarea{width:100%;min-height:96px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;resize:vertical}
 textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+/* Inicio de sesión */
+.v-login{display:none;min-height:100vh;min-height:100dvh;flex-direction:column;align-items:center;justify-content:center;padding:32px 16px}
+body[data-v="login"] .v-login{display:flex}
+body[data-v="login"] header,body:not([data-v]) header{display:none}
+.v-login .logo{font-size:44px}
+.v-login form{width:min(100%,360px);margin-top:8px}
+input[type=email],input[type=password]{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+.lerr{color:#c0392b;font-size:14px;margin:12px 0 0;min-height:1em}
+.quien{margin:22px 0 0;font-size:13px}
+.lnk{background:none;border:0;padding:0;color:var(--acc);font:inherit;text-decoration:underline;cursor:pointer}

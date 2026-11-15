@@ -13,6 +13,16 @@
   <div class="logo">Las Ureta</div>
   <nav><a href="#menu">← Menú</a></nav>
 </header>
+<section class="v-login">
+  <div class="logo">Las Ureta</div>
+  <p class="sub">Ingresa con tu correo y contraseña</p>
+  <form id="loginForm" class="card">
+    <label for="lMail">Correo</label><input type="email" id="lMail" autocomplete="username" required>
+    <label for="lPass" style="margin-top:12px">Contraseña</label><input type="password" id="lPass" autocomplete="current-password" required>
+    <button class="btn p" type="submit" style="width:100%;margin-top:16px">Entrar</button>
+    <p id="lErr" class="lerr" role="alert"></p>
+  </form>
+</section>
 <section class="v-menu">
   <div class="logo">Las Ureta</div>
   <p class="sub">¿Qué quieres hacer?</p>
@@ -20,6 +30,7 @@
   <a class="mbtn" href="#restauraciones">Restauraciones</a>
   <a class="mbtn" href="#ordenes">Órdenes de trabajo</a>
   <a class="mbtn" href="#proveedores">Proveedores</a>
+  <p class="sub quien">Sesión: <span id="quien"></span> · <button class="lnk" id="salir" type="button">Cerrar sesión</button></p>
 </section>
 <section class="v-ph">
   <h1 id="phT"></h1>
@@ -178,7 +189,10 @@
 <dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
 <div id="toast"></div>
 
+<script src="js/vendor/supabase.js"></script>
+<script src="js/config.js"></script>
 <script src="js/catalogo.js"></script>
+<script src="js/datos.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
