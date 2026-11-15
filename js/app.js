@@ -108,7 +108,7 @@ function rPhSet(i,u){const el=$("rph"+i),o=el.querySelector("img");if(o)o.remove
 function rTot(){const p=Math.max(0,parseFloat($("rPrecio").value)||0),a=Math.max(0,parseFloat($("rAbono").value)||0);$("rSaldo").textContent=clp(Math.max(0,p-a))}
 function rLoad(r){rEd=r?r.n:null;$("rN").textContent=r?"N° "+r.n:"";for(const id in RF)$(id).value=r?(r[RF[id]]??""):(id==="rUni"?1:"");rPh=r?[...r.ph]:[null,null,null];rPh.forEach((u,i)=>rPhSet(i+1,u));$("rCobro").style.display=r?"block":"none";$("rSave").textContent=r?"Guardar cambios":"Guardar orden";$("rNew").style.display=r?"inline-block":"none";rTot()}
 function rList(){$("rLista").innerHTML=rests.length?rests.map(r=>`<div class="item"><div class="t"><span>N° ${r.n} · ${esc(r.nom)}</span><span>${r.precio?clp(+r.precio):"Por evaluar"}</span></div><div class="d">${esc(r.obj)} · ${esc(r.uni)} u.${r.precio?` · Saldo ${clp(Math.max(0,r.precio-(+r.abono||0)))}`:""}</div><button class="btn s" data-re="${r.n}" type="button">Editar</button></div>`).join(""):'<p class="empty">Aún no hay órdenes de restauración.</p>'}
-$("rSave").onclick=async()=>{if(guardando)return;if(!$("rNom").value.trim()||!$("rTel").value.trim()||!$("rObj").value.trim())return toast("Faltan el nombre, el teléfono o el objeto");const r={tipo:"rest",creado:Date.now(),taller:"",estado:"Recibida",hist:[]};for(const id in RF)r[RF[id]]=$(id).value;r.ph=[...rPh];if(rEd!==null){const o=rests.find(x=>x.n===rEd);r.creado=o.creado;r.taller=o.taller;r.estado=o.estado||"Recibida";r.hist=o.hist||[];r.avisado=o.avisado;r.n=rEd;guardando=true;const ok=await guardarOrden(r);guardando=false;if(!ok)return;rests[rests.indexOf(o)]=r;toast("Orden actualizada")}else{guardando=true;toast("Guardando la orden…");try{await crearOrden(r)}catch(e){console.error(e);return toast("No se pudo guardar la orden. Revisa la conexión y vuelve a intentarlo")}finally{guardando=false}rests.push(r);toast(`Orden N° ${r.n} guardada`);ofrecerEnvio(r)}if(document.body.dataset.v==="ordenes"){ordList();rLoad(rests.find(x=>x.n===r.n));ordEst()}else{rLoad(null);rList()}scrollTo({top:0,behavior:"smooth"})};
+$("rSave").onclick=async()=>{if(guardando)return;if(!$("rNom").value.trim()||!$("rTel").value.trim()||!$("rObj").value.trim())return toast("Faltan el nombre, el teléfono o el objeto");const r={tipo:"rest",vendedora:nombreVend,creado:Date.now(),taller:"",estado:"Recibida",hist:[]};for(const id in RF)r[RF[id]]=$(id).value;r.ph=[...rPh];if(rEd!==null){const o=rests.find(x=>x.n===rEd);r.creado=o.creado;r.taller=o.taller;r.estado=o.estado||"Recibida";r.hist=o.hist||[];r.avisado=o.avisado;r.vendedora=o.vendedora;r.n=rEd;guardando=true;const ok=await guardarOrden(r);guardando=false;if(!ok)return;rests[rests.indexOf(o)]=r;toast("Orden actualizada")}else{guardando=true;toast("Guardando la orden…");try{await crearOrden(r)}catch(e){console.error(e);return toast("No se pudo guardar la orden. Revisa la conexión y vuelve a intentarlo")}finally{guardando=false}rests.push(r);toast(`Orden N° ${r.n} guardada`);ofrecerEnvio(r)}if(document.body.dataset.v==="ordenes"){ordList();rLoad(rests.find(x=>x.n===r.n));ordEst()}else{rLoad(null);rList()}scrollTo({top:0,behavior:"smooth"})};
 $("rNew").onclick=()=>rLoad(null);
 document.addEventListener("input",e=>{if(e.target.id==="rPrecio"||e.target.id==="rAbono")rTot()});
 document.addEventListener("change",e=>{const p=e.target.dataset.rp;if(p&&e.target.files[0]){shrink(e.target.files[0],u=>{rPh[p-1]=u;rPhSet(p,u)})}});
@@ -121,7 +121,7 @@ const fd=d=>d.toLocaleDateString("es-CL");
 function due(o){if(o.tipo==="rest")return o.fecha?new Date(o.fecha+"T23:59:59"):null;if(o.entTipo==="f"&&o.entFecha)return new Date(o.entFecha+"T23:59:59");return new Date(o.creado+21*864e5)}
 function est(o){if(o.estado==="Entregada")return["verde","Entregada"];const d=due(o);return d?(Date.now()>d?["rojo","Atrasada"]:["verde","A tiempo"]):["gris","Sin fecha de entrega"]}
 function shrink(f,cb){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.85))};im.onerror=()=>cb(r.result);im.src=r.result};r.readAsDataURL(f)}
-function otRec(){return{tipo:"enm",nom:$("cNom").value.trim(),tel:$("cTel").value.trim(),mail:$("cMail").value.trim(),entTipo:$("entTipo").value,entFecha:$("entFecha").value,items:cart.map(x=>({...x})),como:$("como").value,conv:$("conv").value,dcto:$("dcto").value,pago:$("pago").value,abono:$("abono").value,abonoTipo:$("abonoTipo").value,creado:Date.now(),taller:"",estado:"Recibida",hist:[]}}
+function otRec(){return{tipo:"enm",nom:$("cNom").value.trim(),tel:$("cTel").value.trim(),mail:$("cMail").value.trim(),entTipo:$("entTipo").value,entFecha:$("entFecha").value,items:cart.map(x=>({...x})),como:$("como").value,conv:$("conv").value,dcto:$("dcto").value,pago:$("pago").value,abono:$("abono").value,abonoTipo:$("abonoTipo").value,vendedora:nombreVend,creado:Date.now(),taller:"",estado:"Recibida",hist:[]}}
 function otClear(){["cNom","cTel","cMail","entFecha","abono"].forEach(i=>$(i).value="");$("entTipo").value="s";$("como").value="";$("conv").value="No";$("dcto").value="";$("pago").value="";$("abonoTipo").value=""}
 function otLoad(o){otCur=o;$("cNom").value=o.nom;$("cTel").value=o.tel;$("cMail").value=o.mail;$("entTipo").value=o.entTipo;$("entFecha").value=o.entFecha;$("como").value=o.como;$("conv").value=o.conv;$("dcto").value=o.dcto;$("pago").value=o.pago;$("abonoTipo").value=o.abonoTipo||(o.abono?"v":"");$("abono").value=o.abono;$("otOk").textContent="Guardar cambios";$("otBack").style.display="none";otRender()}
 async function otSave(){const o=otCur;o.nom=$("cNom").value.trim();o.tel=$("cTel").value.trim();o.mail=$("cMail").value.trim();o.entTipo=$("entTipo").value;o.entFecha=$("entFecha").value;o.como=$("como").value;o.conv=$("conv").value;o.dcto=$("dcto").value;o.pago=$("pago").value;o.abono=$("abono").value;o.abonoTipo=$("abonoTipo").value;if(!await guardarOrden(o))return;toast("Orden actualizada");ordList();ordEst()}
@@ -131,12 +131,12 @@ let pendEst=null;
 const nrm=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 function otTxt(o){const parts=[];(function w(v){if(v==null)return;if(typeof v==="string"){if(!v.startsWith("data:"))parts.push(v)}else if(typeof v==="number")parts.push(String(v));else if(Array.isArray(v))v.forEach(w);else if(typeof v==="object")Object.entries(v).forEach(([k,x])=>{if(k!=="hist")w(x)})})(o);parts.push("OT "+o.n,o.tipo==="rest"?"restauracion":"enmarcacion",estOf(o));return nrm(parts.join(" "))}
 function ordMatch(o){const q=nrm($("oQ").value).trim().split(/\s+/).filter(Boolean);if(!q.length)return true;const t=otTxt(o);return q.every(w=>t.includes(w))}
-function ordList(){const L=allOT().filter(ordMatch);$("oList").innerHTML=L.map(o=>`<div class="orow${o.n===ordSel?" on":""}" data-os="${o.n}"><input type="checkbox" data-oc="${o.n}"${chosen.has(o.n)?" checked":""} aria-label="Elegir OT ${o.n}"><i class="dot ${est(o)[0]}"></i><span>OT ${o.n}${o.nom?" · "+esc(o.nom):""}<small>${o.tipo==="rest"?"Restauración":"Enmarcación"}${o.taller?" · "+o.taller:""}</small></span><select class="estsel" data-es="${o.n}" aria-label="Estado de la OT ${o.n}">${ESTADOS.map(x=>`<option${x===estOf(o)?" selected":""}>${x}</option>`).join("")}</select></div>`).join("")||(allOT().length?'<p class="empty">Ninguna orden coincide con la búsqueda.</p>':'<p class="empty">Aún no hay órdenes.</p>');$("oCnt").textContent=chosen.size}
+function ordList(){const L=allOT().filter(ordMatch);$("oList").innerHTML=L.map(o=>`<div class="orow${o.n===ordSel?" on":""}" data-os="${o.n}"><input type="checkbox" data-oc="${o.n}"${chosen.has(o.n)?" checked":""} aria-label="Elegir OT ${o.n}"><i class="dot ${est(o)[0]}"></i><span>OT ${o.n}${o.nom?" · "+esc(o.nom):""}<small>${o.tipo==="rest"?"Restauración":"Enmarcación"}${o.vendedora?" · Vendedora: "+esc(o.vendedora):""}${o.taller?" · Taller: "+esc(o.taller):""}</small></span><select class="estsel" data-es="${o.n}" aria-label="Estado de la OT ${o.n}">${ESTADOS.map(x=>`<option${x===estOf(o)?" selected":""}>${x}</option>`).join("")}</select></div>`).join("")||(allOT().length?'<p class="empty">Ninguna orden coincide con la búsqueda.</p>':'<p class="empty">Aún no hay órdenes.</p>');$("oCnt").textContent=chosen.size}
 const fh=t=>new Date(t).toLocaleString("es-CL",{dateStyle:"short",timeStyle:"short"});
 function ordHist(){const o=allOT().find(x=>x.n===ordSel);if(!o){$("oHist").innerHTML="";return}
-$("oHist").innerHTML="<h2>Historial de estados</h2>"+[...(o.hist||[])].reverse().map(h=>`<div class="tr"><span>${esc(h.de)} → <b>${esc(h.a)}</b>${h.por?` <small style="color:var(--mute)">(${esc(h.por)})</small>`:""}</span><span style="color:var(--mute)">${fh(h.t)}</span></div>`).join("")+`<div class="tr"><span>Recibida (orden creada)</span><span style="color:var(--mute)">${fh(o.creado)}</span></div>`+(o.avisado?`<div class="tr"><span>Aviso «lista para retirar» abierto en WhatsApp</span><span style="color:var(--mute)">${fh(o.avisado)}</span></div>`:"")}
+$("oHist").innerHTML="<h2>Historial de estados</h2>"+[...(o.hist||[])].reverse().map(h=>`<div class="tr"><span>${esc(h.de)} → <b>${esc(h.a)}</b>${h.por?` <small style="color:var(--mute)">(${esc(h.por)})</small>`:""}</span><span style="color:var(--mute)">${fh(h.t)}</span></div>`).join("")+`<div class="tr"><span>Recibida (orden creada${o.vendedora?" por "+esc(o.vendedora):""})</span><span style="color:var(--mute)">${fh(o.creado)}</span></div>`+(o.avisado?`<div class="tr"><span>Aviso «lista para retirar» abierto en WhatsApp</span><span style="color:var(--mute)">${fh(o.avisado)}</span></div>`:"")}
 function setEstado(n,nuevo){const o=allOT().find(x=>x.n===n),ant=estOf(o);if(!o||nuevo===ant){ordList();return}
-const apply=()=>{o.hist=o.hist||[];o.hist.push({de:ant,a:nuevo,t:Date.now(),por:usuaria});o.estado=nuevo;ordList();ordEst();ordHist();guardarOrden(o);toast(`OT ${n}: ${nuevo}`)};
+const apply=()=>{o.hist=o.hist||[];o.hist.push({de:ant,a:nuevo,t:Date.now(),por:nombreVend||usuaria});o.estado=nuevo;ordList();ordEst();ordHist();guardarOrden(o);toast(`OT ${n}: ${nuevo}`)};
 if(nuevo==="Lista para retirar"&&!o.avisado&&o.tel){pendEst={o,apply};$("waTxt").innerHTML=`Se abrirá WhatsApp para enviar este mensaje al <b>${esc(o.tel)}</b>:<br><br><i>${esc(textoWA("listo",o)).replace(/\n/g,"<br>")}</i>`;linkWA($("waGo"),o,"listo");$("waDlg").showModal();return}
 apply();if(nuevo==="Lista para retirar"&&o.avisado)toast(`OT ${n}: ${nuevo}. Ya se había avisado al cliente`)}
 $("waDlg").addEventListener("close",()=>{const v=$("waDlg").returnValue,p=pendEst;$("waDlg").returnValue="";pendEst=null;if(!p)return;if(v==="avisar"){p.o.avisado=Date.now();p.apply();toast("Revisa WhatsApp y aprieta Enviar")}else if(v==="solo")p.apply();else ordList()});
@@ -174,7 +174,7 @@ y=40;
 const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
 txt(`Orden de trabajo N° ${o.n}`,17,true,AC,2);
 txt(`${o.tipo==="rest"?"Restauración":"Enmarcación"} · Fecha: ${fd(new Date(o.creado))} · Entrega: ${ent}`,10,false,MU,1);
-txt(`Cliente: ${o.nom||"-"}${o.tel?" · "+o.tel:""}`,10,false,null,5);
+txt(`Cliente: ${o.nom||"-"}${o.tel?" · "+o.tel:""}`,10,false,null,o.vendedora?1:5);if(o.vendedora)txt(`Te atendió: ${o.vendedora}`,10,false,null,5);
 let total,desc=0,conv="",ab,saldo;
 if(o.tipo==="rest"){
  txt("Detalle del trabajo",12,true,AC,1.5);line();
@@ -213,7 +213,7 @@ const img=async(u,label)=>{u=fotoSrc(u);if(!u)return;const im=await new Promise(
 let first=true;
 for(const o of sel){if(!first){d.addPage();y=M}first=false;
 const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
-T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);T(`Tipo: ${o.tipo==="rest"?"Restauración":"Enmarcación"}`);T(`Entrega: ${ent}`,11,false,3);
+T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);if(o.vendedora)T(`Vendedora: ${o.vendedora}`);T(`Tipo: ${o.tipo==="rest"?"Restauración":"Enmarcación"}`);T(`Entrega: ${ent}`,11,false,3);
 if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
 else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
 if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
@@ -245,7 +245,7 @@ async function arrancar(){
   if(!db){document.body.dataset.v="login";$("lErr").textContent="No se pudo cargar la conexión con la base de datos. Recarga la página.";return}
   const {data:{session}}=await db.auth.getSession();
   if(!session){document.body.dataset.v="login";return}
-  usuaria=session.user.email;$("quien").textContent=usuaria;
+  usuaria=session.user.email;nombreVend=(session.user.user_metadata||{}).nombre||"";mostrarQuien();if(!nombreVend)pedirNombre();
   await cargarOrdenes();rList();addEventListener("hashchange",route);route();
 }
 $("loginForm").onsubmit=async e=>{e.preventDefault();const b=e.target.querySelector("button");b.disabled=true;$("lErr").textContent="";
@@ -253,4 +253,14 @@ $("loginForm").onsubmit=async e=>{e.preventDefault();const b=e.target.querySelec
   b.disabled=false;if(error){$("lErr").textContent=/invalid/i.test(error.message)?"Correo o contraseña incorrectos.":"No se pudo iniciar sesión: "+error.message;return}
   $("lPass").value="";arrancar()};
 $("salir").onclick=cerrarSesion;
+// Nombre de la vendedora: se pide una vez y queda guardado en su usuario
+function mostrarQuien(){$("quien").textContent=nombreVend?`${nombreVend} (${usuaria})`:usuaria}
+function pedirNombre(){$("nomIn").value=nombreVend;$("nomErr").textContent="";$("nomX").style.display=nombreVend?"":"none";$("nomDlg").showModal()}
+$("cambiarNom").onclick=pedirNombre;
+$("nomX").onclick=()=>$("nomDlg").close();
+$("nomDlg").addEventListener("cancel",e=>{if(!nombreVend)e.preventDefault()});
+$("nomForm").onsubmit=async e=>{e.preventDefault();const n=$("nomIn").value.trim().replace(/\s+/g," ");if(!n)return;const b=e.target.querySelector("button[type=submit]");b.disabled=true;
+  const {error}=await db.auth.updateUser({data:{nombre:n}});b.disabled=false;
+  if(error){console.error(error);$("nomErr").textContent="No se pudo guardar. Revisa la conexión y vuelve a intentarlo.";return}
+  nombreVend=n;mostrarQuien();$("nomDlg").close();toast(`¡Hola, ${n}!`)};
 arrancar();

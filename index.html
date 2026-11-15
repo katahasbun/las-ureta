@@ -30,7 +30,7 @@
   <a class="mbtn" href="#restauraciones">Restauraciones</a>
   <a class="mbtn" href="#ordenes">Órdenes de trabajo</a>
   <a class="mbtn" href="#proveedores">Proveedores</a>
-  <p class="sub quien">Sesión: <span id="quien"></span> · <button class="lnk" id="salir" type="button">Cerrar sesión</button></p>
+  <p class="sub quien">Sesión: <span id="quien"></span> · <button class="lnk" id="cambiarNom" type="button">Cambiar nombre</button> · <button class="lnk" id="salir" type="button">Cerrar sesión</button></p>
 </section>
 <section class="v-ph">
   <h1 id="phT"></h1>
@@ -190,6 +190,10 @@
   <div class="paso"><button class="btn" id="envPdf" type="button">1 · Descargar PDF</button></div>
   <div class="paso"><a class="btn p" id="envWa" target="_blank" rel="noopener">2 · Abrir WhatsApp</a><small>Se abre el chat con el mensaje ya escrito. Adjunta el PDF con el clip 📎 (o arrástralo al chat) y aprieta Enviar.</small></div>
   <div style="text-align:right;margin-top:14px"><button class="btn" id="envX" type="button">Listo</button></div></dialog>
+<dialog id="nomDlg"><form id="nomForm"><h2>¿Cómo te llamas?</h2><p class="sub" style="margin-bottom:12px">Tu nombre aparecerá en las órdenes que crees y en el PDF del cliente («Te atendió: …»).</p>
+  <label for="nomIn">Nombre</label><input type="text" id="nomIn" maxlength="40" autocomplete="given-name" required placeholder="Ej.: Ana">
+  <p id="nomErr" class="lerr" role="alert"></p>
+  <div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" id="nomX" type="button">Cancelar</button><button class="btn p" type="submit">Guardar</button></div></form></dialog>
 <dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
 <div id="toast"></div>
 

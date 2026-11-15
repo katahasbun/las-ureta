@@ -1,6 +1,7 @@
 // Base de datos (Supabase): sesión, órdenes y fotos.
 const db = window.supabase ? supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 let usuaria = null;   // correo de quien inició sesión
+let nombreVend = "";  // nombre de la vendedora (se guarda en su usuario de Supabase)
 const FOTO_URL = {};  // ruta de la foto en Storage → dirección para mostrarla
 
 // Una foto puede estar recién tomada (data:...) o guardada en Storage (ruta).
