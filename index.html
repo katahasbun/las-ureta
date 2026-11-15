@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Las Ureta · Cotizador (prototipo)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo">Las Ureta</div>
+  <nav><a href="#menu">← Menú</a></nav>
+</header>
+<section class="v-menu">
+  <div class="logo">Las Ureta</div>
+  <p class="sub">¿Qué quieres hacer?</p>
+  <a class="mbtn" href="#enmarcaciones">Enmarcaciones</a>
+  <a class="mbtn" href="#restauraciones">Restauraciones</a>
+  <a class="mbtn" href="#ordenes">Órdenes de trabajo</a>
+  <a class="mbtn" href="#proveedores">Proveedores</a>
+</section>
+<section class="v-ph">
+  <h1 id="phT"></h1>
+  <p class="sub">Esta sección se diseñará en un próximo paso.</p>
+  <a class="btn" href="#menu" style="text-decoration:none;display:inline-block">← Volver al menú</a>
+</section>
+<div class="note">Prototipo para revisar el diseño y el flujo. Los precios y las fórmulas marcadas como «provisoria» son de ejemplo y se reemplazarán por los que tú definas.</div>
+
+<main>
+<section>
+  <h1>Nueva cotización</h1>
+  <p class="sub">Cada trabajo se suma al carrito. Cuando esté listo, se crea la orden de trabajo.</p>
+
+  <div class="card">
+    <h2>La obra</h2>
+    <div class="row"><div><label for="nombre">Nombre de la obra u objeto</label><input type="text" id="nombre" placeholder="Ej.: Óleo paisaje, camiseta firmada"></div></div>
+    <div class="grid">
+      <div><label for="alto">Alto (cm)</label><input type="number" id="alto" value="" placeholder="Ej.: 30" min="1"></div>
+      <div><label for="ancho">Ancho (cm)</label><input type="number" id="ancho" value="" placeholder="Ej.: 40" min="1"></div>
+      <div><label for="cant">Unidades</label><input type="number" id="cant" value="1" min="1"></div>
+    </div>
+    <div class="grid" style="margin-top:14px;align-items:end">
+      <div><label for="mUni">Margen (cm)</label><input type="number" id="mUni" value="" placeholder="Ej.: 5" min="0"></div>
+      <div class="chk"><input type="checkbox" id="mPers"><label for="mPers" style="margin:0;color:var(--ink);font-size:15px">Personalizado</label></div>
+    </div>
+    <div class="grid" id="mGrid" style="display:none;margin-top:12px">
+      <div><label for="mSup">Superior</label><input type="number" id="mSup" value="" min="0"></div>
+      <div><label for="mIzq">Izquierdo</label><input type="number" id="mIzq" value="" min="0"></div>
+      <div><label for="mDer">Derecho</label><input type="number" id="mDer" value="" min="0"></div>
+      <div><label for="mInf">Inferior</label><input type="number" id="mInf" value="" min="0"></div>
+    </div>
+    <div class="calc" id="mv"></div>
+  </div>
+
+  <div class="card">
+    <h2>Moldura</h2>
+    <div id="molduras"></div>
+    <button class="btn s" id="addMold" type="button">+ Agregar otra moldura</button>
+  </div>
+
+  <div class="card">
+    <h2>Materiales</h2>
+    <div class="grid">
+      <div><label for="vidrio">Vidrio</label><select id="vidrio"></select></div>
+      <div><label for="paspa">Paspartú</label><select id="paspa"></select></div>
+      <div><label for="fondo">Fondo</label><select id="fondo"></select></div>
+      <div><label for="montaje">Montaje</label><select id="montaje"></select></div>
+      <div id="mmBox" style="display:none"><label for="montajeManual">Precio montaje objetos ($)</label><input type="number" id="montajeManual" min="0"></div>
+      <div><label for="java">Java o embalaje</label><select id="java"></select></div>
+    </div>
+    <div class="chk" style="margin-top:12px"><input type="checkbox" id="desm"><label for="desm" style="margin:0;color:var(--ink);font-size:15px">Desmontaje</label></div>
+  </div>
+
+  <div class="card">
+    <h2>Extras</h2>
+    <div class="chk"><input type="checkbox" id="urg"><label for="urg" style="margin:0;color:var(--ink);font-size:15px">Urgencia (+30 %)</label></div>
+    <div class="chk"><input type="checkbox" id="museo"><label for="museo" style="margin:0;color:var(--ink);font-size:15px">Conservación museo (+20 %)</label></div>
+    <div class="chk"><input type="checkbox" id="desp"><label for="desp" style="margin:0;color:var(--ink);font-size:15px">Despacho a domicilio</label></div>
+    <div id="regionBox" style="display:none;margin-top:8px"><label for="region">Zona de despacho</label><select id="region"></select></div>
+    <div class="row" style="margin-top:12px"><div><label for="obs">Observaciones</label><input type="text" id="obs" placeholder="Instrucciones para el taller"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Fotografías</h2>
+    <div class="photos">
+      <label class="ph" id="ph1">Foto de la obra original<input type="file" accept="image/*" data-p="1"></label>
+      <label class="ph" id="ph2">Foto de la muestra de moldura<input type="file" accept="image/*" data-p="2"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="total"><span>Este trabajo</span><span id="subItem">$0</span></div>
+    <div class="calc" id="desglose"></div>
+    <div style="margin-top:14px"><button class="btn p" id="add" type="button">Agregar al carrito</button> <button class="btn" id="cancel" type="button" style="display:none">Cancelar edición</button></div>
+  </div>
+</section>
+
+<aside>
+  <div class="card">
+    <h2>Carrito de cotización</h2>
+    <div id="cart"><p class="empty">Aún no hay trabajos. Completa el formulario y agrégalo.</p></div>
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <small style="color:var(--mute)">Precios con IVA incluido</small>
+    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" id="draft" type="button">Guardar borrador</button>
+      <button class="btn p" id="ot" type="button">Crear orden de trabajo</button>
+    </div>
+  </div>
+</aside>
+</main>
+
+<section class="v-prov">
+  <h1>Proveedores</h1>
+  <p class="sub">Pedidos pendientes según las órdenes de enmarcación confirmadas, agrupados por proveedor. Marca cada línea cuando ya esté pedida.</p>
+  <div id="provList"></div>
+  <div class="card"><h2>Qué se pide a quién</h2><p class="sub" style="margin-bottom:10px">Catálogo de ejemplo: aquí irán todas las opciones reales con su proveedor.</p><div id="provCat"></div></div>
+</section>
+<section class="v-ord">
+<aside class="olist">
+  <div class="oct"><select id="oTaller"><option value="">Taller…</option><option>Mariano</option><option>Rodrigo</option></select><button class="btn s p" id="oGen" type="button">Generar PDF (<span id="oCnt">0</span>)</button></div>
+  <input type="search" id="oQ" placeholder="Buscar por cliente, teléfono, moldura, estado…" aria-label="Buscar órdenes" style="width:100%;margin:8px 0">
+  <div id="oList"></div>
+</aside>
+<div class="opane"><div id="oEst" class="est"></div><div id="oCliBox" style="margin:8px 0;display:none"><button class="btn s" id="oCli" type="button">Descargar PDF para el cliente</button></div><p class="ophint">Selecciona una orden de la lista para verla o editarla.</p>
+<section class="v-rest">
+  <h1>Restauración <span id="rN"></span></h1>
+  <p class="sub">El cliente deja la obra y el restaurador la evalúa en la tienda. El precio se agrega después, editando la orden.</p>
+  <div class="card"><h2>Orden</h2>
+    <div class="grid"><div><label for="rNom">Nombre del cliente</label><input type="text" id="rNom"></div><div><label for="rTel">Teléfono</label><input type="text" id="rTel" placeholder="+56 9"></div></div>
+    <div class="grid"><div><label for="rMail">Mail</label><input type="text" id="rMail"></div></div>
+    <div class="grid"><div><label for="rObj">Objeto</label><input type="text" id="rObj" placeholder="Ej.: óleo sobre tela"></div><div><label for="rUni">Unidades</label><input type="number" id="rUni" value="1" min="1"></div></div>
+    <div class="grid"><div><label for="rFecha">Entrega (opcional)</label><input type="date" id="rFecha"></div></div>
+    <label for="rObs">Observaciones</label><textarea id="rObs"></textarea>
+    <label style="margin-top:14px">Agregar fotos</label>
+    <div class="photos" style="grid-template-columns:repeat(3,1fr)">
+      <label class="ph" id="rph1">+<input type="file" accept="image/*" data-rp="1"></label>
+      <label class="ph" id="rph2">+<input type="file" accept="image/*" data-rp="2"></label>
+      <label class="ph" id="rph3">+<input type="file" accept="image/*" data-rp="3"></label>
+    </div>
+  </div>
+  <div class="card" id="rCobro" style="display:none"><h2>Cobro</h2>
+    <div class="grid"><div><label for="rPrecio">Precio total ($)</label><input type="number" id="rPrecio" min="0"></div><div><label for="rAbono">Abono ($)</label><input type="number" id="rAbono" min="0"></div><div><label for="rPago">Forma de pago</label><select id="rPago"></select></div></div>
+    <div class="tr big"><span>Saldo</span><span id="rSaldo">$0</span></div>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px"><button class="btn p" id="rSave" type="button">Guardar orden</button><button class="btn" id="rNew" type="button" style="display:none">Nueva orden</button></div>
+  <div class="card rl"><h2>Restauraciones guardadas</h2><div id="rLista"></div></div>
+</section>
+
+<section class="v-ot">
+  <h1>Orden de trabajo <span id="otN"></span></h1>
+  <p class="sub">El número se asigna solo. Completa los datos del cliente y revisa cada trabajo.</p>
+  <div class="card"><h2>Cliente</h2>
+    <div class="grid"><div><label for="cNom">Nombre</label><input type="text" id="cNom"></div><div><label for="cTel">Teléfono</label><input type="text" id="cTel" placeholder="+56 9"></div></div>
+    <div class="grid"><div><label for="cMail">Mail</label><input type="text" id="cMail"></div></div>
+    <div class="grid"><div><label for="entTipo">Entrega</label><select id="entTipo"><option value="s">2 a 3 semanas</option><option value="f">Fecha específica</option></select></div><div id="fechaBox" style="display:none"><label for="entFecha">Fecha</label><input type="date" id="entFecha"></div></div>
+  </div>
+  <div class="card"><h2>Trabajos</h2><div id="otItems"></div></div>
+  <div class="card"><h2>Venta</h2>
+    <div class="grid"><div><label for="como">¿Cómo nos conociste?</label><select id="como"></select></div><div><label for="conv">Convenio</label><select id="conv"></select></div><div id="dctoBox" style="display:none"><label for="dcto">Descuento</label><select id="dcto"></select></div><div><label for="pago">Forma de pago</label><select id="pago"></select></div></div>
+  </div>
+  <div class="card">
+    <div class="tr"><span>Total</span><b id="otTotal">$0</b></div>
+    <div class="tr" id="rowDcto" style="display:none"><span>Total con descuento</span><b id="otTotalD">$0</b></div>
+    <div class="grid" style="margin-top:10px"><div><label for="abonoTipo">Abono</label><select id="abonoTipo"><option value="">Seleccionar…</option><option value="100">100 %</option><option value="50">50 %</option><option value="v">Variable (a mano)</option></select></div><div><label for="abono">Monto del abono ($)</label><input type="number" id="abono" min="0" readonly></div></div>
+    <div class="tr big"><span>Saldo</span><span id="saldo">$0</span></div>
+    <div class="grid saldo-ed" style="margin-top:10px"><div><label for="saldoEd">Editar saldo ($)</label><input type="number" id="saldoEd" min="0"></div></div>
+    <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn" id="otBack" href="#enmarcaciones" style="text-decoration:none">← Volver al cotizador</a><button class="btn p" id="otOk" type="button">Confirmar</button></div>
+  </div>
+</section>
+<div class="card ohist" id="oHist"></div>
+
+</div></section>
+
+<dialog id="dlg"><form method="dialog"><h2>Confirmar orden de trabajo</h2><p id="dlgTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn" value="no">Volver</button><button class="btn p" value="si">Confirmar orden</button></div></form></dialog>
+<dialog id="waDlg"><form method="dialog"><h2>Avisar al cliente</h2><p id="waTxt"></p><div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" value="cancel">Cancelar</button><button class="btn" value="solo">Cambiar sin avisar</button><button class="btn p" value="avisar">Cambiar y avisar</button></div></form></dialog>
+<dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
+<div id="toast"></div>
+
+<script src="js/catalogo.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
