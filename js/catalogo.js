@@ -8,3 +8,14 @@ montaje:[["Sin montaje",0,"fijo"],["Bastidor 2 cm (por ML)",32000,"ml"],["Bastid
 java:[["Sin java",0],["Chica (diploma)",28000],["Mediana (50x60 aprox.)",40000],["Grande (100x120)",70000],["Extra grande",90000]]};
 const REG=[["Las Condes",15000],["Vitacura",20000],["Providencia",20000],["Lo Barnechea",25000],["Chicureo",30000],["Ñuñoa",20000],["Santiago Centro",20000],["Peñalolén",25000],["Especial (por ver)",0],["Región (por ver)",0]];
 const DESM=20000,URG=0.30,MUSEO=0.20;
+
+// Teléfonos de WhatsApp de los proveedores (para enviar pedidos).
+// Formato: "+56 9 1234 5678". Si está vacío, WhatsApp se abre y se elige el contacto a mano.
+const PROV_TEL = {
+  "Carmen Gloria": "",
+  "Ceci": "",
+  "Moldurvip": "",
+  "Pato Pérez": "",
+  "Todo Marco": "",
+  "Álvarez": "",
+};

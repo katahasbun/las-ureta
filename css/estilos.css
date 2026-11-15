@@ -183,3 +183,4 @@ body[data-v="ordenes"] .rl,body[data-v="ordenes"] #rNew{display:none!important}
 /* En modo noche las etiquetas de estado llevan texto oscuro para leerse bien */
 :root[data-theme="dark"] .est{color:#141312}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .est{color:#141312}}
+.pacc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}.pacc small{flex-basis:100%;color:var(--mute);font-size:12.5px}

@@ -31,6 +31,21 @@ const MENSAJES = {
     ];
   },
 
+  // Pedido a un proveedor. "lineas" trae lo pendiente, ya sumado: [{d: "01-3 · ...", q: 1.88, unit: "ML"}]
+  pedido(prov, lineas) {
+    return [
+      `¡Hola${prov && prov !== "Por definir" ? " " + prov : ""}! 👋`,
+      "",
+      "Te escribimos de Las Ureta para hacer el siguiente pedido:",
+      "",
+      ...lineas.map(l => `• ${l.d.replace(" · Proveedores", "")}: ${String(l.q.toFixed(2)).replace(".", ",")} ${l.unit}`),
+      "",
+      "¿Nos confirmas disponibilidad y fecha de entrega? 🙏",
+      "¡Muchas gracias!",
+      "Las Ureta 🖼️",
+    ];
+  },
+
   // Al cambiar el estado a "Lista para retirar"
   listo(o) {
     return [
@@ -86,9 +101,18 @@ function telWA(t) {
 const esCelular = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 function urlWA(o, tipo) {
   const n = telWA(o.tel);
-  if (!n) return null;
-  const t = encodeURIComponent(textoWA(tipo, o));
+  return n ? urlChat(n, textoWA(tipo, o)) : null;
+}
+function urlChat(n, texto) {
+  const t = encodeURIComponent(texto);
   return esCelular ? `https://wa.me/${n}?text=${t}` : `https://web.whatsapp.com/send?phone=${n}&text=${t}`;
+}
+
+// Pedido a proveedor: si no hay número guardado, WhatsApp se abre para elegir el contacto.
+function urlPedido(prov, lineas) {
+  const texto = MENSAJES.pedido(prov, lineas).filter(x => x !== null).join("\n");
+  const n = telWA((typeof PROV_TEL !== "undefined" && PROV_TEL[prov]) || "");
+  return n ? urlChat(n, texto) : "https://wa.me/?text=" + encodeURIComponent(texto);
 }
 
 // Prepara un link <a> para abrir WhatsApp. Un link no lo bloquea el navegador
