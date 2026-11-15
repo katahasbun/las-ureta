@@ -95,9 +95,10 @@
   <div class="card">
     <h2>Extras</h2>
     <div class="chk"><input type="checkbox" id="urg"><label for="urg" style="margin:0;color:var(--ink);font-size:15px">Urgencia (+30 %)</label></div>
+    <div id="urgBox" class="subopc" style="display:none"><label for="urgFecha">Fecha de entrega urgente</label><input type="date" id="urgFecha"></div>
     <div class="chk"><input type="checkbox" id="museo"><label for="museo" style="margin:0;color:var(--ink);font-size:15px">Conservación museo (+20 %)</label></div>
     <div class="chk"><input type="checkbox" id="desp"><label for="desp" style="margin:0;color:var(--ink);font-size:15px">Despacho a domicilio</label></div>
-    <div id="regionBox" style="display:none;margin-top:8px"><label for="region">Zona de despacho</label><select id="region"></select></div>
+    <div id="regionBox" class="subopc" style="display:none"><div class="dgrid"><div><label for="region">Zona de despacho</label><select id="region"></select></div><div><label for="dir">Dirección de despacho</label><input type="text" id="dir" placeholder="Calle, número, depto. y comuna" autocomplete="off"></div></div></div>
     <div class="row" style="margin-top:12px"><div><label for="obs">Observaciones</label><input type="text" id="obs" placeholder="Instrucciones para el taller"></div></div>
   </div>
 
@@ -136,6 +137,13 @@
   <p class="sub">Materiales de las órdenes de enmarcación, agrupados por proveedor. 🔴 por pedir · 🟡 pedido · 🟢 llegó al taller. Las órdenes entregadas dejan de aparecer aquí.</p>
   <div id="provList"></div>
   <div class="card"><h2>Qué se pide a quién</h2><p class="sub" style="margin-bottom:10px">Catálogo de ejemplo: aquí irán todas las opciones reales con su proveedor.</p><div id="provCat"></div></div>
+</section>
+<div class="otabs" role="tablist"><a href="#ordenes" role="tab">Órdenes de trabajo</a><a href="#envios" role="tab">Envíos a domicilio <span id="envCnt"></span></a></div>
+<section class="v-env">
+  <span class="eyebrow">Órdenes de trabajo</span>
+  <h1>Envíos a domicilio</h1>
+  <p class="sub">Trabajos con despacho a domicilio que aún no se entregan, ordenados por fecha de entrega. Primero los que ya están listos para enviar.</p>
+  <div id="envList"></div>
 </section>
 <section class="v-ord">
 <aside class="olist">
