@@ -5,7 +5,11 @@ const colorM=(it,k)=>it.mc&&it.mc[k]?", color "+it.mc[k]:"";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 // Cotizador, órdenes, restauraciones y proveedores
-for(const k in OPT){$(k).innerHTML='<option value="">Seleccionar…</option>'+(ORDEN_OPT[k]||OPT[k].map((_,i)=>i)).map(i=>`<option value="${i}">${OPT[k][i][0]}</option>`).join("")}
+// Opciones de cada material; si tienen proveedor (paspartú) se agrupan por proveedor
+function opcionesMat(k){const ids=ORDEN_OPT[k]||OPT[k].map((_,i)=>i),op=i=>`<option value="${i}">${OPT[k][i][0]}</option>`,prov=i=>typeof OPT[k][i][2]==="string"?OPT[k][i][2]:"";
+ if(!ids.some(prov))return ids.map(op).join("");const g={};ids.forEach(i=>(g[prov(i)]=g[prov(i)]||[]).push(i));
+ return (g[""]||[]).map(op).join("")+Object.keys(g).filter(Boolean).map(s=>`<optgroup label="${s} · ${clp(OPT[k][g[s][0]][1])}/m²">${g[s].map(op).join("")}</optgroup>`).join("")}
+for(const k in OPT){$(k).innerHTML='<option value="">Seleccionar…</option>'+opcionesMat(k)}
 $("region").innerHTML='<option value="">Seleccionar zona…</option>'+REG.map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("");
 let molds=[-1],mw=[""],mc=[""],mq=[""],cart=[],editing=null,photos={1:null,2:null};
 const mlabel=m=>`${m[0]} · ${m[1]}${m[2]?" · "+m[2]:""} · ${clp(m[3])}/ML`;
@@ -197,7 +201,8 @@ T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join("
 const ex=[it.chk[0]&&desmTxt(it),it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
 T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
-const PV={vidrio:Array(OPT.vidrio.length).fill(""),paspa:Array(4).fill(""),fondo:Array(4).fill("")};
+// Proveedor de vidrios, paspartú y fondos (tercer dato de cada opción, si es texto)
+const PV={vidrio:OPT.vidrio.map(o=>typeof o[2]==="string"?o[2]:""),paspa:OPT.paspa.map(o=>o[2]||""),fondo:OPT.fondo.map(o=>o[2]||"")};
 const fq=n=>n.toFixed(2).replace(".",",");
 function provLines(){const L=[];ots.forEach(o=>o.items.forEach((it,i)=>{const u=it.c.u,add=(k,prov,d,q,unit)=>{const opts=String(prov||"").split(" / ").map(x=>x.trim()).filter(Boolean);if(opts.length)L.push({o,key:i+"-"+k,opts,prov:null,d,q,unit,it})};it.molds.forEach((s,j)=>add("m"+j,MOLD[s][2],MOLD[s][0]+" · "+MOLD[s][1]+colorM(it,j),it.c.ml*u,"ML"));[["vidrio",0],["paspa",1],["fondo",2]].forEach(([k,n])=>add(k,PV[k][it.sel[n]],OPT[k][it.sel[n]][0],it.c.area*u,"m²"))}));
 const pend=l=>!(l.o.ped||{})[l.key],cnt={};
