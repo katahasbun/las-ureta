@@ -14,10 +14,12 @@ const DESMONTAJE=[["Porta retrato",10000],["Sacar clavos",15000],["Sacar corchet
 // Teléfonos de WhatsApp de los proveedores (para enviar pedidos).
 // Formato: "+56 9 1234 5678". Si está vacío, WhatsApp se abre y se elige el contacto a mano.
 const PROV_TEL = {
-  "Carmen Gloria": "",
-  "Ceci": "",
-  "Moldurvip": "",
-  "Pato Pérez": "",
-  "Todo Marco": "",
-  "Álvarez": "",
+  "Carmen Gloria": "+56 9 5302 9662",
+  "Ceci": "+56 9 8819 2471",
+  "Moldurvip": "+56 9 6421 5491",
+  "Pato Pérez": "+56 9 9888 7682",
+  "Todo Marco": "+56 9 9221 2381",
+  "Álvarez": "+56 9 5687 6267",
+  "María Isabel": "+56 9 8228 0140",
+  "Pincheira": "+56 9 9488 6377",
 };
