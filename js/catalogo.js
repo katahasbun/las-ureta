@@ -3,13 +3,15 @@ const MOLD=[["01-3","Proveedores","Carmen Gloria",42000],["01-4","Proveedores","
 const OPT={
 // Vidrio: [nombre, precio por m², precio por metro lineal del perímetro (biselado)].
 // Las opciones nuevas se agregan AL FINAL para no cambiar las órdenes ya guardadas; el orden en pantalla está en ORDEN_OPT.
-vidrio:[["Sin vidrio",0],["Vidrio sencillo",40000],["Vidrio opaco (V.O)",80000],["Vidrio museo (V.M)",450000],["Vidrio museo 99 %",1150000],["Entre vidrios sencillo",50000],["Entre vidrios opaco",90000],["Entre vidrios museo 70 %",470000],["Espejo simple",80000],["Espejo biselado (+ biselado por metro)",100000,51000],["Entre vidrios museo 99 %",1170000]],
+vidrio:[["Sin vidrio",0],["Vidrio sencillo",40000],["Vidrio opaco (V.O)",80000],["Vidrio museo 70 % (V.M)",450000],["Vidrio museo 99 %",1150000],["Entre vidrios sencillo",50000],["Entre vidrios opaco",90000],["Entre vidrios museo 70 %",470000],["Espejo simple",80000],["Espejo biselado (+ biselado por metro)",100000,51000],["Entre vidrios museo 99 %",1170000]],
 // Paspartú y fondo: [nombre, precio por m², proveedor]. Sin proveedor = no se pide.
 paspa:[["Sin paspartú",0],["Blanco invierno",40000],["Blanco puro",40000],["Reutilizar",0],["Negro",40000],["Ratán oro",85000],["Ratán negro",85000],["Ratán blanco",85000],["Ppt 24-60",60000,"Pato Pérez"],["Ppt 60-03",60000,"Moldurvip"],["Ppt 24-13",60000,"Pato Pérez"],["Ppt 24-52",60000,"Pato Pérez"],["Ppt 28-35",60000,"Pato Pérez"],["Ppt 28-22",60000,"Pato Pérez"],["Ppt 24-75",60000,"Pato Pérez"],["Ppt 28-14",60000,"Pato Pérez"],["Ppt 24-74",60000,"Pato Pérez"],["Ppt 24-64",60000,"Pato Pérez"],["Ppt 28-16",60000,"Pato Pérez"],["Ppt 24-11",60000,"Pato Pérez"],["Ppt 21-61",60000,"Moldurvip"],["Ppt 60-01",60000,"Moldurvip"],["Ppt 60-47",60000,"Moldurvip"],["Ppt 846",60000,"Todo Marco"],["Ppt 21-44",60000,"Moldurvip"],["Ppt 60-18",60000,"Moldurvip"],["Ppt 20-99",60000,"Moldurvip"],["Ppt 60-33",60000,"Moldurvip"],["Ppt 60-34",60000,"Moldurvip"],["Ppt 24-83",60000,"Pato Pérez"],["Ppt 24-84",60000,"Pato Pérez"],["Ppt 60-02",60000,"Moldurvip"],["Ppt 24-16",60000,"Pato Pérez"],["Ppt 27-77",60000,"Pato Pérez"],["Ppt 50-29",60000,"Pato Pérez"],["Ppt 28-97",60000,"Pato Pérez"],["Ppt 28-96",60000,"Pato Pérez"],["Ppt 20-36",60000,"Moldurvip"],["Ppt 24-72",60000,"Pato Pérez"],["Ppt 24-14",60000,"Pato Pérez"],["Ppt 10-55",60000,"Moldurvip"]],
 // "Fondo lino" y "Fondo lacado" (opciones 1 y 2) quedan solo para órdenes antiguas: no se muestran.
 fondo:[["Sin fondo",0],["Fondo lino",80000],["Fondo lacado",60000],["Foam",50000],["Fondo espejo",80000],["Fondo lino negro",80000],["Fondo lino crudo",80000],["Fondo lino blanco",80000],["Fondo negro lacado",40000],["Fondo blanco lacado",40000],["Fondo oro-plata",60000],["Fondo oro",60000],["Fondo plata",60000],["Fondo ratán negro",85000],["Fondo ratán dorado",85000],["Fondo ratán blanco",85000]],
 montaje:[["Sin montaje",0,"fijo"],["Bastidor 2 cm (por ML)",32000,"ml"],["Bastidor 3 cm (por ML)",35000,"ml"],["Foam simple (por m²)",138000,"area"],["Foam laminado (por m²)",160000,"area"],["Pegado telas/papel (por m²)",80000,"area"],["Montaje objetos (precio a mano)",0,"manual"]],
 java:[["Sin java",0],["Chica (diploma)",28000],["Mediana (50x60 aprox.)",40000],["Grande (100x120)",70000],["Extra grande",90000]]};
+// Proveedor de vidrios y montajes (por número de opción). Sin proveedor = no se pide.
+const PROV_MAT={vidrio:{3:"Pato Pérez",4:"Pato Pérez",7:"Pato Pérez",10:"Pato Pérez"},montaje:{3:"Rogelio Dinamarca",4:"Rogelio Dinamarca"}};
 // Orden en que se muestran las opciones (por número de opción)
 const ORDEN_OPT={vidrio:[0,1,2,3,4,5,6,7,10,8,9],paspa:[0,3,2,1,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],fondo:[0,5,6,7,8,9,10,11,12,13,14,15,4,3]};
 const REG=[["Las Condes",15000],["Vitacura",20000],["Providencia",20000],["Lo Barnechea",25000],["Chicureo",30000],["Ñuñoa",20000],["Santiago Centro",20000],["Peñalolén",25000],["Especial (por ver)",0],["Región (por ver)",0]];
@@ -30,4 +32,5 @@ const PROV_TEL = {
   "Álvarez": "+56 9 5687 6267",
   "María Isabel": "+56 9 8228 0140",
   "Pincheira": "+56 9 9488 6377",
+  "Rogelio Dinamarca": "",
 };
