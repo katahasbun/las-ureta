@@ -32,5 +32,5 @@ const PROV_TEL = {
   "Álvarez": "+56 9 5687 6267",
   "María Isabel": "+56 9 8228 0140",
   "Pincheira": "+56 9 9488 6377",
-  "Rogelio Dinamarca": "",
+  "Rogelio Dinamarca": "+56 9 4506 5364",
 };
