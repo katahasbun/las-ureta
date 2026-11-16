@@ -118,14 +118,15 @@ function urlWA(o, tipo) {
 }
 function urlChat(n, texto) {
   const t = encodeURIComponent(texto);
-  return esCelular ? `https://wa.me/${n}?text=${t}` : `https://web.whatsapp.com/send?phone=${n}&text=${t}`;
+  // En el celular se usa api.whatsapp.com: los links wa.me rompen los emojis (salen como �)
+  return esCelular ? `https://api.whatsapp.com/send?phone=${n}&text=${t}` : `https://web.whatsapp.com/send?phone=${n}&text=${t}`;
 }
 
 // Pedido a proveedor: si no hay número guardado, WhatsApp se abre para elegir el contacto.
 function urlPedido(prov, lineas) {
   const texto = MENSAJES.pedido(prov, lineas).filter(x => x !== null).join("\n");
   const n = telWA((typeof PROV_TEL !== "undefined" && PROV_TEL[prov]) || "");
-  return n ? urlChat(n, texto) : "https://wa.me/?text=" + encodeURIComponent(texto);
+  return n ? urlChat(n, texto) : "https://api.whatsapp.com/send?text=" + encodeURIComponent(texto);
 }
 
 // Prepara un link <a> para abrir WhatsApp. Un link no lo bloquea el navegador
