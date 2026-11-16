@@ -82,6 +82,12 @@ async function armarPdfCliente(J, o) {
     for (const it of o.items || []) {
       const g = k => (OPT[k][it.sel[keys.indexOf(k)]] || ["Sin"])[0];
       fila(`${it.nombre || "Trabajo"} · ${it.alto} × ${it.ancho} cm${it.c.u > 1 ? ` · ${it.c.u} unidades` : ""}`, $$(it.c.tot), true);
+      {
+        const m = (it.m || []).map(x => parseFloat(x) || 0), c = it.c || {};
+        const marco = (it.mw || []).reduce((a, x) => a + (parseFloat(x) || 0), 0);
+        const mg = m.every(x => x === m[0]) ? `${fmtN(m[0])} cm` : `sup. ${fmtN(m[0])}, inf. ${fmtN(m[1])}, izq. ${fmtN(m[2])}, der. ${fmtN(m[3])} cm`;
+        fila(`Margen: ${mg} · Medida vidrio: ${fmtN(c.mvA)} × ${fmtN(c.mvW)} cm · Medida final (con marco): ${fmtN(c.mvA + 2 * marco)} × ${fmtN(c.mvW + 2 * marco)} cm`);
+      }
       fila("Moldura: " + it.molds.map((s, k) => MOLD[s][0] + colorM(it, k)).join(" + "));
       const mats = [["Vidrio", g("vidrio")], ["Paspartú", g("paspa")], ["Fondo", g("fondo")], ["Montaje", g("montaje")], ["Java", g("java")]].filter(x => !/^Sin/.test(x[1]));
       if (mats.length) fila(mats.map(x => x[0] + ": " + x[1]).join(" · "));
