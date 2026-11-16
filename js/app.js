@@ -104,7 +104,7 @@ document.addEventListener("change",e=>{if(e.target.id==="desm")syncDesm()});
 function syncM(){const p=$("mPers").checked;$("mGrid").style.display=p?"grid":"none";$("mUni").disabled=p;if(!p)["mSup","mInf","mIzq","mDer"].forEach(i=>$(i).value=$("mUni").value)}
 document.addEventListener("input",e=>{if(e.target.id==="mUni"){syncM();refresh()}});
 document.addEventListener("change",e=>{if(e.target.id==="mPers"){syncM();refresh()}});
-const TIT={restauraciones:"Restauraciones",ordenes:"Órdenes de trabajo",envios:"Envíos a domicilio",proveedores:"Proveedores"};
+const TIT={"orden-papel":"Orden en papel",restauraciones:"Restauraciones",ordenes:"Órdenes de trabajo",envios:"Envíos a domicilio",proveedores:"Proveedores"};
 let guardando=false;
 const fill=(id,a,ph)=>{$(id).innerHTML=(ph?`<option value="">${ph}</option>`:"")+a.map(x=>`<option>${x}</option>`).join("")};
 fill("como",["Boca a boca","Cliente","Google","ChatGPT","Instagram","TikTok","Pasando por el local"],"Seleccionar");
@@ -136,7 +136,7 @@ const ots=[],chosen=new Set();let otCur=null,ordSel=null,lastV="";
 const otIt=()=>otCur?otCur.items:cart;
 const allOT=()=>[...ots,...rests].sort((a,b)=>a.n-b.n);
 const fd=d=>d.toLocaleDateString("es-CL");
-function due(o){if(o.tipo==="rest")return o.fecha?new Date(o.fecha+"T23:59:59"):null;if(o.entTipo==="f"&&o.entFecha)return new Date(o.entFecha+"T23:59:59");return new Date(o.creado+21*864e5)}
+function due(o){if(o.papel)return o.entTipo==="f"&&o.entFecha?new Date(o.entFecha+"T23:59:59"):new Date(o.creado+21*864e5);if(o.tipo==="rest")return o.fecha?new Date(o.fecha+"T23:59:59"):null;if(o.entTipo==="f"&&o.entFecha)return new Date(o.entFecha+"T23:59:59");return new Date(o.creado+21*864e5)}
 function est(o){if(o.estado==="Entregada")return["verde","Entregada"];const d=due(o);return d?(Date.now()>d?["rojo","Atrasada"]:["verde","A tiempo"]):["gris","Sin fecha de entrega"]}
 function shrink(f,cb){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.85))};im.onerror=()=>cb(r.result);im.src=r.result};r.readAsDataURL(f)}
 function otRec(){return{tipo:"enm",nom:$("cNom").value.trim(),tel:$("cTel").value.trim(),mail:$("cMail").value.trim(),entTipo:$("entTipo").value,entFecha:$("entFecha").value,items:cart.map(x=>({...x})),como:$("como").value,conv:$("conv").value,dcto:$("dcto").value,pago:$("pago").value,abono:$("abono").value,abonoTipo:$("abonoTipo").value,vendedora:nombreVend,creado:Date.now(),taller:"",estado:"Recibida",hist:[]}}
@@ -149,7 +149,7 @@ let pendEst=null;
 const nrm=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 function otTxt(o){const parts=[];(function w(v){if(v==null)return;if(typeof v==="string"){if(!v.startsWith("data:"))parts.push(v)}else if(typeof v==="number")parts.push(String(v));else if(Array.isArray(v))v.forEach(w);else if(typeof v==="object")Object.entries(v).forEach(([k,x])=>{if(k!=="hist")w(x)})})(o);parts.push("OT "+o.n,o.tipo==="rest"?"restauracion":"enmarcacion",estOf(o));return nrm(parts.join(" "))}
 function ordMatch(o){const q=nrm($("oQ").value).trim().split(/\s+/).filter(Boolean);if(!q.length)return true;const t=otTxt(o);return q.every(w=>t.includes(w))}
-function ordList(){const L=allOT().filter(ordMatch);$("oList").innerHTML=L.map(o=>`<div class="orow${o.n===ordSel?" on":""}" data-os="${o.n}"><input type="checkbox" data-oc="${o.n}"${chosen.has(o.n)?" checked":""} aria-label="Elegir OT ${o.n}"><i class="dot ${est(o)[0]}"></i><span>OT ${o.n}${o.nom?" · "+esc(o.nom):""}<small>${o.tipo==="rest"?"Restauración":"Enmarcación"}${o.vendedora?" · Vendedora: "+esc(o.vendedora):""}${o.taller?" · Taller: "+esc(o.taller):""}</small></span><select class="estsel" data-es="${o.n}" aria-label="Estado de la OT ${o.n}">${ESTADOS.map(x=>`<option${x===estOf(o)?" selected":""}>${x}</option>`).join("")}</select></div>`).join("")||(allOT().length?'<p class="empty">Ninguna orden coincide con la búsqueda.</p>':'<p class="empty">Aún no hay órdenes.</p>');$("oCnt").textContent=chosen.size}
+function ordList(){const L=allOT().filter(ordMatch);$("oList").innerHTML=L.map(o=>`<div class="orow${o.n===ordSel?" on":""}" data-os="${o.n}"><input type="checkbox" data-oc="${o.n}"${chosen.has(o.n)?" checked":""} aria-label="Elegir OT ${o.n}"><i class="dot ${est(o)[0]}"></i><span>OT ${o.n}${o.nom?" · "+esc(o.nom):""}<small>${o.tipo==="rest"?"Restauración":"Enmarcación"}${o.papel?" (papel)":""}${o.vendedora?" · Vendedora: "+esc(o.vendedora):""}${o.taller?" · Taller: "+esc(o.taller):""}</small></span><select class="estsel" data-es="${o.n}" aria-label="Estado de la OT ${o.n}">${ESTADOS.map(x=>`<option${x===estOf(o)?" selected":""}>${x}</option>`).join("")}</select></div>`).join("")||(allOT().length?'<p class="empty">Ninguna orden coincide con la búsqueda.</p>':'<p class="empty">Aún no hay órdenes.</p>');$("oCnt").textContent=chosen.size}
 const fh=t=>new Date(t).toLocaleString("es-CL",{dateStyle:"short",timeStyle:"short"});
 function ordHist(){const o=allOT().find(x=>x.n===ordSel);if(!o){$("oHist").innerHTML="";return}
 $("oHist").innerHTML="<h2>Historial de estados</h2>"+[...(o.hist||[])].reverse().map(h=>`<div class="tr"><span>${esc(h.de)} → <b>${esc(h.a)}</b>${h.por?` <small style="color:var(--mute)">(${esc(h.por)})</small>`:""}${h.wa?` <small style="color:var(--mute)">· aviso por WhatsApp</small>`:""}</span><span style="color:var(--mute)">${fh(h.t)}</span></div>`).join("")+`<div class="tr"><span>Recibida (orden creada${o.vendedora?" por "+esc(o.vendedora):""})</span><span style="color:var(--mute)">${fh(o.creado)}</span></div>`+(o.avisado?`<div class="tr"><span>Aviso «lista para retirar» abierto en WhatsApp</span><span style="color:var(--mute)">${fh(o.avisado)}</span></div>`:"")}
@@ -162,7 +162,7 @@ apply();if(nuevo==="Lista para retirar"&&o.avisado)toast(`OT ${n}: ${nuevo}. Ya 
 $("waDlg").addEventListener("close",()=>{const v=$("waDlg").returnValue,p=pendEst;$("waDlg").returnValue="";pendEst=null;if(!p)return;if(v==="avisar"){if(p.tipo==="listo")p.o.avisado=Date.now();p.apply(true);toast("Revisa WhatsApp y aprieta Enviar")}else if(v==="solo")p.apply();else ordList()});
 document.addEventListener("input",e=>{if(e.target.id==="oQ")ordList()});
 function ordEst(){const o=allOT().find(x=>x.n===ordSel),e=o?est(o):null,d=o?due(o):null;$("oEst").className="est "+(e?e[0]:"");$("oEst").textContent=e?(o.estado==="Entregada"?"Entregada":estOf(o)+" · "+e[1]+(d?" · entrega "+(o.tipo==="enm"&&o.entTipo!=="f"?"hasta el ":"el ")+fd(d):"")):""}
-function ordOpen(n){ordSel=n;$("oCliBox").style.display="block";const o=allOT().find(x=>x.n===n);document.body.dataset.sel=o.tipo;if(o.tipo==="rest")rLoad(o);else otLoad(o);ordList();ordEst();ordHist();scrollTo({top:0,behavior:"smooth"})}
+function ordOpen(n){ordSel=n;$("oCliBox").style.display="block";const o=allOT().find(x=>x.n===n);document.body.dataset.sel=o.papel?"papel":o.tipo;if(o.papel)papLoad(o);else if(o.tipo==="rest")rLoad(o);else otLoad(o);ordList();ordEst();ordHist();scrollTo({top:0,behavior:"smooth"})}
 document.addEventListener("change",e=>{const c=e.target.dataset.oc;if(c!==undefined){e.target.checked?chosen.add(+c):chosen.delete(+c);$("oCnt").textContent=chosen.size}const d=e.target.dataset.om;if(d!==undefined&&otCur){const[i,k]=d.split("-").map(Number),it=otCur.items[i];it.molds[k]=+e.target.value;const prev=snap();load(it);Object.assign(it,snap());load(prev);otRender()}});
 document.addEventListener("change",e=>{const es=e.target.dataset.es;if(es!==undefined)setEstado(+es,e.target.value)});
 document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest(".estsel"))return;const pi=e.target.dataset&&e.target.dataset.pi;if(pi){const[a,b]=pi.split("-");$("picImg").src=fotoSrc(otIt()[+a]["ph"+b]);$("picDlg").showModal();return}if(e.target.id==="picX"||e.target===$("picDlg")){$("picDlg").close();return}if(e.target.dataset.oc!==undefined)return;const r=e.target.closest&&e.target.closest(".orow");if(r)ordOpen(+r.dataset.os)});
@@ -193,7 +193,7 @@ let first=true;
 for(const o of sel){if(!first){d.addPage();y=M}first=false;
 const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
 T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);if(o.vendedora)T(`Vendedora: ${o.vendedora}`);T(`Tipo: ${o.tipo==="rest"?"Restauración":"Enmarcación"}`);T(`Entrega: ${ent}`,11,false,3);
-if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
+if(o.papel){T("Orden en papel"+(o.local?" · Local "+o.local:""),11,false,2);String(o.det||"").split("\n").filter(x=>x.trim()).forEach(l=>T(l));if(o.desp)T("Despacho a domicilio: "+(o.dir||""));y+=2;await img(o.ph&&o.ph[0],"Foto de la orden en papel")}else if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
 else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
 if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
 T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);if(it.blanco)T(blancoTxt(it));
@@ -234,20 +234,52 @@ document.addEventListener("change",e=>{const p=e.target.dataset.pe;if(p!==undefi
   if(v==="pend")delete o.ped[k];else{o.ped[k]=v;const l=provLines().find(x=>x.o===o&&x.key===k);if(l){o.sup=o.sup||{};o.sup[k]=l.prov}}provRender();guardarOrden(o)}
 const q=e.target.dataset.ps;if(q!==undefined){const[n,k]=q.split("|"),o=ots.find(x=>x.n==n);o.sup=o.sup||{};o.sup[k]=e.target.value;provRender();guardarOrden(o)}});
 // ---- Envíos a domicilio: trabajos con despacho de órdenes que aún no se entregan
-function envRender(){const g={};ots.forEach(o=>{if(estOf(o)==="Entregada")return;(o.items||[]).forEach(it=>{if(!(it.chk&&it.chk[3]))return;const k=o.n+"|"+(it.dir||"")+"|"+it.region;(g[k]=g[k]||{o,dir:it.dir||"",region:it.region,its:[]}).its.push(it)})});
+function envRender(){const g={};[...ots,...rests].forEach(o=>{if(o.papel&&o.desp&&estOf(o)!=="Entregada"){const k=o.n+"|"+(o.dir||"")+"|"+o.region;g[k]={o,dir:o.dir||"",region:o.region,its:[{nombre:String(o.det||"").split("\n")[0]}]}}});ots.forEach(o=>{if(estOf(o)==="Entregada"||o.papel)return;(o.items||[]).forEach(it=>{if(!(it.chk&&it.chk[3]))return;const k=o.n+"|"+(it.dir||"")+"|"+it.region;(g[k]=g[k]||{o,dir:it.dir||"",region:it.region,its:[]}).its.push(it)})});
 const gs=Object.values(g).sort((a,b)=>(due(a.o)||0)-(due(b.o)||0)),lista=x=>estOf(x.o)==="Lista para retirar";
 $("envCnt").textContent=gs.length?`(${gs.length})`:"";
 const card=x=>{const zona=(REG[x.region]||[""])[0],q=encodeURIComponent(x.dir+(zona&&!/por ver/i.test(zona)&&!nrm(x.dir).includes(nrm(zona))?", "+zona:"")+", Chile"),d=due(x.o),atr=d&&Date.now()>d,ok=lista(x);
 return `<div class="card ecard ${ok?"verde":"amarillo"}"><div class="phead"><h2>OT ${x.o.n}${x.o.nom?" · "+esc(x.o.nom):""}</h2><span class="pchip ${ok?"verde":"amarillo"}">${ok?"Listo para enviar":esc(estOf(x.o))}</span></div>
 <div class="edat"><div><span class="elbl">Dirección</span>${x.dir?`<a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">${esc(x.dir)}</a>`:"Sin dirección"}${zona?`<small>${esc(zona)}</small>`:""}</div><div><span class="elbl">Teléfono</span>${esc(x.o.tel||"—")}</div><div><span class="elbl">Entrega</span>${d?fd(d):"—"}${atr?` <small class="atr">Atrasada</small>`:""}</div></div>
-<div class="eits">${x.its.map(it=>`<div>• ${esc(it.nombre||"Sin nombre")} · ${it.alto} × ${it.ancho} cm${it.c.u>1?` · ${it.c.u} unidades`:""}</div>`).join("")}</div>
+<div class="eits">${x.its.map(it=>`<div>• ${esc(it.nombre||"Sin nombre")}${it.alto?` · ${it.alto} × ${it.ancho} cm`:""}${it.c&&it.c.u>1?` · ${it.c.u} unidades`:""}</div>`).join("")}</div>
 <div class="pacc"><button class="btn s" type="button" data-eopen="${x.o.n}">Ver orden</button>${ok?`<button class="btn p s" type="button" data-eent="${x.o.n}">Marcar como entregada</button>`:""}</div></div>`};
 const ls=gs.filter(lista),ot=gs.filter(x=>!lista(x));
 $("envList").innerHTML=(ls.length?`<h2 class="esec">Listos para enviar · ${ls.length}</h2>`+ls.map(card).join(""):"")+(ot.length?`<h2 class="esec">En proceso · ${ot.length}</h2>`+ot.map(card).join(""):"")||'<p class="empty">No hay envíos pendientes. Aparecen aquí cuando un trabajo tiene «Despacho a domicilio».</p>'}
 document.addEventListener("click",e=>{const t=e.target.closest&&e.target.closest("[data-eopen],[data-eent]");if(!t)return;
   if(t.dataset.eopen){const n=+t.dataset.eopen;location.hash="ordenes";setTimeout(()=>ordOpen(n),60)}
   else{setEstado(+t.dataset.eent,"Entregada");envRender()}});
-function route(){const h=location.hash.slice(1);if(lastV==="ordenes"&&h!=="ordenes"){if(rEd!==null)rLoad(null);if(otCur){otCur=null;otClear();$("otOk").textContent="Confirmar";$("otBack").style.display=""}}lastV=h;let v=h==="enmarcaciones"?h:TIT[h]?"otro":"menu";if(h==="nueva-orden"){if(!cart.length){location.hash="enmarcaciones";return}const urgente=cart.filter(x=>x.chk[1]&&x.urgF).map(x=>x.urgF).sort()[0];if(urgente&&!$("entFecha").value){$("entTipo").value="f";$("entFecha").value=urgente}v="ot";otRender()}if(h==="restauraciones"){v="rest";if(rEd===null)$("rN").textContent=""}if(h==="proveedores"){v="prov";provRender()}if(h==="envios"){v="envios";envRender()}if(h==="ordenes"){v="ordenes";document.body.dataset.sel=ordSel===null?"":(allOT().find(x=>x.n===ordSel)||{}).tipo||"";ordList();ordEst();ordHist()}document.body.dataset.v=v;if(v==="otro")$("phT").textContent=TIT[h];scrollTo(0,0);if(["ordenes","proveedores","restauraciones"].includes(h)||h==="envios")recargar(h)}
+// ---- Órdenes en papel: traspaso de órdenes antiguas con su número, fecha y montos originales
+let papCur=null,papFoto=null;
+fill("pEstado",ESTADOS);fill("pPago",["POS","Mercado Pago","Transferencia","Efectivo"],"Seleccionar");
+$("pRegion").innerHTML='<option value="">Seleccionar zona…</option>'+REG.map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("");
+const hoyISO=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const PF={pN:"n",pTipo:"tipo",pLocal:"local",pRecep:"recep",pEntTipo:"entTipo",pEntFecha:"entFecha",pVend:"vendedora",pEstado:"estado",pTaller:"taller",pNom:"nom",pTel:"tel",pMail:"mail",pDet:"det",pRegion:"region",pDir:"dir",pTotal:"total",pAbono:"abono",pPago:"pago"};
+function papSync(){$("pFechaBox").style.display=$("pEntTipo").value==="f"?"block":"none";$("pDespBox").style.display=$("pDesp").checked?"block":"none";const t=Math.max(0,parseFloat($("pTotal").value)||0),a=Math.max(0,parseFloat($("pAbono").value)||0);$("pSaldo").textContent=clp(Math.max(0,t-a))}
+function papFotoSet(u){const el=$("pph1"),o=el.querySelector("img");if(o)o.remove();if(u){const im=document.createElement("img");im.src=fotoSrc(u);im.alt="";el.appendChild(im)}}
+function papLoad(o){papCur=o||null;for(const id in PF)$(id).value=o?(o[PF[id]]??""):"";
+  if(!o){$("pTipo").value="enm";$("pEntTipo").value="s";$("pEstado").value="Recibida";$("pRecep").value=hoyISO()}
+  $("pDesp").checked=!!(o&&o.desp);papFoto=o&&o.ph?o.ph[0]||null:null;papFotoSet(papFoto);
+  ["pN","pTipo","pEstado"].forEach(id=>$(id).disabled=!!o);
+  $("pT").textContent=o?`Orden en papel N° ${o.n}`:"Orden en papel";$("pSave").textContent=o?"Guardar cambios":"Guardar orden";$("pBack").style.display=o?"none":"";$("pSub").style.display=o?"none":"";papSync()}
+document.addEventListener("input",e=>{if(e.target.closest&&e.target.closest(".v-papel"))papSync()});
+document.addEventListener("change",e=>{if(e.target.closest&&e.target.closest(".v-papel"))papSync();if(e.target.dataset&&e.target.dataset.pfoto&&e.target.files[0])shrink(e.target.files[0],u=>{papFoto=u;papFotoSet(u)})});
+$("pSave").onclick=async()=>{if(guardando)return;const v=id=>$(id).value.trim(),n=parseInt(v("pN"),10);
+  if(!papCur&&!(n>0))return toast("Escribe el número de la orden en papel");
+  if(!papCur&&allOT().some(x=>x.n===n))return toast(`Ya existe la orden N° ${n} en el portal`);
+  if(!v("pRecep"))return toast("Indica la fecha de recepción");
+  if(!v("pNom")||!v("pTel"))return toast("Faltan el nombre y el teléfono del cliente");
+  if(!v("pDet"))return toast("Escribe el detalle de la orden");
+  if($("pEntTipo").value==="f"&&!v("pEntFecha"))return toast("Indica la fecha de entrega");
+  if($("pDesp").checked&&!v("pDir"))return toast("Escribe la dirección de despacho");
+  const o=papCur||{papel:true,hist:[],items:[]};
+  for(const id in PF){if(papCur&&(id==="pN"||id==="pTipo"||id==="pEstado"))continue;o[PF[id]]=id==="pN"?n:$(id).value.trim()}
+  o.desp=$("pDesp").checked;o.ph=[papFoto];o.creado=Date.parse(o.recep+"T12:00:00");
+  if(o.tipo==="rest"){o.obj=o.det.split("\n")[0];o.obs=o.det;o.uni=o.uni||"1";o.precio=o.total;o.fecha=o.entTipo==="f"?o.entFecha:""}
+  guardando=true;
+  try{if(papCur){if(!await guardarOrden(o))return;toast("Orden actualizada");ordList();ordEst();ordHist();envRender()}
+    else{toast("Guardando la orden…");await crearOrdenPapel(o);(o.tipo==="rest"?rests:ots).push(o);toast(`Orden en papel N° ${o.n} ingresada. Puedes ingresar la siguiente`);papLoad(null);scrollTo({top:0,behavior:"smooth"})}}
+  catch(e){console.error(e);toast(e&&e.code==="23505"?`Ya existe la orden N° ${n} en el portal`:"No se pudo guardar. Revisa la conexión y vuelve a intentarlo")}
+  finally{guardando=false}};
+function route(){const h=location.hash.slice(1);if(lastV==="ordenes"&&h!=="ordenes"){papCur=null;if(rEd!==null)rLoad(null);if(otCur){otCur=null;otClear();$("otOk").textContent="Confirmar";$("otBack").style.display=""}}lastV=h;let v=h==="enmarcaciones"?h:TIT[h]?"otro":"menu";if(h==="nueva-orden"){if(!cart.length){location.hash="enmarcaciones";return}const urgente=cart.filter(x=>x.chk[1]&&x.urgF).map(x=>x.urgF).sort()[0];if(urgente&&!$("entFecha").value){$("entTipo").value="f";$("entFecha").value=urgente}v="ot";otRender()}if(h==="restauraciones"){v="rest";if(rEd===null)$("rN").textContent=""}if(h==="proveedores"){v="prov";provRender()}if(h==="envios"){v="envios";envRender()}if(h==="orden-papel"){v="papel";papLoad(null)}if(h==="ordenes"){v="ordenes";if(lastV!=="ordenes")ordSel=null;document.body.dataset.sel=ordSel===null?"":(allOT().find(x=>x.n===ordSel)||{}).tipo||"";ordList();ordEst();ordHist()}document.body.dataset.v=v;if(v==="otro")$("phT").textContent=TIT[h];scrollTo(0,0);if(["ordenes","proveedores","restauraciones"].includes(h)||h==="envios")recargar(h)}
 // Trae los cambios que hicieron las demás desde la base de datos
 async function recargar(h){if(!await cargarOrdenes()||location.hash.slice(1)!==h)return;if(h==="proveedores")provRender();if(h==="restauraciones")rList();if(h==="ordenes"){ordList();ordEst();ordHist()}if(h==="ordenes"||h==="envios")envRender()}
 // Inicio de sesión

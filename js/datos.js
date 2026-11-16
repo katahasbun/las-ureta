@@ -9,9 +9,9 @@ const fotoSrc = u => !u ? "" : String(u).startsWith("data:") ? u : (FOTO_URL[u] 
 
 // Cada orden se guarda como una fila: número, tipo, estado y el resto en "datos".
 function aFila(o) { const { n, tipo, estado, creado, ...datos } = o; return { tipo, estado: estado || "Recibida", datos }; }
-function deFila(f) { return { ...f.datos, n: f.n, tipo: f.tipo, estado: f.estado, creado: Date.parse(f.creado) }; }
+function deFila(f) { return { ...f.datos, n: f.n, tipo: f.tipo, estado: f.estado, creado: f.datos && f.datos.recep ? Date.parse(f.datos.recep + "T12:00:00") : Date.parse(f.creado) }; }
 
-function fotosDe(o) { return o.tipo === "rest" ? (o.ph || []) : (o.items || []).flatMap(it => [it.ph1, it.ph2]); }
+function fotosDe(o) { return o.tipo === "rest" || o.papel ? (o.ph || []) : (o.items || []).flatMap(it => [it.ph1, it.ph2]); }
 
 // Sube a Storage las fotos nuevas de una orden y las reemplaza por su ruta.
 async function subirFotos(o) {
@@ -24,7 +24,7 @@ async function subirFotos(o) {
     FOTO_URL[ruta] = u;
     return ruta;
   };
-  if (o.tipo === "rest") o.ph = await Promise.all((o.ph || []).map(sube));
+  if (o.tipo === "rest" || o.papel) o.ph = await Promise.all((o.ph || []).map(sube));
   else for (const it of o.items || []) { it.ph1 = await sube(it.ph1); it.ph2 = await sube(it.ph2); }
 }
 
@@ -53,6 +53,14 @@ async function crearOrden(o) {
   const { data, error } = await db.from("ordenes").insert(aFila(o)).select().single();
   if (error) throw error;
   o.n = data.n; o.creado = Date.parse(data.creado);
+  return o;
+}
+
+// Orden traspasada desde papel: se guarda con su número original.
+async function crearOrdenPapel(o) {
+  await subirFotos(o);
+  const { error } = await db.from("ordenes").insert({ n: o.n, ...aFila(o) }).select().single();
+  if (error) throw error;
   return o;
 }
 

@@ -72,7 +72,9 @@ async function armarPdfCliente(J, o) {
   font(8.5, "normal", LBL); d.text("Detalle", M + 4, y0 + 41);
   const filas = [];
   const fila = (t, r, neg) => filas.push({ t, r, neg });
-  if (o.tipo === "rest") {
+  if (o.papel) {
+    String(o.det || "").split("\n").map(x => x.trim()).filter(Boolean).forEach((l, i) => fila(l, i === 0 && +o.total ? $$(+o.total) : "", i === 0));
+  } else if (o.tipo === "rest") {
     fila(`${o.obj || "Obra"} · ${o.uni || 1} ${+o.uni > 1 ? "unidades" : "unidad"}`, +o.precio ? $$(+o.precio) : "Por evaluar", true);
     if (o.obs) fila("Observaciones: " + o.obs);
   } else {

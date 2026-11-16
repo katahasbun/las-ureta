@@ -82,6 +82,7 @@ const saludo = o => { const n = (o.nom || "").trim().split(/\s+/)[0]; return n ?
 
 // Total (con descuento de convenio), abono y saldo de una orden
 function resumenOT(o) {
+  if (o.papel) { const total = +o.total || 0, ab = +o.abono || 0; return { total, ab, saldo: Math.max(0, total - ab) }; }
   if (o.tipo === "rest") {
     const total = parseFloat(o.precio) || 0, ab = parseFloat(o.abono) || 0;
     return { total, ab, saldo: Math.max(0, total - ab) };

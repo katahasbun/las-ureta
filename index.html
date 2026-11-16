@@ -162,7 +162,7 @@
 </section>
 <section class="v-ord">
 <aside class="olist">
-  <div class="oct"><select id="oTaller"><option value="">Taller…</option><option>Mariano</option><option>Rodrigo</option></select><button class="btn s p" id="oGen" type="button">Generar PDF (<span id="oCnt">0</span>)</button></div>
+  <div class="oct"><select id="oTaller"><option value="">Taller…</option><option>Mariano</option><option>Rodrigo</option></select><a class="btn s" href="#orden-papel" style="flex-basis:100%">+ Ingresar orden en papel</a><button class="btn s p" id="oGen" type="button">Generar PDF (<span id="oCnt">0</span>)</button></div>
   <input type="search" id="oQ" placeholder="Buscar por cliente, teléfono, moldura, estado…" aria-label="Buscar órdenes" style="width:100%;margin:8px 0">
   <div id="oList"></div>
 </aside>
@@ -213,6 +213,33 @@
     <div class="grid saldo-ed" style="margin-top:10px"><div><label for="saldoEd">Editar saldo ($)</label><input type="number" id="saldoEd" min="0"></div></div>
     <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn" id="otBack" href="#enmarcaciones" style="text-decoration:none">← Volver al cotizador</a><button class="btn p" id="otOk" type="button">Confirmar</button></div>
   </div>
+</section>
+<section class="v-papel">
+  <span class="eyebrow">Órdenes de trabajo</span>
+  <h1 id="pT">Orden en papel</h1>
+  <p class="sub" id="pSub">Para traspasar al portal una orden que se hizo en papel. Mantiene su número, fecha y montos originales.</p>
+  <div class="card"><h2>Orden</h2>
+    <div class="grid"><div><label for="pN">N° de la orden</label><input type="number" id="pN" placeholder="Ej.: 49225" min="1"></div><div><label for="pTipo">Tipo</label><select id="pTipo"><option value="enm">Enmarcación</option><option value="rest">Restauración</option></select></div><div><label for="pLocal">Local</label><input type="text" id="pLocal" placeholder="Ej.: M"></div></div>
+    <div class="grid" style="margin-top:12px"><div><label for="pRecep">Recepción</label><input type="date" id="pRecep"></div><div><label for="pEntTipo">Entrega</label><select id="pEntTipo"><option value="s">2 a 3 semanas</option><option value="f">Fecha específica</option></select></div><div id="pFechaBox" style="display:none"><label for="pEntFecha">Fecha de entrega</label><input type="date" id="pEntFecha"></div></div>
+    <div class="grid" style="margin-top:12px"><div><label for="pVend">Atendido por</label><input type="text" id="pVend" placeholder="Ej.: Josefa"></div><div><label for="pEstado">Estado actual</label><select id="pEstado"></select></div><div><label for="pTaller">Taller</label><select id="pTaller"><option value="">Sin asignar</option><option>Mariano</option><option>Rodrigo</option></select></div></div>
+  </div>
+  <div class="card"><h2>Cliente</h2>
+    <div class="grid"><div><label for="pNom">Nombre</label><input type="text" id="pNom"></div><div><label for="pTel">Teléfono</label><input type="text" id="pTel" placeholder="+56 9"></div></div>
+    <div class="grid" style="margin-top:12px"><div><label for="pMail">Correo</label><input type="text" id="pMail"></div></div>
+  </div>
+  <div class="card"><h2>Detalle</h2>
+    <label for="pDet">Lo que dice la orden en papel (una línea por trabajo o dato)</label>
+    <textarea id="pDet" rows="6" placeholder="Ej.: 2 diplomas (España y PUC)&#10;3 cm de entrevidrio sencillo&#10;Moldura 227-374 · MV 48 × 35"></textarea>
+    <div class="chk" style="margin-top:12px"><input type="checkbox" id="pDesp"><label for="pDesp" style="margin:0;color:var(--ink);font-size:15px">Despacho a domicilio</label></div>
+    <div id="pDespBox" class="subopc" style="display:none"><div class="dgrid"><div><label for="pRegion">Zona de despacho</label><select id="pRegion"></select></div><div><label for="pDir">Dirección de despacho</label><input type="text" id="pDir" placeholder="Calle, número, depto. y comuna"></div></div></div>
+    <label style="margin-top:14px">Foto de la orden en papel (opcional)</label>
+    <div class="photos" style="grid-template-columns:minmax(0,260px)"><label class="ph" id="pph1">+ Agregar foto<input type="file" accept="image/*" data-pfoto="1"></label></div>
+  </div>
+  <div class="card"><h2>Cobro</h2>
+    <div class="grid"><div><label for="pTotal">Total ($)</label><input type="number" id="pTotal" min="0"></div><div><label for="pAbono">Abono ($)</label><input type="number" id="pAbono" min="0"></div><div><label for="pPago">Forma de pago</label><select id="pPago"></select></div></div>
+    <div class="tr big"><span>Saldo</span><span id="pSaldo">$0</span></div>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn p" id="pSave" type="button">Guardar orden</button><a class="btn" href="#ordenes" id="pBack">Volver a órdenes</a></div>
 </section>
 <div class="card ohist" id="oHist"></div>
 
