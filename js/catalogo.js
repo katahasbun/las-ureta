@@ -7,6 +7,8 @@ fondo:[["Sin fondo",0],["Fondo lino",80000],["Fondo lacado",60000],["Foam",50000
 montaje:[["Sin montaje",0,"fijo"],["Bastidor 2 cm (por ML)",32000,"ml"],["Bastidor 3 cm (por ML)",35000,"ml"],["Foam simple (por m²)",138000,"area"],["Foam laminado (por m²)",160000,"area"],["Pegado telas/papel (por m²)",80000,"area"],["Montaje objetos (precio a mano)",0,"manual"]],
 java:[["Sin java",0],["Chica (diploma)",28000],["Mediana (50x60 aprox.)",40000],["Grande (100x120)",70000],["Extra grande",90000]]};
 const REG=[["Las Condes",15000],["Vitacura",20000],["Providencia",20000],["Lo Barnechea",25000],["Chicureo",30000],["Ñuñoa",20000],["Santiago Centro",20000],["Peñalolén",25000],["Especial (por ver)",0],["Región (por ver)",0]];
+// Categorías de moldura que fabrica el taller (no se piden a proveedores)
+const HECHO_EN_TALLER=["Mañio","Tepa","Tapacantos"];
 const URG=0.30,MUSEO=0.20;
 // Opciones de desmontaje (se puede marcar más de una; se suman)
 const DESMONTAJE=[["Porta retrato",10000],["Sacar clavos",15000],["Sacar corchetes (bastidor chico)",15000],["Sacar corchetes (bastidor grande)",25000],["Entrevidrios",10000]];
