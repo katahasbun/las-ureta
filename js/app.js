@@ -1,6 +1,11 @@
 // Utilidades
 const $=id=>document.getElementById(id);
 const clp=n=>"$"+Math.round(n).toLocaleString("es-CL");
+// Medidas de un trabajo: obra, margen, medida vidrio (MV) y medida final (MV + marco por cada lado)
+const fmtN=x=>String(Math.round((parseFloat(x)||0)*10)/10).replace(".",",");
+function medidasTxt(it){const m=(it.m||[]).map(x=>parseFloat(x)||0),mg=m.every(x=>x===m[0])?`${fmtN(m[0])} cm`:`sup ${fmtN(m[0])}, inf ${fmtN(m[1])}, izq ${fmtN(m[2])}, der ${fmtN(m[3])} cm`;
+  const marco=(it.mw||[]).reduce((a,x)=>a+(parseFloat(x)||0),0),c=it.c||{};
+  return `obra ${fmtN(it.alto)} × ${fmtN(it.ancho)} cm · margen ${mg} · MV ${fmtN(c.mvA)} × ${fmtN(c.mvW)} cm · final ${fmtN(c.mvA+2*marco)} × ${fmtN(c.mvW+2*marco)} cm`}
 const colorM=(it,k)=>it.mc&&it.mc[k]?", color "+it.mc[k]:"";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -196,7 +201,7 @@ T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);if(o.vendedora)T(`
 if(o.papel){T("Orden en papel"+(o.local?" · Local "+o.local:""),11,false,2);String(o.det||"").split("\n").filter(x=>x.trim()).forEach(l=>T(l));if(o.desp)T("Despacho a domicilio: "+(o.dir||""));y+=2;await img(o.ph&&o.ph[0],"Foto de la orden en papel")}else if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
 else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
 if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
-T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);if(it.blanco)T(blancoTxt(it));
+T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);{const mk=(it.mw||[]).reduce((a,x)=>a+(parseFloat(x)||0),0);T(`Medida final (con marco): ${fmtN(it.c.mvA+2*mk)} x ${fmtN(it.c.mvW+2*mk)} cm`)}T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);if(it.blanco)T(blancoTxt(it));
 T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join(" + ")}`);T(`Vidrio: ${g("vidrio")} · Paspartú: ${g("paspa")} · Fondo: ${g("fondo")}`);T(`Montaje: ${g("montaje")} · Java: ${g("java")}`);
 const ex=[it.chk[0]&&desmTxt(it),it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
 T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
@@ -217,13 +222,14 @@ function provRender(){const L=provLines().filter(l=>l.o.estado!=="Entregada"),g=
 $("provList").innerHTML=Object.keys(g).sort().map(p=>{const ls=g[p],c={pend:0,ped:0,lleg:0};ls.forEach(l=>c[estPed(l)]++);
 const s={};ls.filter(l=>estPed(l)==="pend").forEach(l=>{const k=l.d+"|"+l.unit;s[k]=(s[k]||0)+l.q});
 const res=Object.keys(s).map(k=>{const[d,u]=k.split("|");return esc(d)+": <b>"+fq(s[k])+" "+u+"</b>"}).join(" · ");
-const lin=Object.keys(s).map(k=>{const[d,unit]=k.split("|");return{d,unit,q:s[k]}}),tel=PROV_TEL[p],real=p!=="Por definir";
+const det={};ls.filter(l=>estPed(l)==="pend").forEach(l=>{const k=l.d+"|"+l.unit;(det[k]=det[k]||[]).push(`OT ${l.o.n} · ${l.it.nombre||"Sin nombre"}: ${medidasTxt(l.it)}${l.it.c&&l.it.c.u>1?` · ${l.it.c.u} unidades`:""}`)});
+const lin=Object.keys(s).map(k=>{const[d,unit]=k.split("|");return{d,unit,q:s[k],det:det[k]||[]}}),tel=PROV_TEL[p],real=p!=="Por definir";
 const peor=c.pend?"rojo":c.ped?"amarillo":"verde";
 const chips=[c.pend&&`<span class="pchip rojo">${c.pend} por pedir</span>`,c.ped&&`<span class="pchip amarillo">${c.ped} pedido${c.ped>1?"s":""}</span>`,c.lleg&&`<span class="pchip verde">${c.lleg} en taller</span>`].filter(Boolean).join("");
 return `<div class="card pcard ${peor}"><div class="phead"><h2>${esc(p)}</h2><div class="pchips">${chips}</div></div>`+
 (res?`<p class="sub" style="margin-bottom:12px">Por pedir: ${res}</p>`:"")+
 `<div class="pacc">${lin.length&&real?`<a class="btn p s" target="_blank" rel="noopener" data-wap="${esc(p)}" href="${esc(urlPedido(p,lin))}">Enviar pedido por WhatsApp</a><button class="btn s" type="button" data-pall="${esc(p)}" data-a="ped">Marcar todo como pedido</button>`:""}${c.ped?`<button class="btn s" type="button" data-pall="${esc(p)}" data-a="lleg">Marcar todo como llegado</button>`:""}${lin.length&&real&&!tel?`<small>Sin número guardado: WhatsApp te pedirá elegir el contacto.</small>`:""}</div>`+
-ls.map(l=>{const e=estPed(l);return `<div class="pline ${e}"><i class="dot ${ESTP[e][0]}" aria-hidden="true"></i><span class="pdesc">${esc(l.d)} · <b>${fq(l.q)} ${l.unit}</b> <small>OT ${l.o.n} · ${esc(l.it.nombre||"Sin nombre")}</small></span>${l.opts.length>1?`<select class="psel" data-ps="${l.o.n}|${l.key}" aria-label="Proveedor">${l.opts.map(x=>`<option${x===l.prov?" selected":""}>${esc(x)}</option>`).join("")}</select>`:""}<select class="psel pest ${ESTP[e][0]}" data-pe="${l.o.n}|${l.key}" aria-label="Estado del pedido">${Object.keys(ESTP).map(k=>`<option value="${k}"${k===e?" selected":""}>${ESTP[k][1]}</option>`).join("")}</select></div>`}).join("")+`</div>`}).join("")||'<p class="empty">No hay pedidos. Aparecen cuando se confirma una orden de enmarcación.</p>';
+ls.map(l=>{const e=estPed(l);return `<div class="pline ${e}"><i class="dot ${ESTP[e][0]}" aria-hidden="true"></i><span class="pdesc">${esc(l.d)} · <b>${fq(l.q)} ${l.unit}</b> <small>OT ${l.o.n} · ${esc(l.it.nombre||"Sin nombre")}</small><small class="pmed">${esc(medidasTxt(l.it))}</small></span>${l.opts.length>1?`<select class="psel" data-ps="${l.o.n}|${l.key}" aria-label="Proveedor">${l.opts.map(x=>`<option${x===l.prov?" selected":""}>${esc(x)}</option>`).join("")}</select>`:""}<select class="psel pest ${ESTP[e][0]}" data-pe="${l.o.n}|${l.key}" aria-label="Estado del pedido">${Object.keys(ESTP).map(k=>`<option value="${k}"${k===e?" selected":""}>${ESTP[k][1]}</option>`).join("")}</select></div>`}).join("")+`</div>`}).join("")||'<p class="empty">No hay pedidos. Aparecen cuando se confirma una orden de enmarcación.</p>';
 const row=(a,b)=>`<div class="tr"><span>${esc(a)}</span><span style="color:var(--mute)">${esc(b||"—")}</span></div>`;
 $("provCat").innerHTML="<h2>Molduras</h2>"+MOLD.map(m=>row(m[0]+" · "+m[1],m[2]||(HECHO_EN_TALLER.includes(m[1])?"Taller (no se pide)":""))).join("")+"<h2 style='margin-top:14px'>Vidrios</h2>"+OPT.vidrio.map((o,i)=>row(o[0],PV.vidrio[i])).join("")+"<h2 style='margin-top:14px'>Paspartú</h2>"+OPT.paspa.map((o,i)=>row(o[0],PV.paspa[i])).join("")+"<h2 style='margin-top:14px'>Montaje</h2>"+OPT.montaje.map((o,i)=>row(o[0],PV.montaje[i])).join("")}
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-wap]");if(a)toast("Cuando lo envíes, aprieta «Marcar todo como pedido»");

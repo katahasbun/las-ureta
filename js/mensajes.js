@@ -38,7 +38,7 @@ const MENSAJES = {
       "",
       "Te escribimos de Las Ureta para hacer el siguiente pedido:",
       "",
-      ...lineas.map(l => `• ${l.d.replace(" · Proveedores", "")}: ${String(l.q.toFixed(2)).replace(".", ",")} ${l.unit}`),
+      ...lineas.flatMap(l => [`• ${l.d.replace(" · Proveedores", "")}: ${String(l.q.toFixed(2)).replace(".", ",")} ${l.unit}`, ...(l.det || []).map(x => `   – ${x}`)]),
       "",
       "¿Nos confirmas disponibilidad y fecha de entrega? 🙏",
       "¡Muchas gracias!",
