@@ -5,7 +5,7 @@ const colorM=(it,k)=>it.mc&&it.mc[k]?", color "+it.mc[k]:"";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 // Cotizador, órdenes, restauraciones y proveedores
-for(const k in OPT){$(k).innerHTML='<option value="">Seleccionar…</option>'+OPT[k].map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("")}
+for(const k in OPT){$(k).innerHTML='<option value="">Seleccionar…</option>'+(ORDEN_OPT[k]||OPT[k].map((_,i)=>i)).map(i=>`<option value="${i}">${OPT[k][i][0]}</option>`).join("")}
 $("region").innerHTML='<option value="">Seleccionar zona…</option>'+REG.map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("");
 let molds=[-1],mw=[""],mc=[""],mq=[""],cart=[],editing=null,photos={1:null,2:null};
 const mlabel=m=>`${m[0]} · ${m[1]}${m[2]?" · "+m[2]:""} · ${clp(m[3])}/ML`;
@@ -26,6 +26,7 @@ function calc(){
   let sub=0;
   molds.forEach((s,i)=>{if(s<0)return;const mi=(2*(mvA+mvW)+8*(parseFloat(mw[i])||0))/100;mls.push(mi);const v=mi*MOLD[s][3];sub+=v;L.push([`Moldura ${i+1} (${mi.toFixed(2).replace(".",",")} ML)`,v])});
   for(const [k,n] of [["vidrio","Vidrio"],["paspa","Paspartú"],["fondo","Fondo"]]){const p=(OPT[k][$(k).value]||[0,0])[1];if(p){const v=area*p;sub+=v;L.push([`${n} (${area.toFixed(3).replace(".",",")} m²)`,v])}}
+const bis=(OPT.vidrio[$("vidrio").value]||[])[2];if(bis){const v=ml*bis;sub+=v;L.push([`Biselado (${ml.toFixed(2).replace(".",",")} ML)`,v])}
   const mt=OPT.montaje[$("montaje").value]||["",0,"fijo"],mp=mt[2]==="manual"?g("montajeManual"):mt[1];if(mp){const v=mt[2]==="ml"?ml*mp:mt[2]==="area"?area*mp:mp;sub+=v;L.push(["Montaje: "+mt[0].replace(/ \(.*\)/,"")+(mt[2]==="ml"?` (${ml.toFixed(2).replace(".",",")} ML)`:mt[2]==="area"?` (${area.toFixed(3).replace(".",",")} m²)`:""),v])}
   const ja=(OPT.java[$("java").value]||[0,0])[1];if(ja){sub+=ja;L.push(["Java",ja])}
   if($("desm").checked)desmSel().forEach(i=>{const[n,v]=DESMONTAJE[i];sub+=v;L.push(["Desmontaje ("+n.toLowerCase()+")",v])});
@@ -196,9 +197,9 @@ T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join("
 const ex=[it.chk[0]&&desmTxt(it),it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
 T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
-const PV={vidrio:Array(8).fill(""),paspa:Array(4).fill(""),fondo:Array(4).fill("")};
+const PV={vidrio:Array(OPT.vidrio.length).fill(""),paspa:Array(4).fill(""),fondo:Array(4).fill("")};
 const fq=n=>n.toFixed(2).replace(".",",");
-function provLines(){const L=[];ots.forEach(o=>o.items.forEach((it,i)=>{const u=it.c.u,add=(k,prov,d,q,unit)=>{const opts=String(prov).split(" / ").map(x=>x.trim()).filter(Boolean);if(opts.length)L.push({o,key:i+"-"+k,opts,prov:null,d,q,unit,it})};it.molds.forEach((s,j)=>add("m"+j,MOLD[s][2],MOLD[s][0]+" · "+MOLD[s][1]+colorM(it,j),it.c.ml*u,"ML"));[["vidrio",0],["paspa",1],["fondo",2]].forEach(([k,n])=>add(k,PV[k][it.sel[n]],OPT[k][it.sel[n]][0],it.c.area*u,"m²"))}));
+function provLines(){const L=[];ots.forEach(o=>o.items.forEach((it,i)=>{const u=it.c.u,add=(k,prov,d,q,unit)=>{const opts=String(prov||"").split(" / ").map(x=>x.trim()).filter(Boolean);if(opts.length)L.push({o,key:i+"-"+k,opts,prov:null,d,q,unit,it})};it.molds.forEach((s,j)=>add("m"+j,MOLD[s][2],MOLD[s][0]+" · "+MOLD[s][1]+colorM(it,j),it.c.ml*u,"ML"));[["vidrio",0],["paspa",1],["fondo",2]].forEach(([k,n])=>add(k,PV[k][it.sel[n]],OPT[k][it.sel[n]][0],it.c.area*u,"m²"))}));
 const pend=l=>!(l.o.ped||{})[l.key],cnt={};
 L.forEach(l=>{const lk=(l.o.sup||{})[l.key];if(lk&&l.opts.includes(lk))l.prov=lk;else if(l.opts.length===1)l.prov=l.opts[0]});
 L.filter(l=>l.prov&&pend(l)).forEach(l=>cnt[l.prov]=(cnt[l.prov]||0)+1);

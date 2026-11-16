@@ -22,4 +22,10 @@ ingresando con un usuario creado en Supabase → Authentication → Users.
 ## Pendiente
 - Si dos personas editan la misma orden al mismo tiempo, queda el último cambio guardado.
 - «Guardar borrador» del cotizador todavía no guarda nada.
-- Precios y fórmulas marcadas como «provisoria» son de ejemplo.
+- Precios confirmados con el catálogo de SumUp (noviembre 2026).
+- Molduras de Pato Pérez sin precio (están en el Excel de proveedores, no en SumUp):
+  3440-3085, 962, 405 Oro, 91, 313, 630-007, 384, 2840, 315, 314, 271, 6 Aluminio,
+  966, 385, 974, 272, 316, 970, 307, 299-20, 420, 421, 352.
+- Confirmar si son la misma moldura: 43440/43440 CCN3, A-06/A-06 (2016-47), Lisa Plata/Lisos plata,
+  2043-8409/A-59, 11-G4·11-5·11-G6/CG11#4·#5·#6, 3/N° 3, AB-7/AD-7, B-143/V-143, 8/N8.
+- Proveedor por definir: molduras «Especiales», «Grecado» y 14 códigos «Por definir».
