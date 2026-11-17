@@ -89,7 +89,7 @@ function resumenOT(o) {
   }
   const bruto = (o.items || []).reduce((a, x) => a + x.c.tot, 0);
   const pct = o.conv && o.conv !== "No" ? +o.dcto || 0 : 0;
-  const total = bruto * (1 - pct / 100), ab = parseFloat(o.abono) || 0;
+  const total = bruto * (1 - pct / 100) + (o.desp ? +o.despCosto || 0 : 0), ab = parseFloat(o.abono) || 0;
   return { total, ab, saldo: Math.max(0, total - ab) };
 }
 

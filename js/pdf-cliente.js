@@ -96,6 +96,7 @@ async function armarPdfCliente(J, o) {
       if (ex.length) fila("Extras: " + ex.join(", "));
       if (it.obs) fila("Observaciones: " + it.obs);
     }
+    if (o.desp) { const z = (REG[o.region] || [""])[0]; fila("Despacho a domicilio: " + (o.dir || "") + (z ? " (" + z + ")" : ""), +o.despCosto ? $$(+o.despCosto) : "", true); }
   }
   const LH = 7, pieArriba = PH - 46;
   let y = y0 + 44;

@@ -202,12 +202,23 @@
     <div class="grid"><div><label for="entTipo">Entrega</label><select id="entTipo"><option value="s">2 a 3 semanas</option><option value="f">Fecha específica</option></select></div><div id="fechaBox" style="display:none"><label for="entFecha">Fecha</label><input type="date" id="entFecha"></div></div>
   </div>
   <div class="card"><h2>Trabajos</h2><div id="otItems"></div></div>
+  <div class="card"><h2>Despacho a domicilio</h2>
+    <p class="sub" id="otDespInfo" style="display:none;margin:0"></p>
+    <div id="otDespCtl">
+      <div class="chk"><input type="checkbox" id="otDesp"><label for="otDesp" style="margin:0;color:var(--ink);font-size:15px">Enviar a domicilio</label></div>
+      <div id="otDespBox" class="subopc" style="display:none">
+        <div class="dgrid"><div><label for="otRegion">Zona de despacho</label><select id="otRegion"></select></div><div><label for="otDir">Dirección de despacho</label><input type="text" id="otDir" placeholder="Calle, número, depto. y comuna"></div></div>
+        <div class="grid" style="margin-top:10px"><div><label for="otDespCosto">Costo del despacho ($)</label><input type="number" id="otDespCosto" min="0"></div></div>
+      </div>
+    </div>
+  </div>
   <div class="card"><h2>Venta</h2>
     <div class="grid"><div><label for="como">¿Cómo nos conociste?</label><select id="como"></select></div><div><label for="conv">Convenio</label><select id="conv"></select></div><div id="dctoBox" style="display:none"><label for="dcto">Descuento</label><select id="dcto"></select></div><div><label for="pago">Forma de pago</label><select id="pago"></select></div></div>
   </div>
   <div class="card">
     <div class="tr"><span>Total</span><b id="otTotal">$0</b></div>
-    <div class="tr" id="rowDcto" style="display:none"><span>Total con descuento</span><b id="otTotalD">$0</b></div>
+    <div class="tr" id="rowDesp" style="display:none"><span>Despacho</span><b id="otDespTxt">$0</b></div>
+    <div class="tr" id="rowDcto" style="display:none"><span id="rowDctoL">Total con descuento</span><b id="otTotalD">$0</b></div>
     <div class="grid" style="margin-top:10px"><div><label for="abonoTipo">Abono</label><select id="abonoTipo"><option value="">Seleccionar…</option><option value="100">100 %</option><option value="50">50 %</option><option value="v">Variable (a mano)</option></select></div><div><label for="abono">Monto del abono ($)</label><input type="number" id="abono" min="0" readonly></div></div>
     <div class="tr big"><span>Saldo</span><span id="saldo">$0</span></div>
     <div class="grid saldo-ed" style="margin-top:10px"><div><label for="saldoEd">Editar saldo ($)</label><input type="number" id="saldoEd" min="0"></div></div>
