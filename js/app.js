@@ -175,6 +175,10 @@ apply();if(nuevo==="Lista para retirar"&&o.avisado)toast(`OT ${n}: ${nuevo}. Ya 
 $("waDlg").addEventListener("close",()=>{const v=$("waDlg").returnValue,p=pendEst;$("waDlg").returnValue="";pendEst=null;if(!p)return;if(v==="avisar"){if(p.tipo==="listo")p.o.avisado=Date.now();p.apply(true);toast("Revisa WhatsApp y aprieta Enviar")}else if(v==="solo")p.apply();else ordList()});
 document.addEventListener("input",e=>{if(e.target.id==="oQ")ordList()});
 function ordEst(){const o=allOT().find(x=>x.n===ordSel),e=o?est(o):null,d=o?due(o):null;$("oEst").className="est "+(e?e[0]:"");$("oEst").textContent=e?(o.estado==="Entregada"?"Entregada":estOf(o)+" · "+e[1]+(d?" · entrega "+(o.tipo==="enm"&&o.entTipo!=="f"?"hasta el ":"el ")+fd(d):"")):""}
+// Cerrar la orden abierta y volver a la lista (en tablet y celular la lista se oculta al abrir una orden)
+function ordCerrar(){papCur=null;if(rEd!==null)rLoad(null);if(otCur){otCur=null;otClear();$("otOk").textContent="Confirmar";$("otBack").style.display=""}
+  ordSel=null;document.body.dataset.sel="";$("oCliBox").style.display="none";ordList();ordEst();ordHist();scrollTo(0,0)}
+$("oBack").onclick=ordCerrar;
 function ordOpen(n){ordSel=n;$("oCliBox").style.display="block";const o=allOT().find(x=>x.n===n);document.body.dataset.sel=o.papel?"papel":o.tipo;if(o.papel)papLoad(o);else if(o.tipo==="rest")rLoad(o);else otLoad(o);ordList();ordEst();ordHist();scrollTo({top:0,behavior:"smooth"})}
 document.addEventListener("change",e=>{const c=e.target.dataset.oc;if(c!==undefined){e.target.checked?chosen.add(+c):chosen.delete(+c);$("oCnt").textContent=chosen.size}const d=e.target.dataset.om;if(d!==undefined&&otCur){const[i,k]=d.split("-").map(Number),it=otCur.items[i];it.molds[k]=+e.target.value;const prev=snap();load(it);Object.assign(it,snap());load(prev);otRender()}});
 document.addEventListener("change",e=>{const es=e.target.dataset.es;if(es!==undefined)setEstado(+es,e.target.value)});
