@@ -48,12 +48,16 @@ async function cargarOrdenes() {
 }
 
 // Crea una orden nueva; la base de datos le asigna el número.
+// Si el número que da la numeración ya está usado (por ejemplo, por una orden en papel
+// o una a la que se le cambió el número), prueba con el siguiente.
 async function crearOrden(o) {
   await subirFotos(o);
-  const { data, error } = await db.from("ordenes").insert(aFila(o)).select().single();
-  if (error) throw error;
-  o.n = data.n; o.creado = Date.parse(data.creado);
-  return o;
+  for (let intento = 0; intento < 60; intento++) {
+    const { data, error } = await db.from("ordenes").insert(aFila(o)).select().single();
+    if (!error) { o.n = data.n; o.creado = Date.parse(data.creado); return o; }
+    if (error.code !== "23505") throw error;
+  }
+  throw new Error("No se encontró un número de orden libre");
 }
 
 // Orden traspasada desde papel: se guarda con su número original.

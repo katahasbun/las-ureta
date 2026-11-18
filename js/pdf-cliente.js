@@ -98,6 +98,7 @@ async function armarPdfCliente(J, o) {
     }
     if (o.desp) { const z = (REG[o.region] || [""])[0]; fila("Despacho a domicilio: " + (o.dir || "") + (z ? " (" + z + ")" : ""), +o.despCosto ? $$(+o.despCosto) : "", true); }
   }
+  if (o.factura) fila("Factura: " + String(o.facturaDatos || "").split("\n").map(x => x.trim()).filter(Boolean).join(" · "), "", true);
   const LH = 7, pieArriba = PH - 46;
   let y = y0 + 44;
   const raya = () => { d.setDrawColor(LIN[0], LIN[1], LIN[2]); d.setLineWidth(0.25); d.line(M, y + LH, W - M, y + LH); };
