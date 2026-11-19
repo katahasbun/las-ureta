@@ -653,7 +653,7 @@
  {
   "n": 49259,
   "tipo": "rest",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -666,7 +666,14 @@
    "tel": "991958904",
    "uni": "1",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102607937,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "70400",
@@ -684,7 +691,7 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:04:55.572318+00:00",
-  "actualizado": "2026-11-16T19:04:55.572318+00:00",
+  "actualizado": "2026-11-19T15:36:47.384328+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -903,7 +910,7 @@
  {
   "n": 49280,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -913,7 +920,14 @@
    "nom": "Ignacia Echenique",
    "tel": "994625812",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795102481863,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "69280",
@@ -929,14 +943,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:26:23.215001+00:00",
-  "actualizado": "2026-11-16T19:26:23.215001+00:00",
+  "actualizado": "2026-11-19T15:34:40.860355+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49282,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -946,7 +960,14 @@
    "nom": "Job de johg",
    "tel": "97972076",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795102486838,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "Mercado Pago",
    "abono": "127000",
@@ -962,7 +983,7 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:28:55.194569+00:00",
-  "actualizado": "2026-11-16T19:28:55.194569+00:00",
+  "actualizado": "2026-11-19T15:34:45.770713+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1634,7 +1655,7 @@
  {
   "n": 49304,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1644,7 +1665,14 @@
    "nom": "Monica avendaño",
    "tel": "995091612",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102110797,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "462500",
@@ -1660,7 +1688,7 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:12:51.628034+00:00",
-  "actualizado": "2026-11-18T16:18:45.613545+00:00",
+  "actualizado": "2026-11-19T15:28:29.84532+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1700,7 +1728,7 @@
  {
   "n": 49306,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1710,7 +1738,14 @@
    "nom": "Juan Maturana",
    "tel": "996551624",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102126347,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "69000",
@@ -1726,14 +1761,14 @@
    "vendedora": ""
   },
   "creado": "2026-11-17T21:40:35.288163+00:00",
-  "actualizado": "2026-11-18T16:18:45.612206+00:00",
+  "actualizado": "2026-11-19T15:28:45.348156+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49307,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1743,7 +1778,14 @@
    "nom": "Ricardo Kaiser",
    "tel": "953722229",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102135883,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "104052",
@@ -1759,14 +1801,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:19:59.544517+00:00",
-  "actualizado": "2026-11-18T16:18:45.715257+00:00",
+  "actualizado": "2026-11-19T15:28:54.992208+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49308,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1776,7 +1818,14 @@
    "nom": "Patricio Agurto",
    "tel": "92258001",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102146011,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "56510",
@@ -1792,14 +1841,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:22:10.263091+00:00",
-  "actualizado": "2026-11-18T16:18:45.599014+00:00",
+  "actualizado": "2026-11-19T15:29:04.995243+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49309,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1809,7 +1858,14 @@
    "nom": "Isabel egiguren",
    "tel": "995455899",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102158875,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "165000",
@@ -1825,14 +1881,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:23:25.193754+00:00",
-  "actualizado": "2026-11-18T16:18:45.644565+00:00",
+  "actualizado": "2026-11-19T15:29:17.972972+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49310,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1842,7 +1898,14 @@
    "nom": "Fernando Fluxa",
    "tel": "977741777",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102168764,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "165520",
@@ -1858,14 +1921,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:25:21.392403+00:00",
-  "actualizado": "2026-11-18T16:18:45.710661+00:00",
+  "actualizado": "2026-11-19T15:29:27.743053+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49311,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1875,7 +1938,14 @@
    "nom": "Bruce",
    "tel": "929130309",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102176898,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "76.000",
@@ -1891,14 +1961,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:26:48.507976+00:00",
-  "actualizado": "2026-11-18T16:18:45.596377+00:00",
+  "actualizado": "2026-11-19T15:29:35.870771+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49312,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1908,7 +1978,14 @@
    "nom": "Tamara",
    "tel": "938628330",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102183115,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "132000",
@@ -1924,14 +2001,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:28:49.784243+00:00",
-  "actualizado": "2026-11-18T16:18:45.619504+00:00",
+  "actualizado": "2026-11-19T15:29:42.10602+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49313,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1941,7 +2018,14 @@
    "nom": "Marco Prado",
    "tel": "951513948",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102191226,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "55000",
@@ -1957,14 +2041,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:30:38.307143+00:00",
-  "actualizado": "2026-11-18T16:18:45.619379+00:00",
+  "actualizado": "2026-11-19T15:29:50.398236+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49314,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -1974,7 +2058,14 @@
    "nom": "Jorge Galaz",
    "tel": "998204770",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102202955,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "63000",
@@ -1990,14 +2081,14 @@
    "vendedora": "katalina"
   },
   "creado": "2026-11-16T20:32:13.516214+00:00",
-  "actualizado": "2026-11-18T16:18:45.631785+00:00",
+  "actualizado": "2026-11-19T15:30:01.981223+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49315,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2007,7 +2098,14 @@
    "nom": "Mario Neira",
    "tel": "984477306",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102213387,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "133300",
@@ -2023,14 +2121,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:35:11.670652+00:00",
-  "actualizado": "2026-11-18T16:18:45.600324+00:00",
+  "actualizado": "2026-11-19T15:30:12.366314+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49316,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2040,7 +2138,14 @@
    "nom": "Sofia baraona",
    "tel": "975804347",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102218738,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "93350",
@@ -2056,14 +2161,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:38:52.594892+00:00",
-  "actualizado": "2026-11-18T16:18:45.596154+00:00",
+  "actualizado": "2026-11-19T15:30:17.90031+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49317,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2073,7 +2178,14 @@
    "nom": "Katherine",
    "tel": "973777359",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102225164,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "64000",
@@ -2089,14 +2201,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:40:30.968292+00:00",
-  "actualizado": "2026-11-18T16:18:45.703414+00:00",
+  "actualizado": "2026-11-19T15:30:24.218457+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49318,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2106,7 +2218,14 @@
    "nom": "Juan Yurisic",
    "tel": "982326882",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102230602,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "61900",
@@ -2122,14 +2241,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T20:41:57.084689+00:00",
-  "actualizado": "2026-11-18T16:18:45.690531+00:00",
+  "actualizado": "2026-11-19T15:30:29.645781+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49319,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2139,7 +2258,14 @@
    "nom": "Teresa García",
    "tel": "984481496",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102237970,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "94975",
@@ -2155,14 +2281,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:44:18.834851+00:00",
-  "actualizado": "2026-11-18T16:18:45.691889+00:00",
+  "actualizado": "2026-11-19T15:30:37.039763+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49320,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2172,7 +2298,14 @@
    "nom": "Leo",
    "tel": "998980958",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102246810,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "150000",
@@ -2188,14 +2321,14 @@
    "vendedora": "Leo"
   },
   "creado": "2026-11-16T20:45:45.096143+00:00",
-  "actualizado": "2026-11-18T16:18:45.710829+00:00",
+  "actualizado": "2026-11-19T15:30:45.767368+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49321,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2205,7 +2338,14 @@
    "nom": "Beatriz Melosi",
    "tel": "998727394",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102263563,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "",
@@ -2221,14 +2361,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T20:46:46.893796+00:00",
-  "actualizado": "2026-11-18T16:18:45.710169+00:00",
+  "actualizado": "2026-11-19T15:31:02.519101+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49322,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2238,7 +2378,14 @@
    "nom": "Ariel",
    "tel": "993898283",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102272226,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "40700",
@@ -2254,14 +2401,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T20:47:53.368559+00:00",
-  "actualizado": "2026-11-18T16:18:45.688584+00:00",
+  "actualizado": "2026-11-19T15:31:11.246693+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49323,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2271,7 +2418,14 @@
    "nom": "Nicolas Fuentes",
    "tel": "979893946",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102282922,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "88350",
@@ -2287,14 +2441,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T20:49:29.08014+00:00",
-  "actualizado": "2026-11-18T16:18:45.709947+00:00",
+  "actualizado": "2026-11-19T15:31:22.001898+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49324,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2304,7 +2458,14 @@
    "nom": "Juan Guerra",
    "tel": "993457842",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102289947,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "203500",
@@ -2320,21 +2481,28 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-17T21:30:47.820807+00:00",
-  "actualizado": "2026-11-18T16:18:45.710344+00:00",
+  "actualizado": "2026-11-19T15:31:28.996934+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49325,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "nom": "Valeria Montero",
    "tel": "986690523",
    "como": "Pasando por el local",
    "conv": "No",
    "dcto": "",
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102295802,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "12736",
@@ -2429,21 +2597,28 @@
    "vendedora": "katalina"
   },
   "creado": "2026-11-16T17:45:51.884706+00:00",
-  "actualizado": "2026-11-18T16:18:45.703955+00:00",
+  "actualizado": "2026-11-19T15:31:34.784104+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49326,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "nom": "David",
    "tel": "975557999",
    "como": "Cliente",
    "conv": "No",
    "dcto": "",
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102301994,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "160048",
@@ -2532,21 +2707,28 @@
    "vendedora": "katalina"
   },
   "creado": "2026-11-16T21:47:11.688152+00:00",
-  "actualizado": "2026-11-18T16:18:45.699525+00:00",
+  "actualizado": "2026-11-19T15:31:41.01439+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49327,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "nom": "Enrique Pérez",
    "tel": "998944851",
    "como": "",
    "conv": "No",
    "dcto": "",
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102311530,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "92042",
@@ -2630,14 +2812,14 @@
    "vendedora": "Team"
   },
   "creado": "2026-11-17T18:35:41.609521+00:00",
-  "actualizado": "2026-11-18T16:18:45.691867+00:00",
+  "actualizado": "2026-11-19T15:31:50.543264+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49328,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2647,7 +2829,14 @@
    "nom": "Arturo",
    "tel": "+56957914982",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102317746,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "85250",
@@ -2663,14 +2852,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-18T15:57:10.51141+00:00",
-  "actualizado": "2026-11-18T16:18:45.709753+00:00",
+  "actualizado": "2026-11-19T15:31:56.707647+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49329,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2680,7 +2869,14 @@
    "nom": "Carlos Traub",
    "tel": "+569964477164",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102324178,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "23999",
@@ -2696,14 +2892,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-18T15:47:36.092962+00:00",
-  "actualizado": "2026-11-18T16:18:45.722265+00:00",
+  "actualizado": "2026-11-19T15:32:03.192722+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49330,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2713,7 +2909,14 @@
    "nom": "Renata",
    "tel": "+569830323303",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102329466,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "103900",
@@ -2729,14 +2932,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-18T15:51:44.138321+00:00",
-  "actualizado": "2026-11-18T16:18:45.710184+00:00",
+  "actualizado": "2026-11-19T15:32:08.442159+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49331,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -2746,7 +2949,14 @@
    "nom": "Virginia Ekmekdjiaen",
    "tel": "+56999188988",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102399994,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "68940",
@@ -2762,14 +2972,14 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-18T15:54:11.101252+00:00",
-  "actualizado": "2026-11-18T16:18:45.709604+00:00",
+  "actualizado": "2026-11-19T15:33:19.185207+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49332,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Magdalena",
@@ -2778,7 +2988,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795102406985,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "190372",
@@ -3011,7 +3228,7 @@
    "facturaDatos": "Rut: 77501223-4\nSociedad las vertientes Spa \nGiro: alquiler bienes y muebles"
   },
   "creado": "2026-11-18T15:39:34.13233+00:00",
-  "actualizado": "2026-11-18T16:18:45.704254+00:00",
+  "actualizado": "2026-11-19T15:33:26.012893+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3049,5 +3266,311 @@
   "actualizado": "2026-11-19T13:33:06.450377+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49334,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Consuelo garcia",
+   "tel": "99431181",
+   "como": "Pasando por el local",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "47712",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,72 ML)",
+        72240
+       ],
+       [
+        "Vidrio (0,166 m²)",
+        6624
+       ],
+       [
+        "Paspartú (0,166 m²)",
+        3312
+       ],
+       [
+        "Montaje: Pegado telas/papel (0,166 m²)",
+        13248
+       ]
+      ],
+      "u": 1,
+      "ml": 1.64,
+      "mls": [
+       1.72
+      ],
+      "mvA": 46,
+      "mvW": 36,
+      "tot": 95424,
+      "area": 0.1656,
+      "unit": 95424
+     },
+     "m": [
+      "3",
+      "3",
+      "3",
+      "3"
+     ],
+     "mc": [
+      "folia dorada frente, exterior negro"
+     ],
+     "mm": "",
+     "mn": [
+      "1x2 Tepa (folia dorada frente, exterior negro)"
+     ],
+     "mw": [
+      "1"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/205425e6-3231-4744-af23-2bd2d2e0efc9.jpg",
+     "ph2": "2026-11/5ea2a34e-e1d1-4dc0-bfbb-c175fa44aafb.jpg",
+     "sel": [
+      "1",
+      "2",
+      "0",
+      "5",
+      "0"
+     ],
+     "alto": "40",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco puro"
+     ],
+     "urgF": "",
+     "ancho": "30",
+     "molds": [
+      145
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Acrílico puerta roja",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "50",
+   "despCosto": "",
+   "vendedora": "Verónica",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T15:56:37.313212+00:00",
+  "actualizado": "2026-11-19T15:56:37.313212+00:00",
+  "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
+  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
+ },
+ {
+  "n": 49335,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Rodolfo parraguez",
+   "tel": "+56974775551",
+   "como": "Pasando por el local",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "",
+   "abono": "389384",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,48 ML)",
+        133920
+       ],
+       [
+        "Vidrio (0,304 m²)",
+        12144.000000000002
+       ],
+       [
+        "Paspartú (0,304 m²)",
+        6072.000000000001
+       ],
+       [
+        "Montaje: Pegado telas/papel (0,304 m²)",
+        24288.000000000004
+       ]
+      ],
+      "u": 1,
+      "ml": 2.24,
+      "mls": [
+       2.48
+      ],
+      "mvA": 66,
+      "mvW": 46,
+      "tot": 176424,
+      "area": 0.30360000000000004,
+      "unit": 176424
+     },
+     "m": [
+      "3",
+      "3",
+      "3",
+      "3"
+     ],
+     "mc": [
+      "folia dorada"
+     ],
+     "mm": "",
+     "mn": [
+      "3x2 Tepa (folia dorada)"
+     ],
+     "mw": [
+      "3"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "1",
+      "2",
+      "0",
+      "5",
+      "0"
+     ],
+     "alto": "60",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco puro"
+     ],
+     "urgF": "",
+     "ancho": "40",
+     "molds": [
+      147
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Lamina guayasamin",
+     "region": ""
+    },
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,86 ML)",
+        154440
+       ],
+       [
+        "Vidrio (0,418 m²)",
+        16720
+       ],
+       [
+        "Paspartú (0,418 m²)",
+        8360
+       ],
+       [
+        "Montaje: Pegado telas/papel (0,418 m²)",
+        33440
+       ]
+      ],
+      "u": 1,
+      "ml": 2.62,
+      "mls": [
+       2.86
+      ],
+      "mvA": 76,
+      "mvW": 55,
+      "tot": 212960,
+      "area": 0.41800000000000004,
+      "unit": 212960
+     },
+     "m": [
+      "4",
+      "4",
+      "4",
+      "4"
+     ],
+     "mc": [
+      "negra"
+     ],
+     "mm": "",
+     "mn": [
+      "3x2 Tepa (negra)"
+     ],
+     "mw": [
+      "3"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "Dejar visible la descripción inferior",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "1",
+      "2",
+      "0",
+      "5",
+      "0"
+     ],
+     "alto": "68",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco puro"
+     ],
+     "urgF": "",
+     "ancho": "47",
+     "molds": [
+      147
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Lamina guayasamin",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "100",
+   "despCosto": "",
+   "vendedora": "Verónica",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T16:24:52.397827+00:00",
+  "actualizado": "2026-11-19T16:24:52.397827+00:00",
+  "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
+  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
  }
 ]
