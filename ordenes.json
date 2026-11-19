@@ -3574,18 +3574,25 @@
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
-  "n": 49336,
+  "n": 49337,
   "tipo": "enm",
   "estado": "Recibida",
   "datos": {
    "dir": "",
    "nom": "Pilar Dueñas",
-   "tel": "5697684496",
+   "tel": "+56976084496",
    "como": "Cliente",
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "N° 49337",
+     "t": 1795113159080,
+     "de": "N° 49336",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "",
    "abono": "35560",
@@ -3676,14 +3683,14 @@
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
-   "abonoTipo": "50",
+   "abonoTipo": "v",
    "despCosto": "",
    "vendedora": "Verónica",
    "facturaDatos": ""
   },
   "creado": "2026-11-19T18:16:25.311599+00:00",
-  "actualizado": "2026-11-19T18:16:25.311599+00:00",
+  "actualizado": "2026-11-19T18:32:39.127417+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
-  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
