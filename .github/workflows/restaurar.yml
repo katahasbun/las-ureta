@@ -1,0 +1,67 @@
+name: Restaurar respaldo
+
+# Se ejecuta solo a mano: Actions → "Restaurar respaldo" → "Run workflow".
+on:
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: "Fecha del respaldo a restaurar (AAAA-MM-DD), o 'ultimo' para el más reciente"
+        required: true
+        default: ultimo
+      confirmar:
+        description: "Escribe RESTAURAR para confirmar"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  restaurar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SUPABASE_URL: https://vbhveympiafsndatfyyl.supabase.co
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+      FECHA: ${{ inputs.fecha }}
+      CONFIRMAR: ${{ inputs.confirmar }}
+    steps:
+      - name: Revisar confirmación
+        run: |
+          if [ "$CONFIRMAR" != "RESTAURAR" ]; then
+            echo "::error::Para restaurar hay que escribir RESTAURAR en el campo de confirmación."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Buscar el respaldo
+        run: |
+          git fetch origin respaldos
+          if [ "$FECHA" = "ultimo" ]; then
+            COMMIT=$(git rev-parse FETCH_HEAD)
+          else
+            COMMIT=$(git log FETCH_HEAD --format=%H -n1 --fixed-strings --grep="Respaldo $FECHA")
+          fi
+          if [ -z "$COMMIT" ]; then
+            echo "::error::No hay respaldo con fecha $FECHA"
+            exit 1
+          fi
+          echo "Restaurando: $(git log -1 --format=%s "$COMMIT")"
+          git worktree add --detach datos "$COMMIT"
+
+      - name: Instalar la librería de Supabase
+        run: |
+          mkdir -p "$RUNNER_TEMP/libs"
+          cd "$RUNNER_TEMP/libs"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund @supabase/supabase-js@2.45.4
+          cp "$GITHUB_WORKSPACE/respaldo/"*.mjs .
+
+      - name: Restaurar órdenes y fotos
+        run: node "$RUNNER_TEMP/libs/restaurar.mjs" "$GITHUB_WORKSPACE/datos"

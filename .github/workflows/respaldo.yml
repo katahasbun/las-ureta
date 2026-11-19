@@ -1,0 +1,71 @@
+name: Respaldo diario
+
+# Todos los días a las 06:00 UTC (3:00 en Chile con horario de verano, 2:00 en invierno).
+# También se puede ejecutar a mano desde la pestaña Actions → "Respaldo diario" → "Run workflow".
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: respaldo
+  cancel-in-progress: false
+
+jobs:
+  respaldo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SUPABASE_URL: https://vbhveympiafsndatfyyl.supabase.co
+      SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Preparar la rama de respaldos
+        run: |
+          git config user.name "Respaldo Las Ureta"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin respaldos >/dev/null; then
+            git fetch --depth=1 origin respaldos
+            git worktree add -B respaldos datos FETCH_HEAD
+          else
+            git worktree add --detach datos
+            cd datos
+            git checkout --orphan respaldos
+            git rm -rq --cached .
+            git clean -fdq
+          fi
+
+      - name: Instalar la librería de Supabase
+        run: |
+          mkdir -p "$RUNNER_TEMP/libs"
+          cd "$RUNNER_TEMP/libs"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund @supabase/supabase-js@2.45.4
+          cp "$GITHUB_WORKSPACE/respaldo/"*.mjs .
+
+      - name: Copiar órdenes y fotos
+        run: |
+          if [ -z "$SUPABASE_SECRET_KEY" ]; then
+            echo "::error::Falta el secret SUPABASE_SECRET_KEY en Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          node "$RUNNER_TEMP/libs/respaldar.mjs" "$GITHUB_WORKSPACE/datos"
+
+      - name: Guardar el respaldo
+        working-directory: datos
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios desde el último respaldo."
+          else
+            git commit -qm "Respaldo $(TZ=America/Santiago date +%F)"
+          fi
+          git push origin respaldos

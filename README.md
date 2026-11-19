@@ -29,3 +29,15 @@ ingresando con un usuario creado en Supabase → Authentication → Users.
 - Confirmar si son la misma moldura: 43440/43440 CCN3, A-06/A-06 (2016-47), Lisa Plata/Lisos plata,
   2043-8409/A-59, 11-G4·11-5·11-G6/CG11#4·#5·#6, 3/N° 3, AB-7/AD-7, B-143/V-143, 8/N8.
 - Proveedor por definir: molduras «Especiales», «Grecado» y 14 códigos «Por definir».
+
+## Respaldos
+- **Automático, todos los días a las 3:00** (GitHub Actions, `.github/workflows/respaldo.yml`):
+  copia todas las órdenes (`ordenes.json`) y las fotos a la rama `respaldos` de este repositorio.
+  Cada commit de esa rama es el respaldo de un día; las fotos se guardan una sola vez.
+- Necesita el secret **`SUPABASE_SECRET_KEY`** (clave secreta de Supabase) en
+  Settings → Secrets and variables → Actions. Nunca va en el código.
+- **Respaldo a mano:** pestaña Actions → "Respaldo diario" → Run workflow.
+- **Restaurar:** pestaña Actions → "Restaurar respaldo" → Run workflow, con la fecha
+  (AAAA-MM-DD o `ultimo`) y la palabra `RESTAURAR`. Vuelve a crear las órdenes que falten y deja
+  las existentes como estaban ese día; no borra órdenes creadas después. Sube las fotos que falten.
+- Los usuarios (correos y contraseñas) no se respaldan: se vuelven a crear en Supabase si hiciera falta.
