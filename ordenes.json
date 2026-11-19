@@ -1,0 +1,3053 @@
+[
+ {
+  "n": 49216,
+  "tipo": "enm",
+  "estado": "Entregada",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lamina el beso \n3 paisajes nueva york",
+   "dir": "la rabida 5345 casa 6",
+   "nom": "Macarena Carrasco",
+   "tel": "950777307",
+   "desp": true,
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795095310010,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
+   "mail": "",
+   "pago": "POS",
+   "abono": "177280",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-03",
+   "total": "177280",
+   "region": "0",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T18:25:50.463975+00:00",
+  "actualizado": "2026-11-19T13:35:09.338145+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49222,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 foto panoramica 5 cm ppt 6047\nmantener 2cm de ppt original \nmoldura A-01 vidrio sencillo",
+   "dir": "",
+   "nom": "Ximena",
+   "tel": "97991214",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "169500",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-06",
+   "total": "169500",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T18:28:24.967806+00:00",
+  "actualizado": "2026-11-16T18:28:24.967806+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49223,
+  "tipo": "rest",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 toral lonely woman restauracion",
+   "dir": "",
+   "nom": "Susana hiplan",
+   "obj": "1 toral lonely woman restauracion",
+   "obs": "1 toral lonely woman restauracion",
+   "tel": "976570748",
+   "uni": "1",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "Transferencia",
+   "abono": "52500",
+   "fecha": "",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-09",
+   "total": "105000",
+   "precio": "105000",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T18:30:05.851269+00:00",
+  "actualizado": "2026-11-16T18:30:05.851269+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49224,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 textil irregular mantener tamaño entrevidrio sencillo, mold 1x2 negro",
+   "dir": "",
+   "nom": "Ignacia diaz",
+   "tel": "979981100",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "34455",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-09",
+   "total": "68910",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T18:31:36.874578+00:00",
+  "actualizado": "2026-11-16T18:31:36.874578+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49225,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 diplomas PUC y españa 3cm entrevidrios sencillo, moldura 227-374",
+   "dir": "",
+   "nom": "Jose subiabre",
+   "tel": "984523779",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "64300",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-11-09",
+   "total": "128600",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": ""
+  },
+  "creado": "2026-11-16T18:34:18.17065+00:00",
+  "actualizado": "2026-11-16T18:34:18.17065+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49228,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 placa de madera de flores fondo negro lacado 1,5cm moldura 2x2 tepa negro provenzal",
+   "dir": "",
+   "nom": "Andro vlahovic",
+   "tel": "953647022",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "54600",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-11-10",
+   "total": "54600",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T18:35:55.30125+00:00",
+  "actualizado": "2026-11-16T18:35:55.30125+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49230,
+  "tipo": "rest",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 restauraciones \npilar dominguez: sanitizacion, limpieza fisico-quimica, reintegro de obray cambio de bastidor \nirene dominguez reparacion de desgarros y reintegro cromatico",
+   "dir": "",
+   "nom": "Maria loreto sanchez",
+   "obj": "2 restauraciones ",
+   "obs": "2 restauraciones \npilar dominguez: sanitizacion, limpieza fisico-quimica, reintegro de obray cambio de bastidor \nirene dominguez reparacion de desgarros y reintegro cromatico",
+   "tel": "988885792",
+   "uni": "1",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "Transferencia",
+   "abono": "350000",
+   "fecha": "2026-12-07",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-12",
+   "total": "702500",
+   "precio": "702500",
+   "region": "",
+   "taller": "",
+   "entTipo": "f",
+   "entFecha": "2026-12-07",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T18:38:16.724907+00:00",
+  "actualizado": "2026-11-16T18:38:16.724907+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49235,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 diplomas Abogado y andres bello al porte con moldura 227-374\nvidrio sencillo",
+   "dir": "",
+   "nom": "Pilar Dueñas",
+   "tel": "976084496",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "63720",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-14",
+   "total": "127440",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T18:40:02.912793+00:00",
+  "actualizado": "2026-11-16T18:40:02.912793+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49236,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 mapa de chile 3cm ppt negro moldura greca 3oro antiguo vidrio sencillo",
+   "dir": "",
+   "nom": "Erik docousso",
+   "tel": "+3366635592",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "100256",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-14",
+   "total": "200560",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T18:42:18.457155+00:00",
+  "actualizado": "2026-11-16T18:42:18.457155+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49237,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "4 laminas aves al porte con moldura 227-374 v.s",
+   "dir": "",
+   "nom": "Doris heimlich",
+   "tel": "997906000",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "78000",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-14",
+   "total": "156000",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T18:43:58.897853+00:00",
+  "actualizado": "2026-11-16T18:43:58.897853+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49238,
+  "tipo": "enm",
+  "estado": "Lista para retirar",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 obras para desarmar",
+   "dir": "",
+   "nom": "Lucia arredondo",
+   "tel": "999318372",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "Transferencia",
+   "abono": "20000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-14",
+   "total": "40000",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T18:45:40.391198+00:00",
+  "actualizado": "2026-11-16T18:45:40.391198+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49239,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma san sebastian tamaño final 51,5 x41,5cm entrevidrio opaco mold 3416 opaco c/b negro",
+   "dir": "",
+   "nom": "Hugo Fuentes",
+   "tel": "990791017",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "122960",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-15",
+   "total": "122960",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T18:47:12.853313+00:00",
+  "actualizado": "2026-11-16T18:47:12.853313+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49240,
+  "tipo": "enm",
+  "estado": "Lista para retirar",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 pintura paisaje montada en madera dejar volando, 5,5 cm fondo blanco mold n06 tinte caoba",
+   "dir": "",
+   "nom": "Hugo fuentes",
+   "tel": "990791017",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "307000",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-15",
+   "total": "307000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T18:49:04.205977+00:00",
+  "actualizado": "2026-11-16T18:49:04.205977+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49241,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 mapa tierra del fuego al prte 2x2, vidrio opaco \n1 pintura casa/niña al porte 1x2",
+   "dir": "",
+   "nom": "Lucia comments",
+   "tel": "993096005",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "130300",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-15",
+   "total": "260600",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T18:50:49.745294+00:00",
+  "actualizado": "2026-11-16T18:50:49.745294+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49243,
+  "tipo": "enm",
+  "estado": "Lista para retirar",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 obra tinta acuarela, agregar 5cm ppt blanco invierno no mantener borde original, pegar en madera , moldura 2x2 folia plata vidrio sencillo",
+   "dir": "",
+   "nom": "Francisco Rojas",
+   "tel": "993266517",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "46625",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-16",
+   "total": "93250",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T18:53:09.547019+00:00",
+  "actualizado": "2026-11-16T18:53:09.547019+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49245,
+  "tipo": "enm",
+  "estado": "Lista para retirar",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 aldunate \"equilibrio\" 2cm borde blanco y 4cm hacia abajo 5cm ppt blanco invierno , mold 380r59, vidrio sencillo",
+   "dir": "",
+   "nom": "Martin Riquelme",
+   "tel": "940039877",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "50060",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-09-16",
+   "total": "100120",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T18:55:07.248083+00:00",
+  "actualizado": "2026-11-16T18:55:07.248083+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49248,
+  "tipo": "enm",
+  "estado": "Lista para retirar",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 oleo paisaje moldura 325-GR-B \nfilete folia oro 1x2 piramide",
+   "dir": "",
+   "nom": "Gustavo Estay",
+   "tel": "992319442",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "125000",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-10-17",
+   "total": "250000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T18:57:08.295836+00:00",
+  "actualizado": "2026-11-16T18:57:08.295836+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49249,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 laminas vasarelly \n1 lamina klein (llego)\n2 oleos \n1 lamina mujer (llego)\n1 panoramica budapest (llego)",
+   "dir": "",
+   "nom": "Jaqueline pefaur",
+   "tel": "998221921",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "990000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-18",
+   "total": "990000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T18:59:50.179471+00:00",
+  "actualizado": "2026-11-16T18:59:50.179471+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49257,
+  "tipo": "enm",
+  "estado": "Entregada",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diptico vertical (morado verde) \n2,5cm ppt blanco invierno 2,5 cm de separacion moldura piramide chica folia plata vidrio sencillo",
+   "dir": "",
+   "nom": "Isabel Rodriguez",
+   "tel": "974475645",
+   "desp": false,
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795015169480,
+     "de": "Lista para retirar",
+     "por": "katalina"
+    }
+   ],
+   "mail": "",
+   "pago": "POS",
+   "abono": "65500",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-23",
+   "total": "65500",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "josefa"
+  },
+  "creado": "2026-11-16T19:02:37.396699+00:00",
+  "actualizado": "2026-11-18T15:19:29.684105+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "n": 49259,
+  "tipo": "rest",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 oleo cambio de marco a 03-3 + restauracion limpieza",
+   "dir": "",
+   "nom": "Rosa serrano",
+   "obj": "1 oleo cambio de marco a 03-3 + restauracion limpieza",
+   "obs": "1 oleo cambio de marco a 03-3 + restauracion limpieza",
+   "tel": "991958904",
+   "uni": "1",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "70400",
+   "fecha": "",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-24",
+   "total": "140800",
+   "precio": "140800",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:04:55.572318+00:00",
+  "actualizado": "2026-11-16T19:04:55.572318+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49260,
+  "tipo": "enm",
+  "estado": "Devuelta al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "3 arpilleras caja mañio albayalde \nse devuelve por sucio",
+   "dir": "",
+   "nom": "Lorena inostroza",
+   "tel": "982306195",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "295000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-24",
+   "total": "590000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:06:55.835073+00:00",
+  "actualizado": "2026-11-16T19:06:55.835073+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49264,
+  "tipo": "enm",
+  "estado": "Entregada",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "tela blanco negro terracota, estirar flecos entrevidrios opaco 5cm moldura mañio caja tinte negro",
+   "dir": "",
+   "nom": "Francisca Elgueta",
+   "tel": "961256180",
+   "desp": false,
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1794862708595,
+     "de": "Lista para retirar",
+     "por": "Team"
+    }
+   ],
+   "mail": "",
+   "pago": "POS",
+   "abono": "184620",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-24",
+   "total": "369240",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:09:02.526659+00:00",
+  "actualizado": "2026-11-16T20:58:28.644193+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49270,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 pintura quitar tapacanto, 6cm fondo negro, moldura 283 patoperez \n1 antunez 6cm ppt negro, moldura 1x2 oro antiguo c/b negro vidrio sencillo\n1 acuarela azul con amarillo pegar en madera 6cm ppt negro mold25 cusqueña MV sin pestaña 44x36\n2 dibujos tiralineas dejar medida obra 18x18 4cm ppt negro mold n10 cusqueña v.s 26x26",
+   "dir": "",
+   "nom": "Carlos munizaga",
+   "tel": "978499332",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "393565",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-26",
+   "total": "787130",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T19:13:07.337931+00:00",
+  "actualizado": "2026-11-16T19:13:07.337931+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49271,
+  "tipo": "enm",
+  "estado": "Entregada",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 dipticos verde rojo 6cm ppt negro (tazas)\n6cm ppt blanco (abstracto)\ndejar 4cm entre elementos\nmold mini piramide negra \n1 abstracto verde rojo 6cm ppt blanco minipiramide negro v.s \n1 abstracto negro 6cm ppt negro mini piramide negro v.s",
+   "dir": "",
+   "nom": "Jorge Bravo",
+   "tel": "976183841",
+   "desp": false,
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1794951354678,
+     "de": "Lista para retirar",
+     "por": "katalina"
+    }
+   ],
+   "mail": "",
+   "pago": "POS",
+   "abono": "137005",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-26",
+   "total": "274000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T19:20:10.653421+00:00",
+  "actualizado": "2026-11-17T21:35:54.633319+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "n": 49273,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 pintura 3 manos 5cm fondo blanco  mold caja rustica blanca",
+   "dir": "Alsacia 145 depto 1147",
+   "nom": "Esmeralda Malco",
+   "tel": "982598583",
+   "desp": true,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "169900",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-27",
+   "total": "169900",
+   "region": "0",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T19:22:27.870923+00:00",
+  "actualizado": "2026-11-16T19:22:27.870923+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49278,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma USS 5cm ppt blanco inv y moldura A-02",
+   "dir": "",
+   "nom": "Patricio Sabag",
+   "tel": "992503045",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "92770",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-29",
+   "total": "92770",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Josefa"
+  },
+  "creado": "2026-11-16T19:24:36.230428+00:00",
+  "actualizado": "2026-11-16T19:24:36.230428+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49280,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 fotos blanco y negro pareja pegar en madera pp3cm moldura 966 plateada vidrio opaco",
+   "dir": "",
+   "nom": "Ignacia Echenique",
+   "tel": "994625812",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "69280",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-11-30",
+   "total": "138560",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:26:23.215001+00:00",
+  "actualizado": "2026-11-16T19:26:23.215001+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49282,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 fotografia blanco y negro 5cm ppt blanco puro pegado en madera \nmoldura 2x2 negra  V.O\n\n2 bordados vietnam 4cm ppt blanco puro 2x2 folia oro, V.S",
+   "dir": "",
+   "nom": "Job de johg",
+   "tel": "97972076",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "Mercado Pago",
+   "abono": "127000",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-31",
+   "total": "254000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:28:55.194569+00:00",
+  "actualizado": "2026-11-16T19:28:55.194569+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49283,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "3 laminas papel artesanal entrevidrio 5cm el de papel amarillo guia a los otros \nmoldura 3x2 folia oro rojo para amarillo y cafe \ny 3x2 folia oro azul",
+   "dir": "",
+   "nom": "Macarena Arias",
+   "tel": "965164606",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "190000",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-10-31",
+   "total": "380000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:30:48.958669+00:00",
+  "actualizado": "2026-11-16T19:30:48.958669+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49284,
+  "tipo": "rest",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 oleo altamirano restauracion limpieza +\nenmarcacion caja folia oro N5 al porte",
+   "dir": "",
+   "nom": "Camila Ruz",
+   "obj": "1 oleo altamirano restauracion limpieza +",
+   "obs": "1 oleo altamirano restauracion limpieza +\nenmarcacion caja folia oro N5 al porte",
+   "tel": "985490024",
+   "uni": "1",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "",
+   "abono": "50000",
+   "fecha": "2026-11-30",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-31",
+   "total": "250000",
+   "precio": "250000",
+   "region": "",
+   "taller": "",
+   "entTipo": "f",
+   "entFecha": "2026-11-30",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:32:52.441195+00:00",
+  "actualizado": "2026-11-16T19:32:52.441195+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49285,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "5 laminas san francisco mantener ppt \n- puente con flores y cielo morado\n- casas\n-subida de calle con flores \n(blanco lacado)\n\n-palacio finas artes \n-puente olas tonos verdes\n(plateado)\n\nmoldura rd2712 v.s",
+   "dir": "",
+   "nom": "Manuel Cepeda",
+   "tel": "998701090",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "543250",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-31",
+   "total": "543250",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": ""
+  },
+  "creado": "2026-11-16T19:35:17.752105+00:00",
+  "actualizado": "2026-11-16T19:35:17.752105+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49286,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 marco para montar abanico fondo lino crudo, moldura caja n6 blanco \nsin vidrio  medidas ( 26x43)",
+   "dir": "",
+   "nom": "Maria ines cifuentes",
+   "tel": "937650837",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "50110",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-10-31",
+   "total": "100220",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T19:36:57.268495+00:00",
+  "actualizado": "2026-11-16T19:36:57.268495+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49287,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 acuarela oliver 2x2 blanco mate vidrio opaco, pegar lamina",
+   "dir": "",
+   "nom": "Betty",
+   "tel": "+5402235916042",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "34500",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-11-02",
+   "total": "69000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:38:14.593006+00:00",
+  "actualizado": "2026-11-16T19:38:14.593006+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49288,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 telar dejar 5,5 cm entrevidrios sencillo caja canto negro mate  *pelitos hacia abajo",
+   "dir": "",
+   "nom": "Maria luisa fernandez",
+   "tel": "944002221",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "125500",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-02",
+   "total": "251000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:39:48.533548+00:00",
+  "actualizado": "2026-11-16T19:39:48.533548+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49289,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 tela flores pegada en madera 2151-1548 moldura al porte",
+   "dir": "",
+   "nom": "maria ximena mendez",
+   "tel": "977486740",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "126000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-02",
+   "total": "126000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "katalina"
+  },
+  "creado": "2026-11-16T19:41:18.834149+00:00",
+  "actualizado": "2026-11-16T19:41:18.834149+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49290,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 abstracto azul 5cm fondo blanco y moldura AD-7",
+   "dir": "",
+   "nom": "Maria teresa",
+   "tel": "963269714",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "120000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-02",
+   "total": "240000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:42:28.917517+00:00",
+  "actualizado": "2026-11-16T19:42:28.917517+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49291,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 palmeras beige cambio de vidrio a sencillo",
+   "dir": "",
+   "nom": "Mercedes",
+   "tel": "988032933",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "38000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-03",
+   "total": "38000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "katalina"
+  },
+  "creado": "2026-11-16T19:43:47.268018+00:00",
+  "actualizado": "2026-11-16T19:43:47.268018+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49292,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma u del norte lliana cambiar ppt a 853y poner vidrio sencillo",
+   "dir": "",
+   "nom": "Ignacio Bolbaran",
+   "tel": "997996307",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "28000",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-11-03",
+   "total": "28000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:45:17.655219+00:00",
+  "actualizado": "2026-11-16T19:45:17.655219+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49293,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 marco suelto 180x100 M-1013perle folia oro",
+   "dir": "Camino la loica 5027 santuario del valle",
+   "nom": "Maritza Abusada",
+   "tel": "997791623",
+   "desp": true,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "156000",
+   "items": [],
+   "local": "M",
+   "papel": true,
+   "recep": "2026-11-05",
+   "total": "352000",
+   "region": "3",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": ""
+  },
+  "creado": "2026-11-16T19:47:18.00134+00:00",
+  "actualizado": "2026-11-16T19:47:18.00134+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49294,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 Mapa calle londres 5cm entrevidrios museo 70% con caja n5 mañio albayalde dientes colgador",
+   "dir": "",
+   "nom": "Ricardo Massu",
+   "tel": "96124912",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "Transferencia",
+   "abono": "70000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-05",
+   "total": "370500",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:49:30.689033+00:00",
+  "actualizado": "2026-11-16T19:49:30.689033+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49295,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 composicion 2 fotos 1 medalla 1 boleto 5cm entrevidrios sencillo 1x2 tepa albayalde *tapar precio boleto*",
+   "dir": "",
+   "nom": "Pablo",
+   "tel": "932571247",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "55000",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-11-05",
+   "total": "55000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:51:00.112433+00:00",
+  "actualizado": "2026-11-16T19:51:00.112433+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49296,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 acuarela carretera pegar en madera\npegar en madera pp 3cm blanco puro tapar bordes marco 2x2 folia oro v.s",
+   "dir": "",
+   "nom": "Daniela orellana",
+   "tel": "992312609",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "57950",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-06",
+   "total": "115900",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T19:54:47.984685+00:00",
+  "actualizado": "2026-11-16T19:54:47.984685+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49297,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 tela camboya pegar en madera moldura 8312\n1 carboncillo pegar en madera Foam 4cm greca 2x2 negra V.S",
+   "dir": "",
+   "nom": "Giuliana Giovannini",
+   "tel": "954100578",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "",
+   "abono": "460000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-07",
+   "total": "460000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T19:57:15.442787+00:00",
+  "actualizado": "2026-11-16T19:57:15.442787+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49298,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 acuarela andina pegar en madera pp blanco puro 2cm moldura A-1 V.S",
+   "dir": "",
+   "nom": "Sabina Sepulveda",
+   "tel": "983620518",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "67500",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-07",
+   "total": "67500",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T19:58:25.200383+00:00",
+  "actualizado": "2026-11-16T19:58:25.200383+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49299,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 serigrafia totoy pegar en madera ppt negro 22cm inferior, 12 superior 7cm lados, tapar esquina superior derecha marco 2x2 tepa folia plata lomo color negro pegar certificado",
+   "dir": "",
+   "nom": "Ricardo Osillag",
+   "tel": "982938801",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "112950",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-07",
+   "total": "225900",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-16T20:00:36.975916+00:00",
+  "actualizado": "2026-11-16T20:00:36.975916+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49300,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lamina tower bridge pegar en madera dejar 3cm borde blanco pp verde 4cm 832 2460 moldura 227-374 v.s\n\n1 fotografia nuswell hill pegar en madera agregar 4cm pp verde 832 2460 moldura 227-374 v.s",
+   "dir": "",
+   "nom": "Maria gloria Undurraga",
+   "tel": "998787089",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "126600",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-07",
+   "total": "126600",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:03:05.80401+00:00",
+  "actualizado": "2026-11-16T20:03:05.80401+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49301,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 oleo mujer en bastidor, agregar fondo blanco invierno 6cm moldura caja canto mañio tinte chocolate",
+   "dir": "",
+   "nom": "Cristian peñaloza",
+   "tel": "967678493",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "101620",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-08",
+   "total": "203240",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:04:18.640483+00:00",
+  "actualizado": "2026-11-16T20:04:18.640483+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49302,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 cambio de marco acuarela pueblo colores moldura 3x2 folia oro mantener foam y vidrio \n1 acuarela venecia 2 cm ppt beige pegar en madera moldura 01-4\n1 postal italia 2cm ppt blanco inv pegar en madera moldura 01-4 v.s \n1 papiro rapa nui entrevidrios 4cm moldura 2x2 tepa negra",
+   "dir": "",
+   "nom": "Paula Ubilla",
+   "tel": "993183719",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "116070",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-08",
+   "total": "232140",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:07:00.141478+00:00",
+  "actualizado": "2026-11-16T20:07:00.141478+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49304,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 obra catalina rojas original 5,5 cm fondo blanco a la vista Caja mañio canto tinte nuez.\nponer dientes y alambre",
+   "dir": "",
+   "nom": "Monica avendaño",
+   "tel": "995091612",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "462500",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-10",
+   "total": "462500",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:12:51.628034+00:00",
+  "actualizado": "2026-11-18T16:18:45.613545+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49305,
+  "tipo": "enm",
+  "estado": "Enviada al taller",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 fotos familia con 2cm ppt negro borde pintado vidrio sencillo y moldura greca 3N8 doble perle negro oro envejecido mate",
+   "dir": "",
+   "nom": "Bruce",
+   "tel": "929130309",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "170000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "170000",
+   "region": "",
+   "taller": "Mariano",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:15:30.435087+00:00",
+  "actualizado": "2026-11-16T20:15:30.435087+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49306,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 Batik 3cm entrevidrios sencillo 2x2 oro rojo folia",
+   "dir": "",
+   "nom": "Juan Maturana",
+   "tel": "996551624",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "69000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-10",
+   "total": "69000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": ""
+  },
+  "creado": "2026-11-17T21:40:35.288163+00:00",
+  "actualizado": "2026-11-18T16:18:45.612206+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49307,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma ricardo kaiser 4cm entrevidrios opaco 2x2 negro mate \n1 diploma *repintar marco un poco*",
+   "dir": "",
+   "nom": "Ricardo Kaiser",
+   "tel": "953722229",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "104052",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-10",
+   "total": "104052",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:19:59.544517+00:00",
+  "actualizado": "2026-11-18T16:18:45.715257+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49308,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 foto 3 niños 2cm ppt blanco invierno y moldura 2x2blanco mate. v.s pegar lamina\n\n1 factura 3cm entrevidrios opaco moldura diploma negra",
+   "dir": "",
+   "nom": "Patricio Agurto",
+   "tel": "92258001",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "56510",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-10",
+   "total": "113020",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:22:10.263091+00:00",
+  "actualizado": "2026-11-18T16:18:45.599014+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49309,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 tela flores 5cm fondo blanco caja n6 mañio albayalde",
+   "dir": "",
+   "nom": "Isabel egiguren",
+   "tel": "995455899",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "165000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "165000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:23:25.193754+00:00",
+  "actualizado": "2026-11-18T16:18:45.644565+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49310,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 foto familia en san pedro de atacama 5cm fondo lino crudo 2x2 mañio albayalde vidrio sencillo. pegar foto en madera y que quede flotando.",
+   "dir": "",
+   "nom": "Fernando Fluxa",
+   "tel": "977741777",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "165520",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "165520",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:25:21.392403+00:00",
+  "actualizado": "2026-11-18T16:18:45.710661+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49311,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "2 fotos pareja 15x10 moldura 1x2cm tepa negro mate vidrio sencillo",
+   "dir": "",
+   "nom": "Bruce",
+   "tel": "929130309",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "76.000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "76.000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:26:48.507976+00:00",
+  "actualizado": "2026-11-18T16:18:45.596377+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49312,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 acuarela araucarias 4cm ppt blanco invierno, vidrio sencillo, 2x2 folia plata \n1 caricatura pareja 3cm ppt blanco inv 1x2 tepa negro v.s",
+   "dir": "",
+   "nom": "Tamara",
+   "tel": "938628330",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "132000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "132000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:28:49.784243+00:00",
+  "actualizado": "2026-11-18T16:18:45.619504+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49313,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 rolling stones pegar en madera dejar flotando 0,5cm, fondo negro lacado 5cm, moldura 3x2 folia plata",
+   "dir": "",
+   "nom": "Marco Prado",
+   "tel": "951513948",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "55000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-11",
+   "total": "110000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:30:38.307143+00:00",
+  "actualizado": "2026-11-18T16:18:45.619379+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49314,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 caricatura 31.10.26 pareja BYN 2cm ppt negro vidrio opaco, moldura alvarez lisaplata",
+   "dir": "",
+   "nom": "Jorge Galaz",
+   "tel": "998204770",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "63000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-12",
+   "total": "63000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "katalina"
+  },
+  "creado": "2026-11-16T20:32:13.516214+00:00",
+  "actualizado": "2026-11-18T16:18:45.631785+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49315,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 amatte japones 17x27cm 4cm entrevidrios opaco , 2x2 negro provenzal\n1 amatte caballo rojo 3cm entrevidrios opaco 2x2 negro provenzal \n\n*LOS ADHESIVOS TIENEN QUE SER MUY CHICOS EN CADA ESQUINA QUE NI SE NOTEN PORQUE EL CLIENTE ES QUISQUILLOSO Y NO QUIERE QUE DAÑE LA OBRA*",
+   "dir": "",
+   "nom": "Mario Neira",
+   "tel": "984477306",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "133300",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-12",
+   "total": "133300",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:35:11.670652+00:00",
+  "actualizado": "2026-11-18T16:18:45.600324+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49316,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 silla sevillana pegar lamina, dejar 0,5cm blanco original superior, lados y en la leyenda dejar 4cm. 5cm ppt blanco invierno. mini piramide folia plata al frente y a los bordes negro mate. vidrio sencillo\n\n1 ilustracion mosaico dejar 4cm blanco original, 5cm ppt blanco invierno moldura mini piramide folia plata al frente y los bordes negro mate. vidrio sencillo",
+   "dir": "",
+   "nom": "Sofia baraona",
+   "tel": "975804347",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "93350",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-12",
+   "total": "186700",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:38:52.594892+00:00",
+  "actualizado": "2026-11-18T16:18:45.596154+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49317,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 edificio canvas curvas de colores tapar blanco original con ppt blanco invierno y moldura 2x2 negro tepa. vidrio sencillo. pegar lamina",
+   "dir": "",
+   "nom": "Katherine",
+   "tel": "973777359",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "64000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-12",
+   "total": "128000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:40:30.968292+00:00",
+  "actualizado": "2026-11-18T16:18:45.703414+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49318,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lamina acuarela abstracta 10cm ppt blanco puro, moldura 2x2 blanco vidrio opaco. pegar lamina",
+   "dir": "",
+   "nom": "Juan Yurisic",
+   "tel": "982326882",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "61900",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-13",
+   "total": "123800",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T20:41:57.084689+00:00",
+  "actualizado": "2026-11-18T16:18:45.690531+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49319,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lamina guayasamin pegado en madera agregar foam 7cm, moldura piramide mediana exterior negro frente e interior oro suave. vidrio sencillo",
+   "dir": "",
+   "nom": "Teresa García",
+   "tel": "984481496",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "94975",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-13",
+   "total": "189950",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Katalina"
+  },
+  "creado": "2026-11-16T20:44:18.834851+00:00",
+  "actualizado": "2026-11-18T16:18:45.691889+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49320,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 marco flexipuntas 5cm ppt blanco puro marco 2x2 tepa negro vidrio sencillo",
+   "dir": "",
+   "nom": "Leo",
+   "tel": "998980958",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "150000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-13",
+   "total": "150000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Leo"
+  },
+  "creado": "2026-11-16T20:45:45.096143+00:00",
+  "actualizado": "2026-11-18T16:18:45.710829+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49321,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 garantía arreglo puente",
+   "dir": "",
+   "nom": "Beatriz Melosi",
+   "tel": "998727394",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-13",
+   "total": "0",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T20:46:46.893796+00:00",
+  "actualizado": "2026-11-18T16:18:45.710169+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49322,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma UC ariel 5cm entrevidrios moldura 2x2 tepa negra vidrio sencillo",
+   "dir": "",
+   "nom": "Ariel",
+   "tel": "993898283",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "40700",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-13",
+   "total": "81400",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T20:47:53.368559+00:00",
+  "actualizado": "2026-11-18T16:18:45.688584+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49323,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lamina mappin pegar en madera moldura 2x2 tepa negro al porte vidrio opaco",
+   "dir": "",
+   "nom": "Nicolas Fuentes",
+   "tel": "979893946",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "88350",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-14",
+   "total": "176700",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-16T20:49:29.08014+00:00",
+  "actualizado": "2026-11-18T16:18:45.709947+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49324,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 Serigrafia Guayasamin enmarcacion conservativa, poner fijaciones libres de acido y 5cm ppt blanco invierno libre de acido por adelante y por atras. moldura 03-3 V.M 70%",
+   "dir": "",
+   "nom": "Juan Guerra",
+   "tel": "993457842",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "203500",
+   "items": [],
+   "local": "R",
+   "papel": true,
+   "recep": "2026-11-15",
+   "total": "407000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "veronica"
+  },
+  "creado": "2026-11-17T21:30:47.820807+00:00",
+  "actualizado": "2026-11-18T16:18:45.710344+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49325,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "nom": "Valeria Montero",
+   "tel": "986690523",
+   "como": "Pasando por el local",
+   "conv": "No",
+   "dcto": "",
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "12736",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,06 ML)",
+        0
+       ],
+       [
+        "Vidrio (0,034 m²)",
+        1368
+       ],
+       [
+        "Paspartú (0,034 m²)",
+        1368
+       ],
+       [
+        "Desmontaje (porta retrato)",
+        10000
+       ]
+      ],
+      "u": 1,
+      "ml": 0.74,
+      "mls": [
+       1.06
+      ],
+      "mvA": 18,
+      "mvW": 19,
+      "tot": 12736,
+      "area": 0.0342,
+      "unit": 12736
+     },
+     "m": [
+      "4",
+      "4",
+      "2",
+      "2"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "Reutilizar moldura"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      true,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "Reutilizar marco ",
+     "ph1": "2026-11/093655b4-0225-449b-840f-57a43e549efd.jpg",
+     "ph2": "2026-11/223b89ec-f1f6-42ec-954e-03f63bb95330.jpg",
+     "sel": [
+      "1",
+      "2",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "10",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco puro"
+     ],
+     "urgF": "",
+     "ancho": "15",
+     "molds": [
+      197
+     ],
+     "blanco": null,
+     "desmOp": [
+      0
+     ],
+     "nombre": "Foto bordada ",
+     "region": ""
+    }
+   ],
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "abonoTipo": "100",
+   "vendedora": "katalina"
+  },
+  "creado": "2026-11-16T17:45:51.884706+00:00",
+  "actualizado": "2026-11-18T16:18:45.703955+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49326,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "nom": "David",
+   "tel": "975557999",
+   "como": "Cliente",
+   "conv": "No",
+   "dcto": "",
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "160048",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,80 ML)",
+        125999.99999999999
+       ],
+       [
+        "Vidrio (0,426 m²)",
+        17024
+       ],
+       [
+        "Paspartú (0,426 m²)",
+        17024
+       ]
+      ],
+      "u": 1,
+      "ml": 2.64,
+      "mls": [
+       2.8
+      ],
+      "mvA": 76,
+      "mvW": 56,
+      "tot": 160048,
+      "area": 0.42560000000000003,
+      "unit": 160048
+     },
+     "m": [
+      "3",
+      "3",
+      "3",
+      "3"
+     ],
+     "mc": [
+      "Negro mate"
+     ],
+     "mm": "",
+     "mn": [
+      "2x2 Tepa (Negro mate)"
+     ],
+     "mw": [
+      "2"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "Pegar lámina ",
+     "ph1": "2026-11/ba65a7c3-efa7-495e-ae17-f165e944ab9e.jpg",
+     "ph2": "2026-11/4c96d2a0-9503-4c83-ae58-b305408f35e9.jpg",
+     "sel": [
+      "1",
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "70",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco invierno"
+     ],
+     "urgF": "",
+     "ancho": "50",
+     "molds": [
+      146
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Lamina barco ",
+     "region": ""
+    }
+   ],
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "abonoTipo": "100",
+   "vendedora": "katalina"
+  },
+  "creado": "2026-11-16T21:47:11.688152+00:00",
+  "actualizado": "2026-11-18T16:18:45.699525+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49327,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "nom": "Enrique Pérez",
+   "tel": "998944851",
+   "como": "",
+   "conv": "No",
+   "dcto": "",
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "92042",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,42 ML)",
+        83780
+       ],
+       [
+        "Vidrio (0,092 m²)",
+        8262
+       ]
+      ],
+      "u": 1,
+      "ml": 1.22,
+      "mls": [
+       1.42
+      ],
+      "mvA": 34,
+      "mvW": 27,
+      "tot": 92042,
+      "area": 0.0918,
+      "unit": 92042
+     },
+     "m": [
+      "2",
+      "2",
+      "3",
+      "3"
+     ],
+     "mc": [
+      "Natural"
+     ],
+     "mm": "",
+     "mn": [
+      "2711 (1028) Mañio (Natural)"
+     ],
+     "mw": [
+      "2.5"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "Envía marco de referencia. Dejar hoja \"National Transcript\" visible por el reverso, las demás dentro.",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "6",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "30",
+     "cant": "1",
+     "mats": [
+      "Entre vidrios opaco"
+     ],
+     "urgF": "",
+     "ancho": "21",
+     "molds": [
+      129
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Diploma Roy Bruce",
+     "region": ""
+    }
+   ],
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "abonoTipo": "100",
+   "vendedora": "Team"
+  },
+  "creado": "2026-11-17T18:35:41.609521+00:00",
+  "actualizado": "2026-11-18T16:18:45.691867+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49328,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 lámina ultrasonido \nPegar en madera \nMoldura 2x2 tepa negra \nSin vidrio",
+   "dir": "",
+   "nom": "Arturo",
+   "tel": "+56957914982",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "85250",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-17",
+   "total": "170500",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-18T15:57:10.51141+00:00",
+  "actualizado": "2026-11-18T16:18:45.709753+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49329,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 composición dos retratos antiguos\nCambiar pp a 2450 beige (mantener mismos márgenes)\nponer vidrio atrás para dejar visible papel\nMoldura diploma caoba \nVidrio sencillo",
+   "dir": "",
+   "nom": "Carlos Traub",
+   "tel": "+569964477164",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "23999",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-18",
+   "total": "48000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-18T15:47:36.092962+00:00",
+  "actualizado": "2026-11-18T16:18:45.722265+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49330,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 Lámina Hotel Bidasoa \nCortar los bordes y pegar en madera\nAgregar 6 cm paspartú blanco puro\nMoldura 2x2 tepa folia oro\nVidrio sencillo",
+   "dir": "",
+   "nom": "Renata",
+   "tel": "+569830323303",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "103900",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-18",
+   "total": "207800",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-18T15:51:44.138321+00:00",
+  "actualizado": "2026-11-18T16:18:45.710184+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49331,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 diploma Catalina San Martín \nPegar en madera\n2cm de paspartú azul (2814)\nmoldura 01-4\nVidrio opaco",
+   "dir": "",
+   "nom": "Virginia Ekmekdjiaen",
+   "tel": "+56999188988",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "68940",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-18",
+   "total": "68940",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "entFecha": "",
+   "vendedora": "Veronica"
+  },
+  "creado": "2026-11-18T15:54:11.101252+00:00",
+  "actualizado": "2026-11-18T16:18:45.709604+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49332,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Magdalena",
+   "tel": "996436240",
+   "como": "Cliente",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "190372",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,18 ML)",
+        119900.00000000001
+       ],
+       [
+        "Vidrio (0,213 m²)",
+        17056
+       ]
+      ],
+      "u": 1,
+      "ml": 1.86,
+      "mls": [
+       2.18
+      ],
+      "mvA": 52,
+      "mvW": 41,
+      "tot": 136956,
+      "area": 0.2132,
+      "unit": 136956
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "JO1119"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/f01162be-d20e-4289-8067-d48a0f48b338.jpg",
+     "ph2": "2026-11/c463a1ce-d2dc-4a4c-ba36-5e6f62ef2dec.jpg",
+     "sel": [
+      "2",
+      "3",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "52",
+     "cant": "1",
+     "mats": [
+      "Vidrio opaco (V.O)",
+      "Reutilizar"
+     ],
+     "urgF": "",
+     "ancho": "41",
+     "molds": [
+      118
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Acuarela ",
+     "region": ""
+    },
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,02 ML)",
+        111100
+       ],
+       [
+        "Vidrio (0,179 m²)",
+        14287.999999999998
+       ]
+      ],
+      "u": 1,
+      "ml": 1.7,
+      "mls": [
+       2.02
+      ],
+      "mvA": 47,
+      "mvW": 38,
+      "tot": 125388,
+      "area": 0.17859999999999998,
+      "unit": 125388
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "JO1119"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/d0e5d757-3308-4074-b0be-5f903f85b6fa.jpg",
+     "ph2": "2026-11/e4e40b61-fef8-4904-b1f0-d4149ff9d07f.jpg",
+     "sel": [
+      "2",
+      "3",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "47",
+     "cant": "1",
+     "mats": [
+      "Vidrio opaco (V.O)",
+      "Reutilizar"
+     ],
+     "urgF": "",
+     "ancho": "38",
+     "molds": [
+      118
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Acuarela barco ",
+     "region": ""
+    },
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,92 ML)",
+        105600
+       ],
+       [
+        "Vidrio (0,160 m²)",
+        12800.000000000002
+       ]
+      ],
+      "u": 1,
+      "ml": 1.6,
+      "mls": [
+       1.92
+      ],
+      "mvA": 40,
+      "mvW": 40,
+      "tot": 118400,
+      "area": 0.16000000000000003,
+      "unit": 118400
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "JO1119"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/6960f0f5-c349-4fe5-b03d-bda029e0caa5.jpg",
+     "ph2": "2026-11/02f3771d-ca31-4783-905e-b6d217a84f06.jpg",
+     "sel": [
+      "2",
+      "3",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "40",
+     "cant": "1",
+     "mats": [
+      "Vidrio opaco (V.O)",
+      "Reutilizar"
+     ],
+     "urgF": "",
+     "ancho": "40",
+     "molds": [
+      118
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Acuarela barco ",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "s",
+   "factura": true,
+   "entFecha": "",
+   "abonoTipo": "v",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": "Rut: 77501223-4\nSociedad las vertientes Spa \nGiro: alquiler bienes y muebles"
+  },
+  "creado": "2026-11-18T15:39:34.13233+00:00",
+  "actualizado": "2026-11-18T16:18:45.704254+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49333,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 Acrílico Jesús. Pegar en madera. Al porte con moldura SL22-148\n1 Acrílico Venecia. Pega en madera. Agregar 5 cm de fondo blanco. Moldura A-02\n1 Papiro apostol. 3cm de entrevidrio sencillo. Moldura A-1\n1 Papiro Barco. 3cm de entrevidrio sencillo. Moldura mini pirámide folia plata\n2 Papiros parejas. 3cm de entrevidrio sencillo. Moldura 91\n1 Papiro grande en colores bronce y dorado. 4cm de entrevidrios sencillo. Moldura 92",
+   "dir": "",
+   "nom": "Hernando Osses",
+   "tel": "+56981998655",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "910000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-18",
+   "total": "910000",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "vendedora": "Verónica",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T13:33:06.450377+00:00",
+  "actualizado": "2026-11-19T13:33:06.450377+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ }
+]

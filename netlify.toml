@@ -1,0 +1,3 @@
+# Esta rama solo guarda respaldos: Netlify no debe publicarla.
+[build]
+  ignore = "exit 0"
