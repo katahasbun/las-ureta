@@ -469,7 +469,7 @@
  {
   "n": 49241,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -479,7 +479,14 @@
    "nom": "Lucia comments",
    "tel": "993096005",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795124230733,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "130300",
@@ -495,7 +502,7 @@
    "vendedora": "Josefa"
   },
   "creado": "2026-11-16T18:50:49.745294+00:00",
-  "actualizado": "2026-11-16T18:50:49.745294+00:00",
+  "actualizado": "2026-11-19T21:37:12.193765+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1051,7 +1058,7 @@
  {
   "n": 49284,
   "tipo": "rest",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1064,7 +1071,14 @@
    "tel": "985490024",
    "uni": "1",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795123889775,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "",
    "abono": "50000",
@@ -1082,7 +1096,7 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:32:52.441195+00:00",
-  "actualizado": "2026-11-16T19:32:52.441195+00:00",
+  "actualizado": "2026-11-19T21:31:31.132367+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
