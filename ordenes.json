@@ -3274,7 +3274,7 @@
   "datos": {
    "dir": "",
    "nom": "Consuelo garcia",
-   "tel": "99431181",
+   "tel": "+5699431181",
    "como": "Pasando por el local",
    "conv": "No",
    "dcto": "",
@@ -3338,7 +3338,7 @@
       false
      ],
      "dir": "",
-     "obs": "",
+     "obs": "Pintar exterior de la moldura negro y el frente dorado",
      "ph1": "2026-11/205425e6-3231-4744-af23-2bd2d2e0efc9.jpg",
      "ph2": "2026-11/5ea2a34e-e1d1-4dc0-bfbb-c175fa44aafb.jpg",
      "sel": [
@@ -3370,15 +3370,15 @@
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
-   "abonoTipo": "50",
+   "abonoTipo": "v",
    "despCosto": "",
    "vendedora": "Verónica",
    "facturaDatos": ""
   },
   "creado": "2026-11-19T15:56:37.313212+00:00",
-  "actualizado": "2026-11-19T15:56:37.313212+00:00",
+  "actualizado": "2026-11-19T16:40:30.628072+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
-  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49335,
@@ -3386,7 +3386,7 @@
   "estado": "Recibida",
   "datos": {
    "dir": "",
-   "nom": "Rodolfo parraguez",
+   "nom": "Rodolfo Parraguez",
    "tel": "+56974775551",
    "como": "Pasando por el local",
    "conv": "No",
@@ -3451,7 +3451,7 @@
       false
      ],
      "dir": "",
-     "obs": "",
+     "obs": "Lámina de color amarillo. Dejar visible la descripción inferior",
      "ph1": null,
      "ph2": null,
      "sel": [
@@ -3531,7 +3531,7 @@
       false
      ],
      "dir": "",
-     "obs": "Dejar visible la descripción inferior",
+     "obs": "Lámina colores café. Dejar visible la descripción inferior",
      "ph1": null,
      "ph2": null,
      "sel": [
@@ -3569,8 +3569,8 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T16:24:52.397827+00:00",
-  "actualizado": "2026-11-19T16:24:52.397827+00:00",
+  "actualizado": "2026-11-19T16:34:36.461822+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
-  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
