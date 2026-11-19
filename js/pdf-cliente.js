@@ -138,7 +138,7 @@ async function armarPdfCliente(J, o, opts = {}) {
   if (ic.info) d.addImage(ic.info, "PNG", M + 4.5, fy + 3.5, 6, 6);
   font(8, "normal", SUAVE);
   d.text(pres ? "Presupuesto válido por 30 días desde su emisión. Precios con IVA incluido." : "Te avisaremos cuando tu pedido esté listo para retirar. Los trabajos se entregan a partir de las 17:30 hrs.", M + 14, fy + 5.5);
-  d.text(pres ? "Para confirmarlo, escríbenos por WhatsApp o visítanos en la tienda." : "No se responde por trabajos pasados los 60 días. Precios con IVA incluido.", M + 14, fy + 9.6);
+  d.text(pres ? "Para confirmarlo, escríbenos por WhatsApp o visítanos en la tienda." : "Precios con IVA incluido.", M + 14, fy + 9.6);
 
   // ---- Atendido por · Total · Abono · Saldo
   const r = resumenOT(o), sinPrecio = o.tipo === "rest" && !r.total;
