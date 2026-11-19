@@ -1,10 +1,14 @@
 name: Respaldo diario
 
-# Todos los días a las 06:00 UTC (3:00 en Chile con horario de verano, 2:00 en invierno).
+# Tres veces al día: 12:00, 15:00 y 21:00 en Chile con horario de verano (UTC-3).
+# En horario de invierno (UTC-4) corren una hora antes: 11:00, 14:00 y 20:00.
+# GitHub puede atrasarlos unos minutos en horas de mucho uso.
 # También se puede ejecutar a mano desde la pestaña Actions → "Respaldo diario" → "Run workflow".
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 15 * * *"
+    - cron: "0 18 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -66,6 +70,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sin cambios desde el último respaldo."
           else
-            git commit -qm "Respaldo $(TZ=America/Santiago date +%F)"
+            git commit -qm "Respaldo $(TZ=America/Santiago date '+%F %H:%M')"
           fi
           git push origin respaldos

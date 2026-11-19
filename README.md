@@ -31,13 +31,13 @@ ingresando con un usuario creado en Supabase → Authentication → Users.
 - Proveedor por definir: molduras «Especiales», «Grecado» y 14 códigos «Por definir».
 
 ## Respaldos
-- **Automático, todos los días a las 3:00** (GitHub Actions, `.github/workflows/respaldo.yml`):
+- **Automático, tres veces al día: 12:00, 15:00 y 21:00** (hora de Chile; GitHub Actions, `.github/workflows/respaldo.yml`):
   copia todas las órdenes (`ordenes.json`) y las fotos a la rama `respaldos` de este repositorio.
   Cada commit de esa rama es el respaldo de un día; las fotos se guardan una sola vez.
 - Necesita el secret **`SUPABASE_SECRET_KEY`** (clave secreta de Supabase) en
   Settings → Secrets and variables → Actions. Nunca va en el código.
 - **Respaldo a mano:** pestaña Actions → "Respaldo diario" → Run workflow.
 - **Restaurar:** pestaña Actions → "Restaurar respaldo" → Run workflow, con la fecha
-  (AAAA-MM-DD o `ultimo`) y la palabra `RESTAURAR`. Vuelve a crear las órdenes que falten y deja
+  (AAAA-MM-DD, que toma el último respaldo de ese día, o `ultimo`) y la palabra `RESTAURAR`. Vuelve a crear las órdenes que falten y deja
   las existentes como estaban ese día; no borra órdenes creadas después. Sube las fotos que falten.
 - Los usuarios (correos y contraseñas) no se respaldan: se vuelven a crear en Supabase si hiciera falta.
