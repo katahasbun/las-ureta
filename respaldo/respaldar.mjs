@@ -21,6 +21,13 @@ for (let desde = 0; ; desde += 1000) {
 fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, "ordenes.json"), JSON.stringify(filas, null, 1) + "\n");
 
+// Presupuestos (si la tabla existe)
+{
+  const { data, error } = await db.from("presupuestos").select("*").order("id");
+  if (!error) fs.writeFileSync(path.join(dir, "presupuestos.json"), JSON.stringify(data, null, 1) + "\n");
+  else console.log("Presupuestos: tabla no disponible, se omite.");
+}
+
 // 2. Fotos: solo se descargan las que aún no están en el respaldo (las fotos no cambian)
 async function listar(prefijo) {
   const rutas = [];

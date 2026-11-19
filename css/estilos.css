@@ -237,3 +237,16 @@ body[data-v="papel"] nav a[href="#ordenes"]{color:var(--mute);border-bottom-colo
   body[data-v="ordenes"][data-sel="enm"] .oback,body[data-v="ordenes"][data-sel="rest"] .oback,body[data-v="ordenes"][data-sel="papel"] .oback{display:inline-block}
 }
 body[data-v="ordenes"] .v-ot>.sub{display:none}
+
+/* Por retirar, Presupuestos y pagos */
+.v-ret,.v-pres{display:none}
+body[data-v="retiros"] .v-ret,body[data-v="presupuestos"] .v-pres{display:block;max-width:900px;margin:0 auto;padding:24px 20px 64px}
+body[data-v="retiros"] .otabs,body[data-v="presupuestos"] .otabs{display:flex}
+body[data-v="retiros"] .otabs a[href="#retiros"],body[data-v="presupuestos"] .otabs a[href="#presupuestos"]{color:var(--ink);border-bottom-color:var(--gold)}
+body[data-v="retiros"] nav a[href="#ordenes"],body[data-v="presupuestos"] nav a[href="#ordenes"]{color:var(--mute);border-bottom-color:var(--gold)}
+.otabs{overflow-x:auto;scrollbar-width:none}.otabs a{white-space:nowrap}
+.ecard.rojo{border-left-color:var(--rojo)}.ecard.gris{border-left-color:var(--gris)}
+.edat{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.opagos{display:none}
+body[data-v="ordenes"][data-sel="enm"] .opagos,body[data-v="ordenes"][data-sel="rest"] .opagos,body[data-v="ordenes"][data-sel="papel"] .opagos{display:block}
+.pagoform{margin-top:12px}

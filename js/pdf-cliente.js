@@ -23,7 +23,8 @@ async function svgPng(trazos, px = 72, color = "#5a5a5a") {
   return c.toDataURL("image/png");
 }
 
-async function armarPdfCliente(J, o) {
+async function armarPdfCliente(J, o, opts = {}) {
+  const pres = !!opts.presupuesto;  // presupuesto: sin abono/saldo, con fotos y vigencia
   const d = new J({ unit: "mm", format: "a4" }), W = 210, PH = 297, M = 14, CW = W - 2 * M;
   const GRIS = [234, 234, 234], TXT = [40, 40, 40], LBL = [140, 140, 140], LIN = [208, 208, 208], SUAVE = [95, 95, 95];
   const $$ = n => "$" + Math.round(n).toLocaleString("es-CL");
@@ -53,8 +54,8 @@ async function armarPdfCliente(J, o) {
   const logo = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = "img/logo.png"; });
   if (logo) { const h = 23; d.addImage(logo, "PNG", 84, 12, h * logo.naturalWidth / logo.naturalHeight, h); }
   else { font(26, "normal", TXT); d.text("LAS URETA", 84, 28); }
-  font(9, "normal", LBL); d.text("Orden de Trabajo", W - M, 15, { align: "right" });
-  campo(146, 24, W - M - 146, "N°", o.n);
+  font(9, "normal", LBL); d.text(pres ? "Presupuesto" : "Orden de Trabajo", W - M, 15, { align: "right" });
+  campo(146, 24, W - M - 146, "N°", pres ? "P-" + o.id : o.n);
   font(7.5, "normal", LBL); d.text(o.tipo === "rest" ? "RESTAURACIÓN" : "ENMARCACIÓN", W - M - 3, 37, { align: "right" });
 
   // ---- Datos del cliente
@@ -62,10 +63,12 @@ async function armarPdfCliente(J, o) {
   const mitad = (CW - 3) / 2, y0 = 45;
   campo(M, y0, 124, "Nombre", o.nom);
   campo(M + 127, y0, CW - 127, "Fono", o.tel);
-  campo(M, y0 + 9, mitad, "Recepción", fd(new Date(o.creado)));
-  campo(M + mitad + 3, y0 + 9, mitad, "Entrega", ent ? ent.charAt(0).toUpperCase() + ent.slice(1) : "");
+  campo(M, y0 + 9, mitad, pres ? "Fecha" : "Recepción", fd(new Date(o.creado)));
+  if (pres) campo(M + mitad + 3, y0 + 9, mitad, "Válido hasta", fd(new Date(o.vence)));
+  else campo(M + mitad + 3, y0 + 9, mitad, "Entrega", ent ? ent.charAt(0).toUpperCase() + ent.slice(1) : "");
   campo(M, y0 + 18, CW, "Correo", o.mail);
-  if (o.tipo === "rest") campo(M, y0 + 27, CW, "Forma de pago", o.pago);
+  if (pres) campo(M, y0 + 27, CW, "Atendido por", o.vendedora);
+  else if (o.tipo === "rest") campo(M, y0 + 27, CW, "Forma de pago", o.pago);
   else campo(M, y0 + 27, CW, "¿Dónde nos conociste?", o.como);
 
   // ---- Detalle en líneas (como el cuaderno de la orden de papel)
@@ -113,6 +116,20 @@ async function armarPdfCliente(J, o) {
       raya(); y += LH;
     });
   }
+  // Fotos de la obra y de la muestra de moldura (presupuesto)
+  if (pres) {
+    const fotos = [];
+    for (const it of o.items || []) { if (it.ph1) fotos.push([it.ph1, it.nombre || "Obra"]); if (it.ph2) fotos.push([it.ph2, "Muestra de moldura" + (it.nombre ? " · " + it.nombre : "")]); }
+    const cargaImg = u => new Promise(r => { const src = typeof fotoSrc === "function" ? fotoSrc(u) : u; if (!src) return r(null); const i = new Image(); if (!String(src).startsWith("data:")) i.crossOrigin = "anonymous"; i.onload = () => r(i); i.onerror = () => r(null); i.src = src; });
+    const BW = (CW - 8) / 3, BH = 48;
+    for (let i = 0; i < fotos.length; i++) {
+      if (i % 3 === 0) { if (y + BH + 14 > pieArriba) { d.addPage(); y = M + 4; } y += 4; }
+      const [u, cap] = fotos[i], x = M + (i % 3) * (BW + 4), im = await cargaImg(u);
+      if (im) { const s = Math.min(BW / im.naturalWidth, BH / im.naturalHeight), w = im.naturalWidth * s, h = im.naturalHeight * s; d.addImage(im, "JPEG", x + (BW - w) / 2, y + (BH - h) / 2, w, h); }
+      font(8, "normal", LBL); d.text(recorta(cap, BW), x, y + BH + 4);
+      if (i % 3 === 2 || i === fotos.length - 1) y += BH + 8;
+    }
+  }
   while (y + LH <= pieArriba) { raya(); y += LH; }
 
   // ---- Aviso de retiro
@@ -120,21 +137,25 @@ async function armarPdfCliente(J, o) {
   d.setFillColor(GRIS[0], GRIS[1], GRIS[2]); d.roundedRect(M, fy, CW, 13, 6.5, 6.5, "F");
   if (ic.info) d.addImage(ic.info, "PNG", M + 4.5, fy + 3.5, 6, 6);
   font(8, "normal", SUAVE);
-  d.text("Te avisaremos cuando tu pedido esté listo para retirar. Los trabajos se entregan a partir de las 17:30 hrs.", M + 14, fy + 5.5);
-  d.text("No se responde por trabajos pasados los 60 días. Precios con IVA incluido.", M + 14, fy + 9.6);
+  d.text(pres ? "Presupuesto válido por 30 días desde su emisión. Precios con IVA incluido." : "Te avisaremos cuando tu pedido esté listo para retirar. Los trabajos se entregan a partir de las 17:30 hrs.", M + 14, fy + 5.5);
+  d.text(pres ? "Para confirmarlo, escríbenos por WhatsApp o visítanos en la tienda." : "No se responde por trabajos pasados los 60 días. Precios con IVA incluido.", M + 14, fy + 9.6);
 
   // ---- Atendido por · Total · Abono · Saldo
   const r = resumenOT(o), sinPrecio = o.tipo === "rest" && !r.total;
-  const by = PH - 24, cols = [
+  const by = PH - 24, cols = pres ? [
+    [M, 110, "ATENDIDO POR", o.vendedora || ""],
+    [M + 113, CW - 113, "TOTAL", $$(r.total)],
+  ] : [
     [M, 68, "ATENDIDO POR", o.vendedora || ""],
     [M + 71, 36, "TOTAL", sinPrecio ? "Por evaluar" : $$(r.total)],
-    [M + 110, 34, "ABONO" + (o.pago && r.ab ? ` (${o.pago.toUpperCase()})` : ""), $$(r.ab)],
+    [M + 110, 34, ((o.pagos || []).length ? "PAGADO" : "ABONO" + (o.pago && r.ab ? ` (${o.pago.toUpperCase()})` : "")), $$(r.ab)],
     [M + 147, CW - 147, "SALDO", sinPrecio ? "—" : $$(r.saldo)],
   ];
   cols.forEach(([x, w, etq, val], i) => {
     font(6.8, "normal", LBL); d.text(etq, x + 2, by);
     pill(x, by + 1.8, w, 8);
-    font(i === 3 ? 10.5 : 9.5, i === 3 ? "bold" : "normal", TXT);
+    const fuerte = etq === "SALDO" || (pres && etq === "TOTAL");
+    font(fuerte ? 10.5 : 9.5, fuerte ? "bold" : "normal", TXT);
     d.text(recorta(val, w - 8), x + 4, by + 7.2);
   });
   return d;

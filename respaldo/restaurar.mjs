@@ -21,6 +21,15 @@ for (let i = 0; i < limpias.length; i += 200) {
   if (error) throw error;
 }
 
+const archivoPres = path.join(dir, "presupuestos.json");
+if (fs.existsSync(archivoPres)) {
+  const pres = JSON.parse(fs.readFileSync(archivoPres, "utf8")).map(({ creado_por, ...f }) => f);
+  for (let i = 0; i < pres.length; i += 200) {
+    const { error } = await db.from("presupuestos").upsert(pres.slice(i, i + 200), { onConflict: "id" });
+    if (error) throw error;
+  }
+}
+
 let subidas = 0;
 const base = path.join(dir, "fotos");
 function archivos(carpeta) {

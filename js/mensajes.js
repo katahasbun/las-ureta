@@ -46,6 +46,36 @@ const MENSAJES = {
     ];
   },
 
+  // Presupuesto guardado desde el cotizador (se adjunta el PDF)
+  presupuesto(p) {
+    return [
+      `¡Hola${saludo(p)}! 👋✨`,
+      "",
+      "Muchas gracias por cotizar con Las Ureta 🖼️💛",
+      `Te enviamos tu presupuesto N.º P-${p.id} por un total de ${clp(resumenOT(p).total)}.`,
+      `📅 Válido hasta el ${fd(new Date(p.vence))}.`,
+      "",
+      "Te adjuntamos el detalle con las fotos 📎",
+      "Si quieres confirmarlo o tienes dudas, escríbenos por aquí 😊",
+    ];
+  },
+
+  // Recordatorio de retiro (cada 2 semanas desde el último aviso)
+  recordatorio(o) {
+    return [
+      `¡Hola${saludo(o)}! 👋`,
+      "",
+      `Te recordamos que tu orden N.º ${o.n} está lista para retirar en nuestra tienda 🖼️✨`,
+      "",
+      "Te esperamos 🏠",
+      "Lunes a viernes de 10:00 a 18:30 hrs",
+      "Sábados y domingos de 10:00 a 18:00 hrs",
+      "Almuerzo de 14:00 a 14:45 hrs",
+      "",
+      "¡Muchas gracias por confiar en Las Ureta! 💛",
+    ];
+  },
+
   // Al cambiar el estado a "Devuelta al taller"
   devuelta(o) {
     return [
@@ -81,15 +111,18 @@ const MENSAJES = {
 const saludo = o => { const n = (o.nom || "").trim().split(/\s+/)[0]; return n ? " " + n : ""; };
 
 // Total (con descuento de convenio), abono y saldo de una orden
+// Pagos registrados después del abono inicial
+const pagosExtra = o => (o.pagos || []).reduce((a, p) => a + (+p.monto || 0), 0);
+
 function resumenOT(o) {
-  if (o.papel) { const total = +o.total || 0, ab = +o.abono || 0; return { total, ab, saldo: Math.max(0, total - ab) }; }
+  if (o.papel) { const total = +o.total || 0, ab = (+o.abono || 0) + pagosExtra(o); return { total, ab, saldo: Math.max(0, total - ab) }; }
   if (o.tipo === "rest") {
-    const total = parseFloat(o.precio) || 0, ab = parseFloat(o.abono) || 0;
+    const total = parseFloat(o.precio) || 0, ab = (parseFloat(o.abono) || 0) + pagosExtra(o);
     return { total, ab, saldo: Math.max(0, total - ab) };
   }
   const bruto = (o.items || []).reduce((a, x) => a + x.c.tot, 0);
   const pct = o.conv && o.conv !== "No" ? +o.dcto || 0 : 0;
-  const total = bruto * (1 - pct / 100) + (o.desp ? +o.despCosto || 0 : 0), ab = parseFloat(o.abono) || 0;
+  const total = bruto * (1 - pct / 100) + (o.desp ? +o.despCosto || 0 : 0), ab = (parseFloat(o.abono) || 0) + pagosExtra(o);
   return { total, ab, saldo: Math.max(0, total - ab) };
 }
 

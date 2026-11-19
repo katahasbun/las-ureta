@@ -82,3 +82,26 @@ async function guardarOrden(o) {
 }
 
 async function cerrarSesion() { if (db) await db.auth.signOut(); location.hash = ""; location.reload(); }
+
+// ---- Presupuestos (tabla aparte, con numeración propia P-1, P-2…)
+function presDeFila(f) { return { ...f.datos, id: f.id, estado: f.estado, ot: f.ot, creado: Date.parse(f.creado) }; }
+function presAFila(p) { const { id, estado, ot, creado, ...datos } = p; return { datos, estado: estado || "Pendiente", ot: ot || null }; }
+async function cargarPresupuestos() {
+  const { data, error } = await db.from("presupuestos").select("*").order("id", { ascending: false });
+  if (error) { console.error(error); return null; }
+  const L = data.map(presDeFila);
+  await firmarFotos(L);
+  return L;
+}
+async function crearPresupuesto(p) {
+  await subirFotos(p);
+  const { data, error } = await db.from("presupuestos").insert(presAFila(p)).select().single();
+  if (error) throw error;
+  p.id = data.id; p.creado = Date.parse(data.creado); p.estado = data.estado;
+  return p;
+}
+async function guardarPresupuesto(p) {
+  const { error } = await db.from("presupuestos").update(presAFila(p)).eq("id", p.id);
+  if (error) { console.error(error); toast("No se pudo actualizar el presupuesto"); return false; }
+  return true;
+}
