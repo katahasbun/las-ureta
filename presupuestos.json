@@ -1,0 +1,93 @@
+[
+ {
+  "id": 1,
+  "datos": {
+   "nom": "claudia",
+   "tel": "984147314",
+   "conv": "No",
+   "mail": "kata.hasbun.ureta@gmail.com",
+   "tipo": "enm",
+   "abono": "",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,12 ML)",
+        89040
+       ],
+       [
+        "Vidrio (0,200 m²)",
+        10000
+       ]
+      ],
+      "u": 1,
+      "ml": 1.8,
+      "mls": [
+       2.12
+      ],
+      "mvA": 40,
+      "mvW": 50,
+      "tot": 99040,
+      "area": 0.2,
+      "unit": 99040
+     },
+     "m": [
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "01-6"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "5",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "30",
+     "cant": "1",
+     "mats": [
+      "Entre vidrios sencillo"
+     ],
+     "urgF": "",
+     "ancho": "40",
+     "molds": [
+      2
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Acuarela",
+     "region": ""
+    }
+   ],
+   "vence": 1797692278882,
+   "vendedora": "katalina"
+  },
+  "estado": "Pendiente",
+  "ot": null,
+  "creado": "2026-11-19T14:58:00.086258+00:00",
+  "actualizado": "2026-11-19T14:58:00.086258+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ }
+]
