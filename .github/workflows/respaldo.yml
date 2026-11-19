@@ -1,14 +1,12 @@
 name: Respaldo diario
 
-# Tres veces al día: 12:00, 15:00 y 21:00 en Chile con horario de verano (UTC-3).
-# En horario de invierno (UTC-4) corren una hora antes: 11:00, 14:00 y 20:00.
+# Cada hora durante el horario de la tienda: de 10:30 a 19:30 en Chile con horario de verano (UTC-3),
+# es decir, de 13:30 a 22:30 UTC. En horario de invierno (UTC-4) corren una hora antes (9:30 a 18:30).
 # GitHub puede atrasarlos unos minutos en horas de mucho uso.
 # También se puede ejecutar a mano desde la pestaña Actions → "Respaldo diario" → "Run workflow".
 on:
   schedule:
-    - cron: "0 15 * * *"
-    - cron: "0 18 * * *"
-    - cron: "0 0 * * *"
+    - cron: "30 13-22 * * *"
   workflow_dispatch:
 
 permissions:

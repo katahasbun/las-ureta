@@ -31,7 +31,7 @@ ingresando con un usuario creado en Supabase → Authentication → Users.
 - Proveedor por definir: molduras «Especiales», «Grecado» y 14 códigos «Por definir».
 
 ## Respaldos
-- **Automático, tres veces al día: 12:00, 15:00 y 21:00** (hora de Chile; GitHub Actions, `.github/workflows/respaldo.yml`):
+- **Automático, cada hora de 10:30 a 19:30** (hora de Chile; GitHub Actions, `.github/workflows/respaldo.yml`):
   copia todas las órdenes (`ordenes.json`) y las fotos a la rama `respaldos` de este repositorio.
   Cada commit de esa rama es el respaldo de un día; las fotos se guardan una sola vez.
 - Necesita el secret **`SUPABASE_SECRET_KEY`** (clave secreta de Supabase) en
