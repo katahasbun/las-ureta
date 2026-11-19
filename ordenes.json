@@ -1235,7 +1235,7 @@
  {
   "n": 49289,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1245,7 +1245,14 @@
    "nom": "maria ximena mendez",
    "tel": "977486740",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795122741478,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "126000",
@@ -1261,7 +1268,7 @@
    "vendedora": "katalina"
   },
   "creado": "2026-11-16T19:41:18.834149+00:00",
-  "actualizado": "2026-11-16T19:41:18.834149+00:00",
+  "actualizado": "2026-11-19T21:12:23.653444+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3753,6 +3760,76 @@
   "creado": "2026-11-19T18:16:25.311599+00:00",
   "actualizado": "2026-11-19T18:32:39.127417+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49338,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "Lámina fuerza aérea\nPegar en madera\nAl porte con moldura 2x2 tepa negra \nVidrio sencillo",
+   "dir": "",
+   "nom": "Iván Travisany",
+   "tel": "+56975180380",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "46950",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-18",
+   "total": "93900",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "vendedora": "Veronica",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T20:40:42.417505+00:00",
+  "actualizado": "2026-11-19T20:40:42.417505+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49339,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "Garantía 49262\nTextil flores punto cruz. Repintar a oroplata",
+   "dir": "",
+   "nom": "Verónica Alvarado",
+   "tel": "+56995904181",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "",
+   "abono": "",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-19",
+   "total": "",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "vendedora": "",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T21:14:26.033915+00:00",
+  "actualizado": "2026-11-19T21:14:51.624654+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
