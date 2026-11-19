@@ -3572,5 +3572,118 @@
   "actualizado": "2026-11-19T16:34:36.461822+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49336,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Pilar Dueñas",
+   "tel": "5697684496",
+   "como": "Cliente",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "",
+   "abono": "35560",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,60 ML)",
+        56000
+       ],
+       [
+        "Vidrio (0,126 m²)",
+        5040
+       ],
+       [
+        "Montaje: Pegado telas/papel (0,126 m²)",
+        10080
+       ]
+      ],
+      "u": 1,
+      "ml": 1.44,
+      "mls": [
+       1.6
+      ],
+      "mvA": 42,
+      "mvW": 30,
+      "tot": 71120,
+      "area": 0.126,
+      "unit": 71120
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "227-374"
+     ],
+     "mw": [
+      "2"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "1",
+      "0",
+      "0",
+      "5",
+      "0"
+     ],
+     "alto": "42",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo"
+     ],
+     "urgF": "",
+     "ancho": "30",
+     "molds": [
+      26
+     ],
+     "blanco": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "desmOp": [],
+     "nombre": "Diploma Andrés bello carlos Recabarren ",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "50",
+   "despCosto": "",
+   "vendedora": "Verónica",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-19T18:16:25.311599+00:00",
+  "actualizado": "2026-11-19T18:16:25.311599+00:00",
+  "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
+  "actualizado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0"
  }
 ]
