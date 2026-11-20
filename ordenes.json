@@ -1267,10 +1267,18 @@
    "taller": "Rodrigo",
    "entTipo": "s",
    "entFecha": "",
-   "vendedora": "Veronica"
+   "vendedora": "Veronica",
+   "pendientes": [
+    {
+     "t": 1795207012731,
+     "id": "mwpfwk8ryx77",
+     "por": "Team",
+     "texto": "devolver marco abanico"
+    }
+   ]
   },
   "creado": "2026-11-16T19:36:57.268495+00:00",
-  "actualizado": "2026-11-20T16:37:54.049086+00:00",
+  "actualizado": "2026-11-20T20:36:51.709468+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1547,10 +1555,18 @@
    "taller": "Mariano",
    "entTipo": "s",
    "entFecha": "",
-   "vendedora": ""
+   "vendedora": "",
+   "pendientes": [
+    {
+     "t": 1795207061282,
+     "id": "mwpfxlpertht",
+     "por": "Team",
+     "texto": "Envío de marco foliado y achicado"
+    }
+   ]
   },
   "creado": "2026-11-16T19:47:18.00134+00:00",
-  "actualizado": "2026-11-16T19:47:18.00134+00:00",
+  "actualizado": "2026-11-20T20:37:40.248455+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -2595,10 +2611,18 @@
    "taller": "Rodrigo",
    "entTipo": "s",
    "entFecha": "",
-   "vendedora": "Leo"
+   "vendedora": "Leo",
+   "pendientes": [
+    {
+     "t": 1795206994443,
+     "id": "mwpfw64riz3c",
+     "por": "Team",
+     "texto": "Ro envía a las 13hrs"
+    }
+   ]
   },
   "creado": "2026-11-16T20:45:45.096143+00:00",
-  "actualizado": "2026-11-19T15:30:45.767368+00:00",
+  "actualizado": "2026-11-20T20:36:33.579047+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4456,17 +4480,17 @@
    ],
    "region": "",
    "taller": "",
-   "entTipo": "s",
+   "entTipo": "f",
    "factura": false,
-   "entFecha": "",
-   "abonoTipo": "100",
+   "entFecha": "2026-12-06",
+   "abonoTipo": "v",
    "despCosto": "",
    "vendedora": "katalina",
    "facturaDatos": ""
   },
   "creado": "2026-11-20T19:39:29.98905+00:00",
-  "actualizado": "2026-11-20T19:39:29.98905+00:00",
+  "actualizado": "2026-11-20T20:35:44.358853+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
-  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]

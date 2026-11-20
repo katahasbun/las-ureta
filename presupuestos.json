@@ -183,5 +183,96 @@
   "creado": "2026-11-20T17:39:57.88333+00:00",
   "actualizado": "2026-11-20T17:39:57.88333+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "id": 3,
+  "datos": {
+   "nom": "Martin",
+   "tel": "932249133",
+   "conv": "No",
+   "mail": "",
+   "tipo": "enm",
+   "abono": "",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,46 ML)",
+        154980
+       ],
+       [
+        "Vidrio (0,302 m²)",
+        27216
+       ]
+      ],
+      "u": 1,
+      "ml": 2.22,
+      "mls": [
+       2.46
+      ],
+      "mvA": 63,
+      "mvW": 48,
+      "tot": 182196,
+      "area": 0.3024,
+      "unit": 182196
+     },
+     "m": [
+      "5",
+      "5",
+      "5",
+      "5"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "8312"
+     ],
+     "mw": [
+      "3"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "6",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "53",
+     "cant": "1",
+     "mats": [
+      "Entre vidrios opaco"
+     ],
+     "urgF": "",
+     "ancho": "38",
+     "molds": [
+      77
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Diploma Martin",
+     "region": ""
+    }
+   ],
+   "vence": 1797798772093,
+   "vendedora": "katalina"
+  },
+  "estado": "Pendiente",
+  "ot": null,
+  "creado": "2026-11-20T20:32:52.694479+00:00",
+  "actualizado": "2026-11-20T20:32:52.694479+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  }
 ]
