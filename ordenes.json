@@ -1532,7 +1532,7 @@
  {
   "n": 49293,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1542,7 +1542,14 @@
    "nom": "Maritza Abusada",
    "tel": "997791623",
    "desp": true,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795209507866,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "156000",
@@ -1566,7 +1573,7 @@
    ]
   },
   "creado": "2026-11-16T19:47:18.00134+00:00",
-  "actualizado": "2026-11-20T20:37:40.248455+00:00",
+  "actualizado": "2026-11-20T21:18:27.461586+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
