@@ -153,7 +153,7 @@
   <div id="provList"></div>
   <div class="card"><h2>Qué se pide a quién</h2><p class="sub" style="margin-bottom:10px">Catálogo de ejemplo: aquí irán todas las opciones reales con su proveedor.</p><div id="provCat"></div></div>
 </section>
-<div class="otabs" role="tablist"><a href="#ordenes" role="tab">Órdenes de trabajo</a><a href="#envios" role="tab">Envíos a domicilio <span id="envCnt"></span></a><a href="#retiros" role="tab">Por retirar <span id="retCnt"></span></a><a href="#presupuestos" role="tab">Presupuestos <span id="presCnt"></span></a></div>
+<div class="otabs" role="tablist"><a href="#ordenes" role="tab">Órdenes de trabajo</a><a href="#envios" role="tab">Envíos a domicilio <span id="envCnt"></span></a><a href="#retiros" role="tab">Por retirar <span id="retCnt"></span></a><a href="#presupuestos" role="tab">Presupuestos <span id="presCnt"></span></a><a href="#pendientes" role="tab">Pendientes <span id="pendCnt"></span></a></div>
 <section class="v-env">
   <span class="eyebrow">Órdenes de trabajo</span>
   <h1>Envíos a domicilio</h1>
@@ -171,6 +171,18 @@
   <h1>Presupuestos</h1>
   <p class="sub">Presupuestos guardados desde el cotizador, válidos por 30 días. Al retomarlos, sus trabajos vuelven al carrito para crear la orden.</p>
   <div id="presList"></div>
+</section>
+<section class="v-pend">
+  <span class="eyebrow">Órdenes de trabajo</span>
+  <h1>Pendientes</h1>
+  <p class="sub">Notas de cosas por hacer en cada orden. Las ven todas las vendedoras.</p>
+  <div class="card"><h2>Nuevo pendiente</h2>
+    <div class="grid"><div><label for="pdOT">N° de OT</label><input type="number" id="pdOT" placeholder="Ej.: 49330" min="1"></div></div>
+    <label for="pdTx" style="margin-top:12px">Pendiente</label>
+    <textarea id="pdTx" rows="3" placeholder="Ej.: Llamar al cliente para confirmar el color de la moldura"></textarea>
+    <div style="margin-top:12px"><button class="btn p" id="pdAdd" type="button">Agregar pendiente</button></div>
+  </div>
+  <div id="pendList"></div>
 </section>
 <section class="v-ord">
 <aside class="olist">
@@ -250,7 +262,7 @@
   <div class="card"><h2>Orden</h2>
     <div class="grid"><div><label for="pN">N° de la orden</label><input type="number" id="pN" placeholder="Ej.: 49225" min="1"></div><div><label for="pTipo">Tipo</label><select id="pTipo"><option value="enm">Enmarcación</option><option value="rest">Restauración</option></select></div><div><label for="pLocal">Local</label><input type="text" id="pLocal" placeholder="Ej.: M"></div></div>
     <div class="grid" style="margin-top:12px"><div><label for="pRecep">Recepción</label><input type="date" id="pRecep"></div><div><label for="pEntTipo">Entrega</label><select id="pEntTipo"><option value="s">2 a 3 semanas</option><option value="f">Fecha específica</option></select></div><div id="pFechaBox" style="display:none"><label for="pEntFecha">Fecha de entrega</label><input type="date" id="pEntFecha"></div></div>
-    <div class="grid" style="margin-top:12px"><div><label for="pVend">Atendido por</label><input type="text" id="pVend"></div><div><label for="pEstado">Estado actual</label><select id="pEstado"></select></div><div><label for="pTaller">Taller</label><select id="pTaller"><option value="">Sin asignar</option><option>Mariano</option><option>Rodrigo</option></select></div></div>
+    <div class="grid" style="margin-top:12px"><div class="chk" style="align-self:end;margin-bottom:10px"><input type="checkbox" id="pUrg"><label for="pUrg" style="margin:0;color:var(--ink);font-size:15px">Urgente</label></div><div><label for="pVend">Atendido por</label><input type="text" id="pVend"></div><div><label for="pEstado">Estado actual</label><select id="pEstado"></select></div><div><label for="pTaller">Taller</label><select id="pTaller"><option value="">Sin asignar</option><option>Mariano</option><option>Rodrigo</option></select></div></div>
   </div>
   <div class="card"><h2>Cliente</h2>
     <div class="grid"><div><label for="pNom">Nombre</label><input type="text" id="pNom"></div><div><label for="pTel">Teléfono</label><input type="text" id="pTel" placeholder="+56 9"></div></div>
