@@ -1750,7 +1750,7 @@
  {
   "n": 49299,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1773,6 +1773,12 @@
      "de": "Recibida",
      "wa": true,
      "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795204000820,
+     "de": "Lista para retirar",
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -1791,7 +1797,7 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T20:00:36.975916+00:00",
-  "actualizado": "2026-11-20T16:52:07.039387+00:00",
+  "actualizado": "2026-11-20T19:46:40.759715+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4362,6 +4368,104 @@
   },
   "creado": "2026-11-20T18:33:44.780268+00:00",
   "actualizado": "2026-11-20T18:33:44.780268+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "n": 49343,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Rocio Borda",
+   "tel": "995857369",
+   "como": "Boca a boca",
+   "conv": "Otro",
+   "dcto": "15",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "152592",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (4,08 ML)",
+        179520
+       ]
+      ],
+      "u": 1,
+      "ml": 4,
+      "mls": [
+       4.08
+      ],
+      "mvA": 100,
+      "mvW": 100,
+      "tot": 179520,
+      "area": 1,
+      "unit": 179520
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      "Bordes negro frente oro envejecido "
+     ],
+     "mm": "",
+     "mn": [
+      "Tepa 1x3 (Bordes negro frente oro envejecido )"
+     ],
+     "mw": [
+      "1"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/63ad21e3-e268-4918-bca0-6716719c7405.jpg",
+     "ph2": "2026-11/b81dafa5-a4d3-4fe1-ada0-4b29104c9904.jpg",
+     "sel": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "100",
+     "cant": "1",
+     "mats": [],
+     "urgF": "",
+     "ancho": "100",
+     "molds": [
+      157
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Bertini neutros ",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "100",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-20T19:39:29.98905+00:00",
+  "actualizado": "2026-11-20T19:39:29.98905+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  }
