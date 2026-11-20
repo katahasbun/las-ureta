@@ -968,7 +968,7 @@
  {
   "n": 49278,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -978,7 +978,15 @@
    "nom": "Patricio Sabag",
    "tel": "992503045",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795188645383,
+     "de": "Enviada al taller",
+     "wa": true,
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "92770",
@@ -989,12 +997,13 @@
    "total": "92770",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795188645383,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "Josefa"
   },
   "creado": "2026-11-16T19:24:36.230428+00:00",
-  "actualizado": "2026-11-16T19:24:36.230428+00:00",
+  "actualizado": "2026-11-20T15:30:45.735032+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1081,7 +1090,7 @@
  {
   "n": 49283,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1091,7 +1100,14 @@
    "nom": "Macarena Arias",
    "tel": "965164606",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795188718900,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "190000",
@@ -1107,7 +1123,7 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:30:48.958669+00:00",
-  "actualizado": "2026-11-16T19:30:48.958669+00:00",
+  "actualizado": "2026-11-20T15:31:58.700402+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1159,7 +1175,7 @@
  {
   "n": 49285,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1169,7 +1185,14 @@
    "nom": "Manuel Cepeda",
    "tel": "998701090",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795188754571,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "543250",
@@ -1185,7 +1208,7 @@
    "vendedora": ""
   },
   "creado": "2026-11-16T19:35:17.752105+00:00",
-  "actualizado": "2026-11-16T19:35:17.752105+00:00",
+  "actualizado": "2026-11-20T15:32:34.332245+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
