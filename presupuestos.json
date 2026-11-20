@@ -89,5 +89,99 @@
   "creado": "2026-11-19T14:58:00.086258+00:00",
   "actualizado": "2026-11-19T14:58:00.086258+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "id": 2,
+  "datos": {
+   "nom": "Marcelo",
+   "tel": "93371790",
+   "conv": "No",
+   "mail": "",
+   "tipo": "enm",
+   "abono": "",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,76 ML)",
+        187680
+       ],
+       [
+        "Moldura 2 (3,16 ML)",
+        284400
+       ]
+      ],
+      "u": 1,
+      "ml": 2.6,
+      "mls": [
+       2.76,
+       3.16
+      ],
+      "mvA": 60,
+      "mvW": 70,
+      "tot": 472080,
+      "area": 0.42,
+      "unit": 472080
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      "2x2 forrado en lino ",
+      "Folia Oro Envejecido "
+     ],
+     "mm": "",
+     "mn": [
+      "10-1 (2x2 forrado en lino )",
+      "Ro-880 Tepa (Folia Oro Envejecido )"
+     ],
+     "mw": [
+      "2",
+      "7"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "60",
+     "cant": "1",
+     "mats": [],
+     "urgF": "",
+     "ancho": "70",
+     "molds": [
+      16,
+      156
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Oleo Pacheco altamirano ",
+     "region": ""
+    }
+   ],
+   "vence": 1797788398158,
+   "vendedora": "Team"
+  },
+  "estado": "Pendiente",
+  "ot": null,
+  "creado": "2026-11-20T17:39:57.88333+00:00",
+  "actualizado": "2026-11-20T17:39:57.88333+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
