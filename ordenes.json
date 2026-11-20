@@ -2896,7 +2896,7 @@
  {
   "n": 49328,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -2918,6 +2918,12 @@
      "t": 1795118942038,
      "de": "Enviada al taller",
      "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795183554200,
+     "de": "Recibida",
+     "por": "katalina"
     }
    ],
    "mail": "",
@@ -2925,19 +2931,29 @@
    "abono": "85250",
    "items": [],
    "local": "",
+   "pagos": [
+    {
+     "t": 1795183423065,
+     "por": "katalina",
+     "forma": "POS",
+     "monto": 85250
+    }
+   ],
    "papel": true,
    "recep": "2026-11-17",
    "total": "170500",
    "region": "",
    "taller": "Rodrigo",
    "entTipo": "s",
+   "factura": true,
    "entFecha": "",
-   "vendedora": "Veronica"
+   "vendedora": "Veronica",
+   "facturaDatos": "Rut: 78042561-K\nMédicas biohertz spa \nContabilidad@biohertz.cl"
   },
   "creado": "2026-11-18T15:57:10.51141+00:00",
-  "actualizado": "2026-11-19T20:09:02.274097+00:00",
+  "actualizado": "2026-11-20T14:05:54.426334+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
-  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  },
  {
   "n": 49329,
@@ -3845,5 +3861,103 @@
   "actualizado": "2026-11-19T21:14:51.624654+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49340,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Francisca monte",
+   "tel": "976140556",
+   "como": "Cliente",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "48600",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (2,16 ML)",
+        97200
+       ]
+      ],
+      "u": 1,
+      "ml": 2,
+      "mls": [
+       2.16
+      ],
+      "mvA": 40,
+      "mvW": 60,
+      "tot": 97200,
+      "area": 0.24,
+      "unit": 97200
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      "Albayalde"
+     ],
+     "mm": "",
+     "mn": [
+      "2x2 Tepa (Albayalde)"
+     ],
+     "mw": [
+      "2"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/86633fc2-e60f-4b3c-8df0-8644881de5af.jpg",
+     "ph2": "2026-11/2f11b67f-9d86-4d5b-a097-a57edc6676bb.jpg",
+     "sel": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "40",
+     "cant": "1",
+     "mats": [],
+     "urgF": "",
+     "ancho": "60",
+     "molds": [
+      146
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Tela verde pastizal ",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "f",
+   "factura": false,
+   "entFecha": "2026-12-06",
+   "abonoTipo": "50",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-20T13:52:01.436337+00:00",
+  "actualizado": "2026-11-20T13:52:01.436337+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  }
 ]
