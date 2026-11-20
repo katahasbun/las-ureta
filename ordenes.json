@@ -1215,7 +1215,7 @@
  {
   "n": 49286,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Devuelta al taller",
   "datos": {
    "ph": [
     null
@@ -1225,7 +1225,14 @@
    "nom": "Maria ines cifuentes",
    "tel": "937650837",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Devuelta al taller",
+     "t": 1795192674214,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "50110",
@@ -1241,7 +1248,7 @@
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:36:57.268495+00:00",
-  "actualizado": "2026-11-16T19:36:57.268495+00:00",
+  "actualizado": "2026-11-20T16:37:54.049086+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1368,7 +1375,7 @@
  {
   "n": 49290,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1378,12 +1385,33 @@
    "nom": "Maria teresa",
    "tel": "963269714",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795192705822,
+     "de": "Enviada al taller",
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795193236023,
+     "de": "Lista para retirar",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "120000",
    "items": [],
    "local": "",
+   "pagos": [
+    {
+     "t": 1795192972341,
+     "por": "Team",
+     "forma": "POS",
+     "monto": 120000
+    }
+   ],
    "papel": true,
    "recep": "2026-11-02",
    "total": "240000",
@@ -1394,14 +1422,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:42:28.917517+00:00",
-  "actualizado": "2026-11-16T19:42:28.917517+00:00",
+  "actualizado": "2026-11-20T16:47:15.704576+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49291,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1411,7 +1439,14 @@
    "nom": "Mercedes",
    "tel": "988032933",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795192725569,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "38000",
@@ -1427,7 +1462,7 @@
    "vendedora": "katalina"
   },
   "creado": "2026-11-16T19:43:47.268018+00:00",
-  "actualizado": "2026-11-16T19:43:47.268018+00:00",
+  "actualizado": "2026-11-20T16:38:45.059446+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1500,7 +1535,7 @@
  {
   "n": 49294,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1510,7 +1545,14 @@
    "nom": "Ricardo Massu",
    "tel": "96124912",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795192808310,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "Transferencia",
    "abono": "70000",
@@ -1526,14 +1568,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:49:30.689033+00:00",
-  "actualizado": "2026-11-16T19:49:30.689033+00:00",
+  "actualizado": "2026-11-20T16:40:08.056993+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49295,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1543,7 +1585,14 @@
    "nom": "Pablo",
    "tel": "932571247",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795192826453,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "55000",
@@ -1559,14 +1608,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:51:00.112433+00:00",
-  "actualizado": "2026-11-16T19:51:00.112433+00:00",
+  "actualizado": "2026-11-20T16:40:25.916941+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49296,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1576,7 +1625,14 @@
    "nom": "Daniela orellana",
    "tel": "992312609",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795192829129,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "57950",
@@ -1592,7 +1648,7 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:54:47.984685+00:00",
-  "actualizado": "2026-11-16T19:54:47.984685+00:00",
+  "actualizado": "2026-11-20T16:40:28.545795+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1632,7 +1688,7 @@
  {
   "n": 49298,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1642,7 +1698,14 @@
    "nom": "Sabina Sepulveda",
    "tel": "983620518",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795193576363,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "67500",
@@ -1658,14 +1721,14 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T19:58:25.200383+00:00",
-  "actualizado": "2026-11-16T19:58:25.200383+00:00",
+  "actualizado": "2026-11-20T16:52:55.719495+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49299,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1681,6 +1744,13 @@
      "t": 1795118962662,
      "de": "Enviada al taller",
      "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795193527739,
+     "de": "Recibida",
+     "wa": true,
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -1693,19 +1763,20 @@
    "total": "225900",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795193527739,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T20:00:36.975916+00:00",
-  "actualizado": "2026-11-19T20:09:22.663685+00:00",
+  "actualizado": "2026-11-20T16:52:07.039387+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49300,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1721,6 +1792,13 @@
      "t": 1795118992726,
      "de": "Enviada al taller",
      "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795193410633,
+     "de": "Recibida",
+     "wa": true,
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -1733,19 +1811,20 @@
    "total": "126600",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795193410633,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:03:05.80401+00:00",
-  "actualizado": "2026-11-19T20:09:52.726658+00:00",
+  "actualizado": "2026-11-20T16:50:10.031918+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49301,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1755,7 +1834,14 @@
    "nom": "Cristian peñaloza",
    "tel": "967678493",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795193379885,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "101620",
@@ -1771,14 +1857,14 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:04:18.640483+00:00",
-  "actualizado": "2026-11-16T20:04:18.640483+00:00",
+  "actualizado": "2026-11-20T16:49:39.295607+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49302,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1788,7 +1874,14 @@
    "nom": "Paula Ubilla",
    "tel": "993183719",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795193373180,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "116070",
@@ -1804,7 +1897,7 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T20:07:00.141478+00:00",
-  "actualizado": "2026-11-16T20:07:00.141478+00:00",
+  "actualizado": "2026-11-20T16:49:32.806685+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
