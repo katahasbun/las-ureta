@@ -206,7 +206,7 @@
  {
   "n": 49228,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -221,6 +221,12 @@
      "a": "Lista para retirar",
      "t": 1795186878933,
      "de": "Enviada al taller",
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795201394328,
+     "de": "Lista para retirar",
      "por": "Team"
     }
    ],
@@ -239,7 +245,7 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T18:35:55.30125+00:00",
-  "actualizado": "2026-11-20T15:01:18.932115+00:00",
+  "actualizado": "2026-11-20T19:03:14.561334+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1090,7 +1096,7 @@
  {
   "n": 49283,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1106,6 +1112,12 @@
      "t": 1795188718900,
      "de": "Enviada al taller",
      "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795201752383,
+     "de": "Lista para retirar",
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -1113,17 +1125,27 @@
    "abono": "190000",
    "items": [],
    "local": "R",
+   "pagos": [
+    {
+     "t": 1795201746260,
+     "por": "Team",
+     "forma": "POS",
+     "monto": 190000
+    }
+   ],
    "papel": true,
    "recep": "2026-10-31",
    "total": "380000",
    "region": "",
    "taller": "Rodrigo",
    "entTipo": "s",
+   "factura": false,
    "entFecha": "",
-   "vendedora": "Veronica"
+   "vendedora": "Veronica",
+   "facturaDatos": ""
   },
   "creado": "2026-11-16T19:30:48.958669+00:00",
-  "actualizado": "2026-11-20T15:31:58.700402+00:00",
+  "actualizado": "2026-11-20T19:09:14.114633+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4229,5 +4251,118 @@
   "actualizado": "2026-11-20T14:52:23.268173+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49342,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Cynthia González",
+   "tel": "994497380",
+   "como": "Pasando por el local",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "43440",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (0,80 ML)",
+        35200
+       ],
+       [
+        "Vidrio (0,032 m²)",
+        1296
+       ],
+       [
+        "Paspartú (0,032 m²)",
+        1944
+       ],
+       [
+        "Montaje: Montaje objetos",
+        5000
+       ]
+      ],
+      "u": 1,
+      "ml": 0.72,
+      "mls": [
+       0.8
+      ],
+      "mvA": 18,
+      "mvW": 18,
+      "tot": 43440,
+      "area": 0.0324,
+      "unit": 43440
+     },
+     "m": [
+      "6",
+      "6",
+      "6",
+      "6"
+     ],
+     "mc": [
+      "Negro mate "
+     ],
+     "mm": "5000",
+     "mn": [
+      "Tepa 1x3 (Negro mate )"
+     ],
+     "mw": [
+      "1"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": "2026-11/dd90c828-4568-4747-ac7d-cc95724350eb.jpg",
+     "ph2": "2026-11/28861d5a-047f-4d14-9dda-048d051de2f1.jpg",
+     "sel": [
+      "1",
+      "13",
+      "0",
+      "6",
+      "0"
+     ],
+     "alto": "6",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Ppt 28-22"
+     ],
+     "urgF": "",
+     "ancho": "6",
+     "molds": [
+      157
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Objeto calavera",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "100",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-20T18:33:44.780268+00:00",
+  "actualizado": "2026-11-20T18:33:44.780268+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  }
 ]
