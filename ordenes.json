@@ -42,7 +42,7 @@
  {
   "n": 49222,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -52,7 +52,14 @@
    "nom": "Ximena",
    "tel": "97991214",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795186688347,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "169500",
@@ -68,7 +75,7 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T18:28:24.967806+00:00",
-  "actualizado": "2026-11-16T18:28:24.967806+00:00",
+  "actualizado": "2026-11-20T14:58:08.921903+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -113,7 +120,7 @@
  {
   "n": 49224,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -128,6 +135,12 @@
      "a": "Recibida",
      "t": 1795118885817,
      "de": "Enviada al taller",
+     "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795186851148,
+     "de": "Recibida",
      "por": "Team"
     }
    ],
@@ -146,7 +159,7 @@
    "vendedora": "Josefa"
   },
   "creado": "2026-11-16T18:31:36.874578+00:00",
-  "actualizado": "2026-11-19T20:08:07.364495+00:00",
+  "actualizado": "2026-11-20T15:00:51.179222+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -193,7 +206,7 @@
  {
   "n": 49228,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -203,7 +216,14 @@
    "nom": "Andro vlahovic",
    "tel": "953647022",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795186878933,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "54600",
@@ -219,7 +239,7 @@
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T18:35:55.30125+00:00",
-  "actualizado": "2026-11-16T18:35:55.30125+00:00",
+  "actualizado": "2026-11-20T15:01:18.932115+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -264,7 +284,7 @@
  {
   "n": 49235,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -274,7 +294,14 @@
    "nom": "Pilar Dueñas",
    "tel": "976084496",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795186921777,
+     "de": "Enviada al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "63720",
@@ -290,7 +317,7 @@
    "vendedora": "josefa"
   },
   "creado": "2026-11-16T18:40:02.912793+00:00",
-  "actualizado": "2026-11-16T18:40:02.912793+00:00",
+  "actualizado": "2026-11-20T15:02:01.748253+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -608,7 +635,7 @@
  {
   "n": 49249,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -618,7 +645,27 @@
    "nom": "Jaqueline pefaur",
    "tel": "998221921",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795187515261,
+     "de": "Enviada al taller",
+     "wa": true,
+     "por": "Team"
+    },
+    {
+     "a": "Recibida",
+     "t": 1795187849667,
+     "de": "Lista para retirar",
+     "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795187850899,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "990000",
@@ -629,12 +676,13 @@
    "total": "990000",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795187515260,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "veronica"
   },
   "creado": "2026-11-16T18:59:50.179471+00:00",
-  "actualizado": "2026-11-16T18:59:50.179471+00:00",
+  "actualizado": "2026-11-20T15:17:30.697167+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -726,7 +774,7 @@
  {
   "n": 49260,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -742,6 +790,13 @@
      "t": 1795118980591,
      "de": "Devuelta al taller",
      "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795188277365,
+     "de": "Recibida",
+     "wa": true,
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -754,12 +809,13 @@
    "total": "590000",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795188277365,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "Veronica"
   },
   "creado": "2026-11-16T19:06:55.835073+00:00",
-  "actualizado": "2026-11-19T20:09:40.624986+00:00",
+  "actualizado": "2026-11-20T15:24:37.868124+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3959,5 +4015,103 @@
   "actualizado": "2026-11-20T13:52:01.436337+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "n": 49341,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Alexis rojas",
+   "tel": "984016615",
+   "como": "Cliente",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "94600",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,72 ML)",
+        94600
+       ]
+      ],
+      "u": 1,
+      "ml": 1.4,
+      "mls": [
+       1.72
+      ],
+      "mvA": 38,
+      "mvW": 32,
+      "tot": 94600,
+      "area": 0.1216,
+      "unit": 94600
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "",
+     "mn": [
+      "03-6"
+     ],
+     "mw": [
+      "4"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "GARANTÍA cambiar moldura exterior ",
+     "ph1": "2026-11/ef35072e-74cd-4964-8453-29cdd505953e.jpg",
+     "ph2": "2026-11/1c341f6f-4d60-4f0a-bc14-41912a67b155.jpg",
+     "sel": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "38",
+     "cant": "1",
+     "mats": [],
+     "urgF": "",
+     "ancho": "32",
+     "molds": [
+      11
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Diploma banco estado ",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "v",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-20T14:49:43.875593+00:00",
+  "actualizado": "2026-11-20T14:52:23.268173+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
