@@ -369,5 +369,105 @@
   "creado": "2026-11-21T16:59:49.83735+00:00",
   "actualizado": "2026-11-21T16:59:49.83735+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "id": 5,
+  "datos": {
+   "nom": "Mirka",
+   "tel": "95471370",
+   "conv": "No",
+   "mail": "",
+   "tipo": "enm",
+   "abono": "",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (4,28 ML)",
+        231120
+       ],
+       [
+        "Vidrio (1,018 m²)",
+        40704
+       ],
+       [
+        "Paspartú (1,018 m²)",
+        20352
+       ],
+       [
+        "Montaje: Montaje objetos",
+        150000
+       ]
+      ],
+      "u": 1,
+      "ml": 4.04,
+      "mls": [
+       4.28
+      ],
+      "mvA": 96,
+      "mvW": 106,
+      "tot": 442176,
+      "area": 1.0176,
+      "unit": 442176
+     },
+     "m": [
+      "3",
+      "3",
+      "3",
+      "3"
+     ],
+     "mc": [
+      ""
+     ],
+     "mm": "150000",
+     "mn": [
+      "3x2 Tepa"
+     ],
+     "mw": [
+      "3"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "1",
+      "2",
+      "0",
+      "6",
+      "0"
+     ],
+     "alto": "90",
+     "cant": "1",
+     "mats": [
+      "Vidrio sencillo",
+      "Blanco puro"
+     ],
+     "urgF": "",
+     "ancho": "100",
+     "molds": [
+      147
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Composicion Fotos Oficina ",
+     "region": ""
+    }
+   ],
+   "vence": 1797880305225,
+   "vendedora": "Team"
+  },
+  "estado": "Pendiente",
+  "ot": null,
+  "creado": "2026-11-21T19:11:46.115249+00:00",
+  "actualizado": "2026-11-21T19:11:46.115249+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]

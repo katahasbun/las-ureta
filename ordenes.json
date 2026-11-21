@@ -396,10 +396,18 @@
    "taller": "Mariano",
    "entTipo": "s",
    "entFecha": "",
-   "vendedora": "josefa"
+   "vendedora": "josefa",
+   "pendientes": [
+    {
+     "t": 1795288623758,
+     "id": "mwqshrpq6jm1",
+     "por": "Team",
+     "texto": "Mariano la envía el lunes"
+    }
+   ]
   },
   "creado": "2026-11-16T18:42:18.457155+00:00",
-  "actualizado": "2026-11-16T18:42:18.457155+00:00",
+  "actualizado": "2026-11-21T19:17:03.769301+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -446,7 +454,7 @@
  {
   "n": 49238,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -456,7 +464,14 @@
    "nom": "Lucia arredondo",
    "tel": "999318372",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Entregada",
+     "t": 1795288689456,
+     "de": "Lista para retirar",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "Transferencia",
    "abono": "20000",
@@ -472,7 +487,7 @@
    "vendedora": "Josefa"
   },
   "creado": "2026-11-16T18:45:40.391198+00:00",
-  "actualizado": "2026-11-16T18:45:40.391198+00:00",
+  "actualizado": "2026-11-21T19:18:09.620619+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -2687,7 +2702,7 @@
  {
   "n": 49320,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -2703,6 +2718,31 @@
      "t": 1795102246810,
      "de": "Recibida",
      "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795285203324,
+     "de": "Enviada al taller",
+     "wa": true,
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795285217237,
+     "de": "Lista para retirar",
+     "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795285219589,
+     "de": "Entregada",
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795287774981,
+     "de": "Lista para retirar",
+     "por": "Team"
     }
    ],
    "mail": "",
@@ -2715,6 +2755,7 @@
    "total": "150000",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795285203324,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "Leo",
@@ -2723,12 +2764,15 @@
      "t": 1795206994443,
      "id": "mwpfw64riz3c",
      "por": "Team",
-     "texto": "Ro envía a las 13hrs"
+     "hecho": true,
+     "texto": "Ro envía a las 13hrs",
+     "hechoT": 1795288588654,
+     "hechoPor": "Team"
     }
    ]
   },
   "creado": "2026-11-16T20:45:45.096143+00:00",
-  "actualizado": "2026-11-20T20:36:33.579047+00:00",
+  "actualizado": "2026-11-21T19:16:28.666643+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4753,5 +4797,109 @@
   "actualizado": "2026-11-21T16:44:46.053393+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49345,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "dir": "",
+   "nom": "Daniel grunberg",
+   "tel": "993386045",
+   "como": "Pasando por el local",
+   "conv": "No",
+   "dcto": "",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "43390",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (1,84 ML)",
+        77280
+       ],
+       [
+        "Vidrio (0,190 m²)",
+        9500
+       ]
+      ],
+      "u": 1,
+      "ml": 1.76,
+      "mls": [
+       1.84
+      ],
+      "mvA": 50,
+      "mvW": 38,
+      "tot": 86780,
+      "area": 0.19,
+      "unit": 86780
+     },
+     "m": [
+      "4",
+      "4",
+      "4",
+      "4"
+     ],
+     "mc": [
+      "Negro mate"
+     ],
+     "mm": "",
+     "mn": [
+      "1x2 Tepa (Negro mate)"
+     ],
+     "mw": [
+      "1"
+     ],
+     "chk": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "También pegar punta de lamina",
+     "ph1": "2026-11/834f1d83-369e-4f87-8a76-d1ef7f58cbd6.jpg",
+     "ph2": "2026-11/e3159add-c963-4695-a4ce-1d53581014a7.jpg",
+     "sel": [
+      "5",
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "alto": "42",
+     "cant": "1",
+     "mats": [
+      "Entre vidrios sencillo"
+     ],
+     "urgF": "",
+     "ancho": "30",
+     "molds": [
+      145
+     ],
+     "blanco": null,
+     "desmOp": [],
+     "nombre": "Futbol arg",
+     "region": ""
+    }
+   ],
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "entFecha": "",
+   "abonoTipo": "50",
+   "despCosto": "",
+   "vendedora": "katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-21T18:46:59.326034+00:00",
+  "actualizado": "2026-11-21T18:46:59.326034+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  }
 ]
