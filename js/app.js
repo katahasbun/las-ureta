@@ -199,10 +199,13 @@ if(!J)return toast("No se pudo cargar el generador de PDF. Revisa la conexión y
 try{const d=await armarPdfCliente(J,o);  // formato en js/pdf-cliente.js
 await dl.save({filename:`Orden de trabajo ${o.n} Las Ureta.pdf`,data:d.output("blob")});toast("PDF del cliente generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 
-async function genPdf(){const tl=$("oTaller").value;if(!tl)return toast("Elige el taller");const sel=allOT().filter(o=>chosen.has(o.n));if(!sel.length)return toast("Selecciona al menos una orden");
+async function genPdf(notas){const tl=$("oTaller").value;if(!tl)return toast("Elige el taller");const sel=allOT().filter(o=>chosen.has(o.n));if(!sel.length)return toast("Selecciona al menos una orden");
+// Primero se escriben las cosas importantes para el taller (vienen sugeridas las urgentes)
+if(typeof notas!=="string"){$("tallerNotas").value=sugerirNotasTaller(sel);$("tallerDlg").showModal();return}
+
 const J=window.jspdf&&window.jspdf.jsPDF,dl=window.claude&&claude.use?await claude.use("downloads"):{save:async({filename,data})=>{const a=document.createElement("a");a.href=URL.createObjectURL(data);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}};
 if(!J)return toast("No se pudo cargar el generador de PDF. Revisa la conexión y recarga la página");if(!dl)return toast("La descarga no está disponible en esta vista");
-try{const d=await armarPdfTaller(J,sel,tl);  /* formato en js/pdf-taller.js */
+try{const d=await armarPdfTaller(J,sel,tl,notas);  /* formato en js/pdf-taller.js */
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 // Proveedor de vidrios, paspartú y fondos (tercer dato de cada opción, si es texto)
 const PV={vidrio:OPT.vidrio.map((o,i)=>PROV_MAT.vidrio[i]||""),paspa:OPT.paspa.map(o=>o[2]||""),fondo:OPT.fondo.map(o=>o[2]||""),montaje:OPT.montaje.map((o,i)=>PROV_MAT.montaje[i]||"")};
@@ -297,6 +300,9 @@ $("oNum").onclick=async()=>{const o=allOT().find(x=>x.n===ordSel);if(!o)return;
   const {error}=await db.from("ordenes").update({n,...aFila(act)}).eq("n",viejo);
   if(error){console.error(error);return toast(error.code==="23505"?`Ya existe la orden N° ${n}`:"No se pudo cambiar el número. Revisa la conexión")}
   await cargarOrdenes();toast(`La orden N° ${viejo} ahora es la N° ${n}`);ordOpen(n)};
+// Ventana "Cosas importantes para el taller" antes de generar el PDF
+$("tallerX").onclick=()=>$("tallerDlg").close();
+$("tallerForm").onsubmit=e=>{e.preventDefault();const t=$("tallerNotas").value;$("tallerDlg").close();genPdf(t)};
 function route(){const h=location.hash.slice(1);if(lastV==="ordenes"&&h!=="ordenes"){papCur=null;if(rEd!==null)rLoad(null);if(otCur){otCur=null;otClear();$("otOk").textContent="Confirmar";$("otBack").style.display=""}}lastV=h;let v=h==="enmarcaciones"?h:TIT[h]?"otro":"menu";if(h==="nueva-orden"){if(!cart.length){location.hash="enmarcaciones";return}const urgente=cart.filter(x=>x.chk[1]&&x.urgF).map(x=>x.urgF).sort()[0];if(urgente&&!$("entFecha").value){$("entTipo").value="f";$("entFecha").value=urgente}v="ot";otRender()}if(h==="restauraciones"){v="rest";if(rEd===null)$("rN").textContent=""}if(h==="proveedores"){v="prov";provRender()}if(h==="envios"){v="envios";envRender()}if(h==="retiros"){v="retiros";retRender()}if(h==="presupuestos"){v="presupuestos";presRender()}if(h==="pendientes"){v="pendientes";pendRender()}if(h==="orden-papel"){v="papel";papLoad(null)}if(h==="ordenes"){v="ordenes";if(lastV!=="ordenes")ordSel=null;document.body.dataset.sel=ordSel===null?"":(allOT().find(x=>x.n===ordSel)||{}).tipo||"";ordList();ordEst();ordHist()}document.body.dataset.v=v;if(v==="otro")$("phT").textContent=TIT[h];scrollTo(0,0);if(["ordenes","proveedores","restauraciones"].includes(h)||["envios","retiros","presupuestos","pendientes"].includes(h))recargar(h)}
 // Trae los cambios que hicieron las demás desde la base de datos
 async function recargar(h){if(!await cargarOrdenes()||location.hash.slice(1)!==h)return;if(h==="proveedores")provRender();if(h==="restauraciones")rList();if(h==="ordenes"){ordList();ordEst();ordHist()}if(["ordenes","envios","retiros","presupuestos","pendientes"].includes(h)){envRender();retRender();pendRender()}}

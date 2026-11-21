@@ -311,6 +311,11 @@
   <div class="paso"><a class="btn p" id="peWa" target="_blank" rel="noopener">2 · Abrir WhatsApp</a><small>Se abre el chat con el mensaje ya escrito. Adjunta el PDF con el clip 📎 y aprieta Enviar.</small></div>
   <div style="text-align:right;margin-top:14px"><button class="btn" id="peX" type="button">Listo</button></div>
 </dialog>
+<dialog id="tallerDlg"><form id="tallerForm"><h2>Cosas importantes para el taller</h2>
+  <p class="sub" style="margin-bottom:10px">Aparecen al principio del PDF, una por línea. Puedes editarlas o dejarlo vacío.</p>
+  <textarea id="tallerNotas" rows="8" placeholder="Ej.: OT 49555: el cliente pidió grabar el proceso&#10;OT 38999: colgador vertical y horizontal"></textarea>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px"><button class="btn" type="button" id="tallerX">Cancelar</button><button class="btn p" type="submit">Generar PDF</button></div>
+</form></dialog>
 <dialog id="picDlg"><img id="picImg" alt=""><div style="text-align:center;margin-top:8px"><button class="btn s" type="button" id="picX">Cerrar</button></div></dialog>
 <div id="toast"></div>
 

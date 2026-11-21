@@ -10,7 +10,7 @@
 //   Vidrio · Java (si llevan) · Extras (desmontaje, conservación)
 //   Observaciones
 
-async function armarPdfTaller(J, ordenes, taller) {
+async function armarPdfTaller(J, ordenes, taller, notas = "") {
   const d = new J({ unit: "mm", format: "a4" }), W = 210, PH = 297, M = 12, CW = W - 2 * M;
   const TOP = 24, BOT = PH - 10, PAD = 4, LH = 4.4, GAP = 4;
   const font = (sz, st = "normal", c = [30, 30, 30]) => { d.setFont("helvetica", st); d.setFontSize(sz); d.setTextColor(c[0], c[1], c[2]); };
@@ -122,6 +122,18 @@ async function armarPdfTaller(J, ordenes, taller) {
 
   encabezado();
   let y = TOP;
+  // Recuadro "IMPORTANTE" con las notas escritas a mano (una por línea)
+  const lineas = String(notas || "").split("\n").map(x => x.trim()).filter(Boolean);
+  if (lineas.length) {
+    font(9, "normal");
+    const partes = lineas.map(l => d.splitTextToSize(l, CW - 2 * PAD - 5));
+    const h = PAD + 6 + partes.reduce((a, p) => a + p.length * LH, 0) + PAD - 1;
+    d.setFillColor(244, 244, 244); d.setDrawColor(30, 30, 30); d.setLineWidth(0.5); d.roundedRect(M, y, CW, h, 2, 2, "FD");
+    font(10, "bold"); d.text("IMPORTANTE", M + PAD, y + PAD + 3.5);
+    let yy = y + PAD + 6;
+    for (const p of partes) p.forEach((t, j) => { font(9, "normal"); if (j === 0) d.text("•", M + PAD, yy + 3.3); d.text(t, M + PAD + 4, yy + 3.3); yy += LH; });
+    y += h + GAP;
+  }
   for (const o of ordenes) {
     const P = await piezas(o);
     // Si no cabe en una hoja completa con fotos grandes, se achican las fotos
@@ -140,3 +152,10 @@ async function armarPdfTaller(J, ordenes, taller) {
 
 // Fecha de entrega de una orden (usa la misma regla que la lista de órdenes)
 function dueOT(o) { return typeof due === "function" ? due(o) : null; }
+
+// Sugerencia para el recuadro "IMPORTANTE": las órdenes urgentes seleccionadas
+function sugerirNotasTaller(ordenes) {
+  const dm = f => { const x = new Date(f); return String(x.getDate()).padStart(2, "0") + "/" + String(x.getMonth() + 1).padStart(2, "0"); };
+  return ordenes.filter(o => typeof esUrgente === "function" && esUrgente(o))
+    .map(o => { const f = dueOT(o); return `OT ${o.n}: URGENTE${f ? " para el " + dm(f) : ""}`; }).join("\n");
+}
