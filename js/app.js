@@ -202,21 +202,7 @@ await dl.save({filename:`Orden de trabajo ${o.n} Las Ureta.pdf`,data:d.output("b
 async function genPdf(){const tl=$("oTaller").value;if(!tl)return toast("Elige el taller");const sel=allOT().filter(o=>chosen.has(o.n));if(!sel.length)return toast("Selecciona al menos una orden");
 const J=window.jspdf&&window.jspdf.jsPDF,dl=window.claude&&claude.use?await claude.use("downloads"):{save:async({filename,data})=>{const a=document.createElement("a");a.href=URL.createObjectURL(data);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}};
 if(!J)return toast("No se pudo cargar el generador de PDF. Revisa la conexión y recarga la página");if(!dl)return toast("La descarga no está disponible en esta vista");
-try{const d=new J({unit:"mm",format:"a4"}),W=210,M=15,CW=W-2*M,PH=297;let y=M;
-const need=h=>{if(y+h>PH-M){d.addPage();y=M}};
-const T=(x,size=11,bold=false,gap=1.5)=>{d.setFont("helvetica",bold?"bold":"normal");d.setFontSize(size);const lh=size*0.3528*1.3;d.splitTextToSize(String(x),CW).forEach(l=>{need(lh);d.text(l,M,y+size*0.3528);y+=lh});y+=gap};
-const img=async(u,label)=>{u=fotoSrc(u);if(!u)return;const im=await new Promise(r=>{const i=new Image();i.crossOrigin="anonymous";i.onload=()=>r(i);i.onerror=()=>r(null);i.src=u});if(!im)return;let w=Math.min(80,CW),h=w*im.naturalHeight/im.naturalWidth;if(h>75){h=75;w=h*im.naturalWidth/im.naturalHeight}need(h+9);T(label,10,true,0.5);d.addImage(/^data:/.test(u)?u:im,/^data:image\/png/.test(u)?"PNG":"JPEG",M,y,w,h);y+=h+4};
-let first=true;
-for(const o of sel){if(!first){d.addPage();y=M}first=false;
-const ent=o.tipo==="rest"?(o.fecha?fd(new Date(o.fecha+"T12:00:00")):"Por definir"):(o.entTipo==="f"&&o.entFecha?fd(new Date(o.entFecha+"T12:00:00")):"2 a 3 semanas");
-T(`Orden de trabajo N° ${o.n}`,18,true,3);T(`Taller: ${tl}`);if(o.vendedora)T(`Vendedora: ${o.vendedora}`);T(`Tipo: ${o.tipo==="rest"?"Restauración":"Enmarcación"}`);T(`Entrega: ${ent}`,11,false,3);if(o.desp&&!o.papel)T(`Despacho a domicilio: ${o.dir||""}`,11,false,3);
-if(o.papel){T("Orden en papel"+(o.local?" · Local "+o.local:""),11,false,2);String(o.det||"").split("\n").filter(x=>x.trim()).forEach(l=>T(l));if(o.desp)T("Despacho a domicilio: "+(o.dir||""));y+=2;await img(o.ph&&o.ph[0],"Foto de la orden en papel")}else if(o.tipo==="rest"){T(`Objeto: ${o.obj} · Unidades: ${o.uni}`);T(`Observaciones: ${o.obs||"-"}`,11,false,3);for(const[k,u]of o.ph.entries())await img(u,`Foto ${k+1}`)}
-else for(const[n,it]of o.items.entries()){const g=k=>(OPT[k][it.sel[["vidrio","paspa","fondo","montaje","java"].indexOf(k)]]||["-"])[0];
-if(n)y+=4;need(30);T(it.nombre||"Sin nombre",14,true,1.5);
-T(`Medidas de la obra: ${it.alto} x ${it.ancho} cm · Unidades: ${it.c.u}`);T(`Medida vidrio (MV): ${it.c.mvA} x ${it.c.mvW} cm`);{const mk=(it.mw||[]).reduce((a,x)=>a+(parseFloat(x)||0),0);T(`Medida final (con marco): ${fmtN(it.c.mvA+2*mk)} x ${fmtN(it.c.mvW+2*mk)} cm`)}T(`Márgenes (cm): superior ${it.m[0]}, inferior ${it.m[1]}, izquierdo ${it.m[2]}, derecho ${it.m[3]}`);if(it.blanco)T(blancoTxt(it));
-T(`Moldura: ${it.molds.map((s,k)=>MOLD[s][0]+" "+MOLD[s][1]+colorM(it,k)).join(" + ")}`);T(`Vidrio: ${g("vidrio")} · Paspartú: ${g("paspa")} · Fondo: ${g("fondo")}`);T(`Montaje: ${g("montaje")} · Java: ${g("java")}`);
-const ex=[it.chk[0]&&desmTxt(it),it.chk[1]&&("URGENTE"+(it.urgF?" para el "+fd(new Date(it.urgF+"T12:00:00")):"")),it.chk[2]&&"Conservación museo",it.chk[3]&&("Despacho a domicilio"+(it.dir?": "+it.dir:""))].filter(Boolean);if(ex.length)T(`Extras: ${ex.join(", ")}`);
-T(`Observaciones: ${it.obs||"-"}`,11,false,2);await img(it.ph1,"Obra original");await img(it.ph2,"Muestra de moldura")}}
+try{const d=await armarPdfTaller(J,sel,tl);  /* formato en js/pdf-taller.js */
 await dl.save({filename:`Ordenes taller ${tl} ${new Date().toISOString().slice(0,10)}.pdf`,data:d.output("blob")});sel.forEach(o=>{o.taller=tl;guardarOrden(o)});chosen.clear();ordList();toast("PDF para el taller generado")}catch(e){if(!e||e.code!=="declined")toast("No se pudo generar el PDF");console.error(e)}}
 // Proveedor de vidrios, paspartú y fondos (tercer dato de cada opción, si es texto)
 const PV={vidrio:OPT.vidrio.map((o,i)=>PROV_MAT.vidrio[i]||""),paspa:OPT.paspa.map(o=>o[2]||""),fondo:OPT.fondo.map(o=>o[2]||""),montaje:OPT.montaje.map((o,i)=>PROV_MAT.montaje[i]||"")};
