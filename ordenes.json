@@ -1562,7 +1562,7 @@
  {
   "n": 49292,
   "tipo": "enm",
-  "estado": "Enviada al taller",
+  "estado": "Lista para retirar",
   "datos": {
    "ph": [
     null
@@ -1572,7 +1572,27 @@
    "nom": "Ignacio Bolbaran",
    "tel": "997996307",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Lista para retirar",
+     "t": 1795281924512,
+     "de": "Enviada al taller",
+     "wa": true,
+     "por": "Team"
+    },
+    {
+     "a": "Devuelta al taller",
+     "t": 1795281942820,
+     "de": "Lista para retirar",
+     "por": "Team"
+    },
+    {
+     "a": "Lista para retirar",
+     "t": 1795281944269,
+     "de": "Devuelta al taller",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "28000",
@@ -1583,12 +1603,13 @@
    "total": "28000",
    "region": "",
    "taller": "Rodrigo",
+   "avisado": 1795281924512,
    "entTipo": "s",
    "entFecha": "",
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:45:17.655219+00:00",
-  "actualizado": "2026-11-16T19:45:17.655219+00:00",
+  "actualizado": "2026-11-21T17:25:41.905724+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
