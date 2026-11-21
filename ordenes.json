@@ -780,7 +780,7 @@
  {
   "n": 49260,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Devuelta al taller",
   "datos": {
    "ph": [
     null
@@ -802,6 +802,12 @@
      "t": 1795188277365,
      "de": "Recibida",
      "wa": true,
+     "por": "Team"
+    },
+    {
+     "a": "Devuelta al taller",
+     "t": 1795271410936,
+     "de": "Lista para retirar",
      "por": "Team"
     }
    ],
@@ -829,7 +835,7 @@
    ]
   },
   "creado": "2026-11-16T19:06:55.835073+00:00",
-  "actualizado": "2026-11-21T13:49:29.168439+00:00",
+  "actualizado": "2026-11-21T14:30:16.283312+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3601,7 +3607,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T13:33:06.450377+00:00",
-  "actualizado": "2026-11-21T14:16:51.40302+00:00",
+  "actualizado": "2026-11-21T14:30:16.285738+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3714,7 +3720,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T15:56:37.313212+00:00",
-  "actualizado": "2026-11-21T14:16:51.48781+00:00",
+  "actualizado": "2026-11-21T14:30:16.311114+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3907,7 +3913,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T16:24:52.397827+00:00",
-  "actualizado": "2026-11-21T14:16:51.393645+00:00",
+  "actualizado": "2026-11-21T14:30:16.282589+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4027,7 +4033,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T18:16:25.311599+00:00",
-  "actualizado": "2026-11-21T14:16:51.402772+00:00",
+  "actualizado": "2026-11-21T14:30:16.099437+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4062,7 +4068,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T20:40:42.417505+00:00",
-  "actualizado": "2026-11-21T14:16:51.417774+00:00",
+  "actualizado": "2026-11-21T14:30:16.305778+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4097,7 +4103,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T21:14:26.033915+00:00",
-  "actualizado": "2026-11-21T14:16:51.391824+00:00",
+  "actualizado": "2026-11-21T14:30:16.282131+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4195,7 +4201,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T13:52:01.436337+00:00",
-  "actualizado": "2026-11-21T14:16:51.403663+00:00",
+  "actualizado": "2026-11-21T14:30:16.285813+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4293,7 +4299,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T14:49:43.875593+00:00",
-  "actualizado": "2026-11-21T14:16:51.391963+00:00",
+  "actualizado": "2026-11-21T14:30:16.298068+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4406,7 +4412,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T18:33:44.780268+00:00",
-  "actualizado": "2026-11-21T14:16:51.409684+00:00",
+  "actualizado": "2026-11-21T14:30:16.2825+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4504,7 +4510,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T19:39:29.98905+00:00",
-  "actualizado": "2026-11-21T14:16:51.391839+00:00",
+  "actualizado": "2026-11-21T14:30:16.336446+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4540,7 +4546,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-21T13:47:31.793286+00:00",
-  "actualizado": "2026-11-21T14:16:51.402524+00:00",
+  "actualizado": "2026-11-21T14:30:16.287342+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
