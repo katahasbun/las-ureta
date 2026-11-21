@@ -818,10 +818,18 @@
    "avisado": 1795188277365,
    "entTipo": "s",
    "entFecha": "",
-   "vendedora": "Veronica"
+   "vendedora": "Veronica",
+   "pendientes": [
+    {
+     "t": 1795268971335,
+     "id": "mwqgsjt379ge",
+     "por": "Team",
+     "texto": "enviar a rodrigo"
+    }
+   ]
   },
   "creado": "2026-11-16T19:06:55.835073+00:00",
-  "actualizado": "2026-11-20T15:24:37.868124+00:00",
+  "actualizado": "2026-11-21T13:49:29.168439+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3585,7 +3593,7 @@
    "recep": "2026-11-18",
    "total": "910000",
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -3593,7 +3601,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T13:33:06.450377+00:00",
-  "actualizado": "2026-11-19T13:33:06.450377+00:00",
+  "actualizado": "2026-11-21T14:16:51.40302+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3696,7 +3704,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -3706,7 +3714,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T15:56:37.313212+00:00",
-  "actualizado": "2026-11-19T16:40:30.628072+00:00",
+  "actualizado": "2026-11-21T14:16:51.48781+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3889,7 +3897,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -3899,7 +3907,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T16:24:52.397827+00:00",
-  "actualizado": "2026-11-19T16:34:36.461822+00:00",
+  "actualizado": "2026-11-21T14:16:51.393645+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4009,7 +4017,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -4019,7 +4027,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T18:16:25.311599+00:00",
-  "actualizado": "2026-11-19T18:32:39.127417+00:00",
+  "actualizado": "2026-11-21T14:16:51.402772+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4046,7 +4054,7 @@
    "recep": "2026-11-18",
    "total": "93900",
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -4054,7 +4062,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T20:40:42.417505+00:00",
-  "actualizado": "2026-11-19T20:40:42.417505+00:00",
+  "actualizado": "2026-11-21T14:16:51.417774+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4081,7 +4089,7 @@
    "recep": "2026-11-19",
    "total": "",
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -4089,7 +4097,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T21:14:26.033915+00:00",
-  "actualizado": "2026-11-19T21:14:51.624654+00:00",
+  "actualizado": "2026-11-21T14:16:51.391824+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4177,7 +4185,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "f",
    "factura": false,
    "entFecha": "2026-12-06",
@@ -4187,9 +4195,9 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T13:52:01.436337+00:00",
-  "actualizado": "2026-11-20T13:52:01.436337+00:00",
+  "actualizado": "2026-11-21T14:16:51.403663+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
-  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49341,
@@ -4275,7 +4283,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -4285,7 +4293,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T14:49:43.875593+00:00",
-  "actualizado": "2026-11-20T14:52:23.268173+00:00",
+  "actualizado": "2026-11-21T14:16:51.391963+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -4388,7 +4396,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "entFecha": "",
@@ -4398,9 +4406,9 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T18:33:44.780268+00:00",
-  "actualizado": "2026-11-20T18:33:44.780268+00:00",
+  "actualizado": "2026-11-21T14:16:51.409684+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
-  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49343,
@@ -4461,7 +4469,7 @@
       false
      ],
      "dir": "",
-     "obs": "",
+     "obs": "moldura es frente oro folia interno negro y externo negro ",
      "ph1": "2026-11/63ad21e3-e268-4918-bca0-6716719c7405.jpg",
      "ph2": "2026-11/b81dafa5-a4d3-4fe1-ada0-4b29104c9904.jpg",
      "sel": [
@@ -4486,7 +4494,7 @@
     }
    ],
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "f",
    "factura": false,
    "entFecha": "2026-12-06",
@@ -4496,8 +4504,44 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T19:39:29.98905+00:00",
-  "actualizado": "2026-11-20T20:35:44.358853+00:00",
+  "actualizado": "2026-11-21T14:16:51.391839+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49344,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    null
+   ],
+   "det": "1 desmontaje de obra",
+   "dir": "",
+   "nom": "Pablo Labowitz",
+   "tel": "999205850",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "35000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-21",
+   "total": "35000",
+   "region": "",
+   "taller": "Rodrigo",
+   "entTipo": "f",
+   "factura": false,
+   "urgente": false,
+   "entFecha": "2026-12-03",
+   "vendedora": "Katalina",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-21T13:47:31.793286+00:00",
+  "actualizado": "2026-11-21T14:16:51.402524+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]
