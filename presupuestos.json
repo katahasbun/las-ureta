@@ -274,5 +274,100 @@
   "creado": "2026-11-20T20:32:52.694479+00:00",
   "actualizado": "2026-11-20T20:32:52.694479+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
+  "id": 4,
+  "datos": {
+   "nom": "Gonzalo",
+   "tel": "993275926",
+   "conv": "No",
+   "mail": "",
+   "tipo": "enm",
+   "abono": "",
+   "items": [
+    {
+     "c": {
+      "L": [
+       [
+        "Moldura 1 (5,16 ML)",
+        304440
+       ],
+       [
+        "Montaje: Bastidor 2 cm (5,00 ML)",
+        160000
+       ],
+       [
+        "Desmontaje (sacar clavos)",
+        15000
+       ]
+      ],
+      "u": 1,
+      "ml": 5,
+      "mls": [
+       5.16
+      ],
+      "mvA": 100,
+      "mvW": 150,
+      "tot": 479440,
+      "area": 1.5,
+      "unit": 479440
+     },
+     "m": [
+      "0",
+      "0",
+      "0",
+      "0"
+     ],
+     "mc": [
+      "Negro mate "
+     ],
+     "mm": "",
+     "mn": [
+      "4x2 plana/caja (Negro mate )"
+     ],
+     "mw": [
+      "2"
+     ],
+     "chk": [
+      true,
+      false,
+      false,
+      false
+     ],
+     "dir": "",
+     "obs": "desmontado de obra, montaje en bastidor 2x2 cm madera tepa, moldura caja n6 negro mate ",
+     "ph1": null,
+     "ph2": null,
+     "sel": [
+      "0",
+      "0",
+      "0",
+      "1",
+      "0"
+     ],
+     "alto": "100",
+     "cant": "1",
+     "mats": [],
+     "urgF": "",
+     "ancho": "150",
+     "molds": [
+      148
+     ],
+     "blanco": null,
+     "desmOp": [
+      1
+     ],
+     "nombre": "Oleo Familia ",
+     "region": ""
+    }
+   ],
+   "vence": 1797872391370,
+   "vendedora": "Team"
+  },
+  "estado": "Pendiente",
+  "ot": null,
+  "creado": "2026-11-21T16:59:49.83735+00:00",
+  "actualizado": "2026-11-21T16:59:49.83735+00:00",
+  "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
 ]

@@ -2,7 +2,7 @@
  {
   "n": 49201,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     "2026-11/6f390593-628d-4350-bc10-35dd4c05e549.jpg"
@@ -12,7 +12,14 @@
    "nom": "Alvaro hercolani",
    "tel": "982949912",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279393968,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "120000",
@@ -22,7 +29,7 @@
    "recep": "2026-11-21",
    "total": "255800",
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "f",
    "factura": false,
    "urgente": false,
@@ -31,9 +38,9 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-21T15:48:31.094842+00:00",
-  "actualizado": "2026-11-21T15:48:31.094842+00:00",
+  "actualizado": "2026-11-21T16:44:46.052942+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
-  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49216,
@@ -866,12 +873,15 @@
      "t": 1795268971335,
      "id": "mwqgsjt379ge",
      "por": "Team",
-     "texto": "enviar a rodrigo"
+     "hecho": true,
+     "texto": "enviar a rodrigo",
+     "hechoT": 1795280010243,
+     "hechoPor": "Team"
     }
    ]
   },
   "creado": "2026-11-16T19:06:55.835073+00:00",
-  "actualizado": "2026-11-21T14:30:16.283312+00:00",
+  "actualizado": "2026-11-21T16:53:27.894847+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1323,12 +1333,15 @@
      "t": 1795207012731,
      "id": "mwpfwk8ryx77",
      "por": "Team",
-     "texto": "devolver marco abanico"
+     "hecho": true,
+     "texto": "devolver marco abanico",
+     "hechoT": 1795280024674,
+     "hechoPor": "Team"
     }
    ]
   },
   "creado": "2026-11-16T19:36:57.268495+00:00",
-  "actualizado": "2026-11-20T20:36:51.709468+00:00",
+  "actualizado": "2026-11-21T16:53:42.325213+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1618,12 +1631,15 @@
      "t": 1795207061282,
      "id": "mwpfxlpertht",
      "por": "Team",
-     "texto": "Envío de marco foliado y achicado"
+     "hecho": true,
+     "texto": "Envío de marco foliado y achicado",
+     "hechoT": 1795280016451,
+     "hechoPor": "Team"
     }
    ]
   },
   "creado": "2026-11-16T19:47:18.00134+00:00",
-  "actualizado": "2026-11-20T21:18:27.461586+00:00",
+  "actualizado": "2026-11-21T16:53:34.103477+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3627,7 +3643,7 @@
  {
   "n": 49333,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -3637,7 +3653,14 @@
    "nom": "Hernando Osses",
    "tel": "+56981998655",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279350473,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "910000",
@@ -3655,14 +3678,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T13:33:06.450377+00:00",
-  "actualizado": "2026-11-21T14:30:16.285738+00:00",
+  "actualizado": "2026-11-21T16:44:46.059308+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49334,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Consuelo garcia",
@@ -3671,7 +3694,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279340745,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "47712",
@@ -3768,14 +3798,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T15:56:37.313212+00:00",
-  "actualizado": "2026-11-21T14:30:16.311114+00:00",
+  "actualizado": "2026-11-21T16:44:46.060893+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49335,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Rodolfo Parraguez",
@@ -3784,7 +3814,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279332321,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "",
    "abono": "389384",
@@ -3961,14 +3998,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T16:24:52.397827+00:00",
-  "actualizado": "2026-11-21T14:30:16.282589+00:00",
+  "actualizado": "2026-11-21T16:44:46.053237+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49336,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     "2026-11/361c1c00-479d-4f51-95fa-51c356a42cc5.jpg"
@@ -3978,17 +4015,24 @@
    "nom": "José Miguel Medina",
    "tel": "992235384",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279312377,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "140330",
    "items": [],
-   "local": "992235384",
+   "local": "",
    "papel": true,
    "recep": "2026-11-21",
    "total": "140330",
    "region": "",
-   "taller": "",
+   "taller": "Rodrigo",
    "entTipo": "s",
    "factura": false,
    "urgente": false,
@@ -3997,14 +4041,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-21T15:53:07.525084+00:00",
-  "actualizado": "2026-11-21T15:53:07.525084+00:00",
+  "actualizado": "2026-11-21T16:51:17.033982+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
-  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+  "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49337,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Pilar Dueñas",
@@ -4018,6 +4062,12 @@
      "a": "N° 49337",
      "t": 1795113159080,
      "de": "N° 49336",
+     "por": "Team"
+    },
+    {
+     "a": "Enviada al taller",
+     "t": 1795279290257,
+     "de": "Recibida",
      "por": "Team"
     }
    ],
@@ -4117,14 +4167,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T18:16:25.311599+00:00",
-  "actualizado": "2026-11-21T14:30:16.099437+00:00",
+  "actualizado": "2026-11-21T16:44:46.104684+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49338,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -4134,7 +4184,14 @@
    "nom": "Iván Travisany",
    "tel": "+56975180380",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279277113,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "46950",
@@ -4152,14 +4209,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T20:40:42.417505+00:00",
-  "actualizado": "2026-11-21T14:30:16.305778+00:00",
+  "actualizado": "2026-11-21T16:44:46.053495+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49339,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -4169,7 +4226,14 @@
    "nom": "Verónica Alvarado",
    "tel": "+56995904181",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279256193,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "",
    "abono": "",
@@ -4187,14 +4251,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-19T21:14:26.033915+00:00",
-  "actualizado": "2026-11-21T14:30:16.282131+00:00",
+  "actualizado": "2026-11-21T16:44:46.104995+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49340,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Francisca monte",
@@ -4203,7 +4267,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279249963,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "48600",
@@ -4285,14 +4356,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T13:52:01.436337+00:00",
-  "actualizado": "2026-11-21T14:30:16.285813+00:00",
+  "actualizado": "2026-11-21T16:44:46.07527+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49341,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Alexis rojas",
@@ -4301,7 +4372,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279244825,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "94600",
@@ -4383,14 +4461,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T14:49:43.875593+00:00",
-  "actualizado": "2026-11-21T14:30:16.298068+00:00",
+  "actualizado": "2026-11-21T16:44:46.101179+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49342,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Cynthia González",
@@ -4399,7 +4477,14 @@
    "conv": "No",
    "dcto": "",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279205514,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "43440",
@@ -4496,14 +4581,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T18:33:44.780268+00:00",
-  "actualizado": "2026-11-21T14:30:16.2825+00:00",
+  "actualizado": "2026-11-21T16:44:46.108542+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49343,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "dir": "",
    "nom": "Rocio Borda",
@@ -4512,7 +4597,14 @@
    "conv": "Otro",
    "dcto": "15",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279199194,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "152592",
@@ -4594,14 +4686,14 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-20T19:39:29.98905+00:00",
-  "actualizado": "2026-11-21T14:30:16.336446+00:00",
+  "actualizado": "2026-11-21T16:44:46.053707+00:00",
   "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
  {
   "n": 49344,
   "tipo": "enm",
-  "estado": "Recibida",
+  "estado": "Enviada al taller",
   "datos": {
    "ph": [
     null
@@ -4611,7 +4703,14 @@
    "nom": "Pablo Labowitz",
    "tel": "999205850",
    "desp": false,
-   "hist": [],
+   "hist": [
+    {
+     "a": "Enviada al taller",
+     "t": 1795279191330,
+     "de": "Recibida",
+     "por": "Team"
+    }
+   ],
    "mail": "",
    "pago": "POS",
    "abono": "35000",
@@ -4630,7 +4729,7 @@
    "facturaDatos": ""
   },
   "creado": "2026-11-21T13:47:31.793286+00:00",
-  "actualizado": "2026-11-21T14:30:16.287342+00:00",
+  "actualizado": "2026-11-21T16:44:46.053393+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  }
