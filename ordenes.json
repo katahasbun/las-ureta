@@ -1,5 +1,41 @@
 [
  {
+  "n": 49201,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    "2026-11/6f390593-628d-4350-bc10-35dd4c05e549.jpg"
+   ],
+   "det": "2 diplomas Alvaro hercolani \nSolo Pintar marco mas chico color miel",
+   "dir": "",
+   "nom": "Alvaro hercolani",
+   "tel": "982949912",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "120000",
+   "items": [],
+   "local": "",
+   "papel": true,
+   "recep": "2026-11-21",
+   "total": "255800",
+   "region": "",
+   "taller": "",
+   "entTipo": "f",
+   "factura": false,
+   "urgente": false,
+   "entFecha": "2026-11-18",
+   "vendedora": "",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-21T15:48:31.094842+00:00",
+  "actualizado": "2026-11-21T15:48:31.094842+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
+ },
+ {
   "n": 49216,
   "tipo": "enm",
   "estado": "Entregada",
@@ -1594,7 +1630,7 @@
  {
   "n": 49294,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1609,6 +1645,12 @@
      "a": "Lista para retirar",
      "t": 1795192808310,
      "de": "Enviada al taller",
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795276459774,
+     "de": "Lista para retirar",
      "por": "Team"
     }
    ],
@@ -1627,7 +1669,7 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:49:30.689033+00:00",
-  "actualizado": "2026-11-20T16:40:08.056993+00:00",
+  "actualizado": "2026-11-21T15:54:17.641868+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -1674,7 +1716,7 @@
  {
   "n": 49296,
   "tipo": "enm",
-  "estado": "Lista para retirar",
+  "estado": "Entregada",
   "datos": {
    "ph": [
     null
@@ -1689,6 +1731,12 @@
      "a": "Lista para retirar",
      "t": 1795192829129,
      "de": "Enviada al taller",
+     "por": "Team"
+    },
+    {
+     "a": "Entregada",
+     "t": 1795276449911,
+     "de": "Lista para retirar",
      "por": "Team"
     }
    ],
@@ -1707,7 +1755,7 @@
    "vendedora": "Katalina"
   },
   "creado": "2026-11-16T19:54:47.984685+00:00",
-  "actualizado": "2026-11-20T16:40:28.545795+00:00",
+  "actualizado": "2026-11-21T15:54:07.939007+00:00",
   "creado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
  },
@@ -3916,6 +3964,42 @@
   "actualizado": "2026-11-21T14:30:16.282589+00:00",
   "creado_por": "6b91ee22-d50b-4d54-b3a0-dedb42adb8c0",
   "actualizado_por": "1ac193d8-e17a-42ee-b441-ad155b60ff03"
+ },
+ {
+  "n": 49336,
+  "tipo": "enm",
+  "estado": "Recibida",
+  "datos": {
+   "ph": [
+    "2026-11/361c1c00-479d-4f51-95fa-51c356a42cc5.jpg"
+   ],
+   "det": "1 lamina mapa la serena pegar lamina, 4cm Ppt blanco puro , moldura 2x2 Mañio tinte caoba (tinte tapacanto) vidrio sencillo",
+   "dir": "",
+   "nom": "José Miguel Medina",
+   "tel": "992235384",
+   "desp": false,
+   "hist": [],
+   "mail": "",
+   "pago": "POS",
+   "abono": "140330",
+   "items": [],
+   "local": "992235384",
+   "papel": true,
+   "recep": "2026-11-21",
+   "total": "140330",
+   "region": "",
+   "taller": "",
+   "entTipo": "s",
+   "factura": false,
+   "urgente": false,
+   "entFecha": "",
+   "vendedora": "",
+   "facturaDatos": ""
+  },
+  "creado": "2026-11-21T15:53:07.525084+00:00",
+  "actualizado": "2026-11-21T15:53:07.525084+00:00",
+  "creado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652",
+  "actualizado_por": "54b6bf94-8f98-4b63-a2d4-b7e037fa7652"
  },
  {
   "n": 49337,
